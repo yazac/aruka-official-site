@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     pageTransition: { name: 'fade', mode: 'out-in' }
   },
   css: [
-    '@/assets/css/animations.css' // アニメーションCSSを追加
+    '@/assets/css/global.styl',
+    'normalize.css/normalize.css'
   ],
   modules: [
     // '@nuxtjs/tailwindcss' // 必要なモジュール（例：Tailwind CSS）

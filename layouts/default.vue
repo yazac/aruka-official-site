@@ -2,13 +2,13 @@
 <template>
   <div>
     <!-- ヘッダー -->
-    <header class="header">
+    <!-- <header class="header">
       <h1>My Nuxt 3 App</h1>
       <nav>
         <NuxtLink to="/">Home</NuxtLink> | 
         <NuxtLink to="/about">About</NuxtLink>
       </nav>
-    </header>
+    </header> -->
 
     <!-- メインコンテンツ -->
     <main class="main">
@@ -33,9 +33,6 @@
   color: white;
   margin: 0 10px;
   text-decoration: none;
-}
-.main {
-  padding: 2rem;
 }
 .footer {
   background: #222;
