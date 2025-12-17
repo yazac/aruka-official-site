@@ -2,17 +2,17 @@
 <template>
   <div>
     <!-- ヘッダー -->
-    <!-- <header class="header">
+    <header class="header">
       <h1>My Nuxt 3 App</h1>
       <nav>
         <NuxtLink to="/">Home</NuxtLink> | 
         <NuxtLink to="/about">About</NuxtLink>
       </nav>
-    </header> -->
+    </header>
 
     <!-- メインコンテンツ -->
     <main class="main">
-      <slot /> <!-- 各ページのコンテンツがここに挿入される -->
+      <slot />
     </main>
 
     <!-- フッター -->

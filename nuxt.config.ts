@@ -1,6 +1,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   app: {
     head: {
       title: 'My Nuxt App', // サイトのタイトル
@@ -17,9 +23,7 @@ export default defineNuxtConfig({
     '@/assets/css/global.styl',
     'normalize.css/normalize.css'
   ],
-  modules: [
-    // '@nuxtjs/tailwindcss' // 必要なモジュール（例：Tailwind CSS）
-  ],
+  modules: ['@formkit/auto-animate'],
   build: {
     transpile: []
   },

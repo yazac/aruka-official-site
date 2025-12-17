@@ -5,14 +5,6 @@
       <div class="img__wrapper" ref="imgWrap">
         <img class="img_content" src="../assets/images/rendered/0001.png" alt="aaa" ref="imgContent"></img>
       </div>
-      <div class="grass_wrap">
-        <div class="grass_wrap__inner">
-          <div class="grass"></div>
-          <div class="grass"></div>
-          <div class="grass"></div>
-          <div class="grass"></div>
-        </div>
-      </div>
     </div>
     <div class="empty"></div>
   </div>
