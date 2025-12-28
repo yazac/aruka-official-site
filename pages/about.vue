@@ -10,8 +10,9 @@
 // 必要な設定があれば追加
 </script>
 
-<style lang="stylus" scoped>
-.container
+<style lang="scss" scoped>
+.container {
   text-align: center;
   padding: 2rem;
+}
 </style>

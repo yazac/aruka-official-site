@@ -1,0 +1,49 @@
+// keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// fade transition
+.fade-enter-active,
+.fade-leave-active {
+  animation: fadeIn 0.4s forwards;
+}
+
+.fade-enter,
+.fade-leave-to {
+  animation: fadeOut 0.4s forwards;
+}
+
+
+// step motion
+.u-anim-stepmotion {
+  display: inline-block;
+  transform-origin: center center;
+  opacity: 0;
+
+  &.js-active {
+    opacity: 1;
+  }
+}
+
+.u-anim-opacity {
+  opacity: 0;
+  &.js-active {
+    animation: fadeIn 0.4s steps(5) forwards;
+  }
+}
+
