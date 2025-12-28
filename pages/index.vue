@@ -5,11 +5,7 @@
     <!-- <h1 class="u-font-en">WORKS</h1>
     <NuxtLink to="about/">私たちについて</NuxtLink>     -->
 
-    <div class="p-loading-logo">
-      <div class="p-loading-logo-text">
-        <CommonLogoText color="black"/>
-      </div>
-    </div>
+    <CommonLogoText color="white" :trigger="animTrigger"/>
 
     <div class="controls">
       <button @click="func">Start Animation</button>
@@ -26,10 +22,12 @@ const func = () => {
   })
 }
 
-const loading = useLoadingState()
+
+const animTrigger = ref(false)
+
 setTimeout(() => {
-  loading.value = false
-}, 2000)
+  animTrigger.value = true
+}, 10000)
 
 </script>
 
@@ -44,12 +42,5 @@ setTimeout(() => {
 
 .controls {
   margin-top: 12px;
-}
-
-.p-loading-logo {
-  margin: 0 auto;
-  @include mixin.pc {
-    width: 200px;
-  }
 }
 </style>

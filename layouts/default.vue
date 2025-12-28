@@ -47,11 +47,10 @@ import { watch } from 'vue'
   position: sticky;
   top: 0;
   text-align: center;
-  z-index: 10;
+  z-index: 2;
 }
 
 .main {
-  height: 1000vh;
   position: relative;
 
   @include mixin.pc {
@@ -62,15 +61,15 @@ import { watch } from 'vue'
 }
 
 .overlay {
-  mix-blend-mode: overlay;
+  mix-blend-mode: color-burn;
   background: url("/images/sunburnpaper2.jpg") no-repeat center center;
   width: 100%;
   height: 100vh;
   background-size: cover;
   position: fixed;
   top: 0;
-  z-index: 1;
-  opacity: 0.3;
+  z-index: 10;
+  opacity: 0.6;
   pointer-events: none;
 }
 

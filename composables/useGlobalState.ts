@@ -1,3 +1,5 @@
+// フラグ管理系
+
 // ローディング
 export const useLoadingState = (): Ref<boolean> =>
   useState('loading', () => true)
@@ -14,3 +16,11 @@ export const useModalState = (): Ref<ModalType> =>
 // ページ遷移中フラグ
 export const usePageTransitionState = (): Ref<boolean> =>
   useState('page-transition', () => false)
+
+
+
+// UI管理系
+
+// マウス座標
+export const useMousePositionState = (): Ref<{ x: number; y: number }> =>
+  useState('mouse-position', () => ({ x: 0, y: 0 }))

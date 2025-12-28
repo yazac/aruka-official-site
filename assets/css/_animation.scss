@@ -41,7 +41,6 @@
 }
 
 .u-anim-opacity {
-  opacity: 0;
   &.js-active {
     animation: fadeIn 0.4s steps(5) forwards;
   }

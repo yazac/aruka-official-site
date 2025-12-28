@@ -1,5 +1,5 @@
 <template>
-  <div class="text-logo-wrapper" :class="`text-logo-wrapper-color--${props.color}`">
+  <div ref="componentRoot" class="text-logo-wrapper" :class="`text-logo-wrapper-color--${props.color}`">
     <div class="u-anim-stepmotion" v-for="(image, index) in imageList" :key="index" v-step-animation="{ 
         duration: 500,
         delay: index * 60,
@@ -15,11 +15,14 @@
 <script setup lang="ts">
 interface Props {
   color?: 'black' | 'white' | 'brown'
+  trigger?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: 'black'
+  color: 'black',
 })
+
+const componentRoot = ref<HTMLElement | null>(null)
 
 const imageList = [
   ['/images/aruka-logo/img-aruka-logo-a-01.svg', "52.8"],
@@ -30,6 +33,15 @@ const imageList = [
 ]
 
 const altList = ['a','r','u','k','a.']
+
+watch(() => props.trigger, (newVal) => {
+  if (newVal && componentRoot.value) {
+    const stepItems = componentRoot.value.querySelectorAll<HTMLElement>('.u-anim-stepmotion')
+    stepItems.forEach((item) => {
+      item.classList.add('js-active')
+    })
+  }
+});
 </script>
 
 <style scoped lang="scss">
