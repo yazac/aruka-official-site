@@ -30,7 +30,6 @@ onMounted(() => {
   width: 100%;
   border-radius: 28px;
   overflow: hidden;
-  margin-bottom: 100vh;
 }
 
 .c-kv-bg {

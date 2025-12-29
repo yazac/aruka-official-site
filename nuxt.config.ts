@@ -30,5 +30,5 @@ export default defineNuxtConfig({
   build: {
     transpile: []
   },
-  ssr: true
+  ssr: true,
 })

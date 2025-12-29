@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 .aruku-chan-img {
   display: block;
-  mask-image: url('/images/aruka-logo/img-aruku-chan.svg');
+  mask-image: url('/assets/images/aruka-logo/img-aruku-chan.svg');
   mask-size: cover;
   mask-position: center;
   mask-repeat: no-repeat;

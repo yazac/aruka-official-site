@@ -2,8 +2,9 @@
 <template>
   <div>
     <TopKv />
-    <!-- <h1 class="u-font-en">WORKS</h1>
-    <NuxtLink to="about/">私たちについて</NuxtLink>     -->
+    
+    <h1 class="u-font-en">WORKS</h1>
+    <NuxtLink to="about/">私たちについて</NuxtLink>    
 
     <CommonLogoText color="white" :trigger="animTrigger"/>
 

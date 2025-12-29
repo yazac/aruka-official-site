@@ -62,7 +62,7 @@ import { watch } from 'vue'
 
 .overlay {
   mix-blend-mode: color-burn;
-  background: url("/images/sunburnpaper2.jpg") no-repeat center center;
+  background: url("/assets/images/sunburnpaper2.jpg") no-repeat center center;
   width: 100%;
   height: 100vh;
   background-size: cover;

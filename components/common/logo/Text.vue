@@ -25,11 +25,11 @@ const props = withDefaults(defineProps<Props>(), {
 const componentRoot = ref<HTMLElement | null>(null)
 
 const imageList = [
-  ['/images/aruka-logo/img-aruka-logo-a-01.svg', "52.8"],
-  ['/images/aruka-logo/img-aruka-logo-r.svg', "63.2"],
-  ['/images/aruka-logo/img-aruka-logo-u.svg', "58.4"],
-  ['/images/aruka-logo/img-aruka-logo-k.svg', "64"],
-  ['/images/aruka-logo/img-aruka-logo-a-02.svg', "71.6"],
+  ['/assets/images/aruka-logo/img-aruka-logo-a-01.svg', "52.8"],
+  ['/assets/images/aruka-logo/img-aruka-logo-r.svg', "63.2"],
+  ['/assets/images/aruka-logo/img-aruka-logo-u.svg', "58.4"],
+  ['/assets/images/aruka-logo/img-aruka-logo-k.svg', "64"],
+  ['/assets/images/aruka-logo/img-aruka-logo-a-02.svg', "71.6"],
 ]
 
 const altList = ['a','r','u','k','a.']

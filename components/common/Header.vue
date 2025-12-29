@@ -49,7 +49,7 @@ onMounted(() => {
   }));
 
   arukuchan.value?.addEventListener('click', () => {
-    const arukusound = new Audio('/sound/arukuchan.mp3');
+    const arukusound = new Audio('/assets/sound/arukuchan.mp3');
     arukusound.play().catch(err => console.log('Audio play failed:', err));
   });
 });
