@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 interface Props {
-  color?: 'black' | 'white' | 'brown'
+  color?: 'black' | 'white' | 'brown' | 'lightgreen' | 'darkgreen'
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -27,6 +27,16 @@ const props = withDefaults(defineProps<Props>(), {
   &-color--white {
     span {
       background-color: var.$color-white;
+    }
+  }
+  &-color--lightgreen {
+    span {
+      background-color: var.$color-light-green;
+    }
+  }
+  &-color--darkgreen {
+    span {
+      background-color: var.$color-dark-green;
     }
   }
 }

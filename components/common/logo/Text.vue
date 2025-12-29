@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 interface Props {
-  color?: 'black' | 'white' | 'brown'
+  color?: 'black' | 'white' | 'brown' | 'lightgreen' | 'darkgreen'
   trigger?: boolean
 }
 
@@ -88,6 +88,20 @@ watch(() => props.trigger, (newVal) => {
     .u-anim-stepmotion {
       span {
         background-color: var.$color-white;
+      }
+    }
+  }
+  &-color--lightgreen {
+    .u-anim-stepmotion {
+      span {
+        background-color: var.$color-light-green;
+      }
+    }
+  }
+  &-color--darkgreen {
+    .u-anim-stepmotion {
+      span {
+        background-color: var.$color-dark-green;
       }
     }
   }

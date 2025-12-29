@@ -2,7 +2,7 @@
   <div ref="moduleRoot" class="c-splash" :class="{ 'js-active': !loading }">
     <div class="c-splash-logo">
       <div class="c-splash-logo-text">
-        <CommonLogoText color="black" :trigger="animTrigger"/>
+        <CommonLogoText color="lightgreen" :trigger="animTrigger"/>
       </div>
     </div>
   </div>

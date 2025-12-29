@@ -2,7 +2,7 @@
   <div class="c-header">
     <div class="c-header-logo-wrapper" ref="arukuchan">
       <NuxtLink href="/" class="c-header-logo">
-        <CommonLogoArukuChan color="black" />
+        <CommonLogoArukuChan color="lightgreen" />
       </NuxtLink>
     </div>
     <nav class="c-header-nav">
