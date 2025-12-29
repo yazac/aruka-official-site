@@ -18,8 +18,10 @@
 
     <!-- フッター -->
     <footer class="footer">
-      <p>&copy; 2025 My Nuxt App</p>
+      <CommonFooter />
     </footer>
+
+    <!-- svgフィルター -->
     <CommonSvgFilterSquiggle />
   </div>
 </template>
@@ -71,16 +73,5 @@ import { watch } from 'vue'
   z-index: 10;
   opacity: 0.6;
   pointer-events: none;
-}
-
-.footer {
-  background-color: var.$color-black;
-  color: var.$color-white;
-  text-align: center;
-  padding: 100px;
-
-  p {
-    margin: 0;
-  }
 }
 </style>
