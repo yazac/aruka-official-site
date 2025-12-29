@@ -1,10 +1,22 @@
 <template>
   <div class="c-header">
+    <div class="c-header-arukuchan-comment" ref="arukuchanComment">
+      みつけてくれてありがとう！
+    </div>
+
     <div class="c-header-logo-wrapper" ref="arukuchan">
-      <NuxtLink href="/" class="c-header-logo">
+      
+      <!-- TOP以外 -->
+      <NuxtLink v-if="route.path != '/'" to="/" class="c-header-logo">
         <CommonLogoArukuChan color="lightgreen" />
       </NuxtLink>
+
+      <!-- TOP -->
+      <button v-else class="c-header-logo">
+        <CommonLogoArukuChan color="lightgreen" />
+      </button>
     </div>
+    
     <nav class="c-header-nav">
       <ul role="list">
         <li role="listitem"><NuxtLink to="/">Home</NuxtLink></li>
@@ -22,8 +34,12 @@
 
 
 <script setup lang="ts">
+const route = useRoute()
+
 const mouse = useMousePositionState();
+const arukuchanClickNum = useArukuchanClickNumState();
 const arukuchan = ref<HTMLElement | null>(null);
+const arukuchanComment = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   const rect = arukuchan.value?.getBoundingClientRect();
@@ -51,6 +67,15 @@ onMounted(() => {
   arukuchan.value?.addEventListener('click', () => {
     const arukusound = new Audio('/assets/sound/arukuchan.mp3');
     arukusound.play().catch(err => console.log('Audio play failed:', err));
+
+    arukuchanClickNum.value += 1;
+
+    if (arukuchanClickNum.value % 20 == 0) {
+      arukuchanComment.value?.classList.add('js-active')
+      setTimeout(()=>{
+        arukuchanComment.value?.classList.remove('js-active')
+      }, 2000)
+    }
   });
 });
 </script>
@@ -64,12 +89,49 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .c-header-logo-wrapper {
   transform: scale(1, 1);
   &.js-active {
     transform: scale(-1, 1);
+  }
+}
+
+.c-header-arukuchan-comment {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 90px;
+  margin: auto;
+
+  width: max-content;
+  height: fit-content;
+  padding: 8px 8px;
+  border-radius: 25px;
+
+  background: var.$color-white;
+
+  opacity: 0;
+  transition: opacity 1s;
+
+  &.js-active {
+    opacity: 1;
+    transition: opacity 0.01s;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: inherit;
+    width: 10%;
+    height: 65%;
+    clip-path: polygon(0% 0%, 100% 10%, 100% 100%);
+    top: 25%;
+    left: -5%;
+    z-index: -1;
   }
 }
 

@@ -31,7 +31,6 @@ const animTrigger = ref(false)
 setTimeout(() => {
   animTrigger.value = true
 }, 10000)
-
 </script>
 
 <style lang="scss" scoped>

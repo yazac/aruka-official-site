@@ -17,7 +17,8 @@ export const useModalState = (): Ref<ModalType> =>
 export const usePageTransitionState = (): Ref<boolean> =>
   useState('page-transition', () => false)
 
-
+export const useArukuchanClickNumState = (): Ref<number> =>
+  useState('arukuchan-click-num', () => 0)
 
 // UI管理系
 
