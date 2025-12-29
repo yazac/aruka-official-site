@@ -5,27 +5,15 @@
     
     <CommonSplitter />
 
-    <h1 class="u-font-en">WORKS</h1>
-    <NuxtLink to="about/">私たちについて</NuxtLink>    
+    <CommonTextH2 lang="en">
+      WORKS
+    </CommonTextH2>
 
     <CommonLogoText color="white" :trigger="animTrigger"/>
-
-    <div class="controls">
-      <button @click="func">Start Animation</button>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
-const func = () => {
-  const stepItems = document.querySelectorAll<HTMLElement>('.u-anim-stepmotion')
-  stepItems.forEach((item) => {
-    item.classList.add('js-active')
-  })
-}
-
-
 const animTrigger = ref(false)
 
 setTimeout(() => {

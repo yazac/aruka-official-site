@@ -3,6 +3,7 @@ export class EventHandlers {
     this.sceneManager = sceneManager;
     this.postProcessing = postProcessingManager;
     this.ui = uiControls;
+    this.canvasWrapper = document.getElementById("canvas-wrapper");
     
     this.setupEventListeners();
   }
@@ -13,13 +14,13 @@ export class EventHandlers {
   }
 
   setupResizeHandler() {
-    window.addEventListener("resize", () => {
-      const newWidth = window.innerWidth;
-      const newHeight = window.innerHeight;
+    window.addEventListener("resize", debounce(200, () => {
+      const newWidth = this.canvasWrapper.clientWidth;
+      const newHeight = this.canvasWrapper.clientHeight;
       
       this.sceneManager.resize(newWidth, newHeight);
       this.postProcessing.resize(newWidth, newHeight);
-    });
+    }));
   }
 
   setupScrollHandler() {
