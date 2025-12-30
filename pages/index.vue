@@ -5,20 +5,20 @@
     
     <CommonSplitter />
 
+    
     <CommonTextH2 lang="en">
-      WORKS
+      WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>
     </CommonTextH2>
-
-    <CommonLogoText color="white" :trigger="animTrigger"/>
+    <CommonTextH2 lang="en">
+      WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>
+    </CommonTextH2>
+    <CommonTextH2 lang="en">
+      WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>WORKS<br>
+    </CommonTextH2>
   </div>
 </template>
 
 <script setup lang="ts">
-const animTrigger = ref(false)
-
-setTimeout(() => {
-  animTrigger.value = true
-}, 10000)
 </script>
 
 <style lang="scss" scoped>

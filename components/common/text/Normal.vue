@@ -18,7 +18,9 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/css/_var.scss';
+
 p {
-  font-size: 12px;
+  @include var.fs-normal;
 }
 </style>

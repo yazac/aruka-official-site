@@ -7,8 +7,10 @@ interface IOoptions {
   rootMargin?: PixelValue
   scrollMargin?: PixelValue
   threshold?: number
-  retrigger?: boolean
   className?: string
+  retrigger?: boolean
+  onEnter?: (entry: IntersectionObserverEntry) => void
+  onLeave?: (entry: IntersectionObserverEntry) => void
 }
 
 const defaultOptions: IOoptions = {
@@ -16,8 +18,8 @@ const defaultOptions: IOoptions = {
   rootMargin: "0px",
   scrollMargin: "0px",
   threshold: 1.0,
+  className: 'js-active',
   retrigger: false,
-  className: 'js-active'
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -33,11 +35,17 @@ export default defineNuxtPlugin((nuxtApp) => {
           if (entry.isIntersecting) {
             el.classList.add(opt.className!)
 
+            opt.onEnter?.(entry)
+
             if (!opt.retrigger) {
               observer.unobserve(el)
             }
-          } else if (opt.retrigger) {
+          }
+          
+          else if (opt.retrigger) {
             el.classList.remove(opt.className!)
+
+            opt.onLeave?.(entry)
           }
         })
       }

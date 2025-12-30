@@ -4,7 +4,7 @@
       みつけてくれてありがとう！
     </div>
 
-    <div class="c-header-logo-wrapper" ref="arukuchan">
+    <div class="c-header-logo-wrapper" ref="arukuchan" :key="route.path">
       
       <!-- TOP以外 -->
       <NuxtLink v-if="route.path != '/'" to="/" class="c-header-logo">
@@ -16,7 +16,7 @@
         <CommonLogoArukuChan color="lightgreen" />
       </button>
     </div>
-    
+
     <nav class="c-header-nav">
       <ul role="list">
         <li role="listitem"><NuxtLink to="/">Home</NuxtLink></li>
@@ -158,12 +158,15 @@ onMounted(() => {
     padding: 0;
 
     li {
-      color: var.$color-black;
+      :deep(a) {
+        color: var.$color-black;
+        text-decoration: none;
+      }
     }
   }
 
   button {
-    font-size: 48px;
+    @include var.fs-large;
   }
 }
 </style>

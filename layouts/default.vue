@@ -3,8 +3,9 @@
   <VueLenis root />
   
   <div class="overlay u-anim-squiggle" style="animation-delay: 0.2s;"></div>
-  <TopSplash />
-  <div class="layout u-anim-squiggle u-font-jp">
+  
+  <TopSplash v-if="route.path == '/'"/>
+  <div class="layout u-font-jp" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
     
     <!-- ヘッダー -->
     <header class="header">
@@ -29,6 +30,8 @@
 <script setup>
 import { VueLenis, useLenis } from 'lenis/vue' // Also available as global imports, no need to import them manually
 import { watch } from 'vue'
+
+const route = useRoute();
 
 // const lenis = useLenis((lenis) => {
 //   // called every scroll

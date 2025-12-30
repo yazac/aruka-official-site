@@ -1,5 +1,8 @@
 <template>
-  <div ref="componentRoot" class="text-logo-wrapper" :class="`text-logo-wrapper-color--${props.color}`">
+  <div ref="componentRoot" :class="`text-logo-wrapper text-logo-wrapper-color--${props.color}`" :style="{
+    '--logo-height-pc': props.height.pc, 
+    '--logo-height-sp': props.height.sp
+  }">
     <div class="u-anim-stepmotion" v-for="(image, index) in imageList" :key="index" v-step-animation="{ 
         duration: 500,
         delay: index * 60,
@@ -7,7 +10,7 @@
         startRotation: random(-20, 20),
         startScale:  1
       }">
-      <span :style="`mask-image: url(${image[0]}); aspect-ratio: ${image[1]} / 30`"></span>
+      <span :style="{maskImage: `url(${image[0]})`, aspectRatio: `${image[1]} / 30`}"></span>
     </div>
   </div>
 </template>
@@ -16,10 +19,19 @@
 interface Props {
   color?: 'black' | 'white' | 'brown' | 'lightgreen' | 'darkgreen'
   trigger?: boolean
+  height?: {
+    pc: number,
+    sp: number,
+  }
 }
 
 const props = withDefaults(defineProps<Props>(), {
   color: 'black',
+  trigger: false,
+  height: () => ({
+    pc: 30,
+    sp: 30
+  })
 })
 
 const componentRoot = ref<HTMLElement | null>(null)
@@ -31,8 +43,6 @@ const imageList = [
   ['/assets/images/aruka-logo/img-aruka-logo-k.svg', "64"],
   ['/assets/images/aruka-logo/img-aruka-logo-a-02.svg', "71.6"],
 ]
-
-const altList = ['a','r','u','k','a.']
 
 watch(() => props.trigger, (newVal) => {
   if (newVal && componentRoot.value) {
@@ -51,16 +61,15 @@ watch(() => props.trigger, (newVal) => {
 .text-logo-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
   
 
   @include mixin.pc {
-    gap: 10%;
-    height: 30px;
+    height: calc(var(--logo-height-pc) * 1px);
   }
   @include mixin.sp {
-    gap: 4%;
-    height: mixin.vw(17);
+    height: calc(var(--logo-height-sp) / 375 * 100vw);
   }
 
   .u-anim-stepmotion {

@@ -60,7 +60,7 @@ onMounted(() => {
 .c-splash-logo {
   margin: 0 auto;
   @include mixin.pc {
-    width: 200px;
+    width: 365px;
   }
 }
 </style>

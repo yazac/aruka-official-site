@@ -77,7 +77,5 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## TODO
 
-- canvasのリサイズに対応させる
-- textの基本コンポーネントの作成
 - works用のカードコンポーネント
 - 多言語対応

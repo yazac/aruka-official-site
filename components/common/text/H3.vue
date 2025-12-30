@@ -18,7 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/css/_var.scss';
+
 h3 {
-  font-size: 18px;
+  @include var.fs-medium;
+  font-weight: 700;
 }
 </style>

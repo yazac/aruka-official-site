@@ -1,7 +1,7 @@
 <template>
-  <h2 :class="[`c-text-h2`, `c-text-h2-color--${props.color}`, `u-font-${props.lang}`]">
+  <h1 :class="[`c-text-h1`, `c-text-h1-color--${props.color}`, `u-font-${props.lang}`]">
     <slot />
-  </h2>
+  </h1>
 </template>
 
 <script setup lang="ts">
@@ -20,8 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
 
-h2 {
-  margin-top: 50px;
-  @include var.fs-large;
+h1 {
+  @include var.fs-xlarge;
 }
 </style>
