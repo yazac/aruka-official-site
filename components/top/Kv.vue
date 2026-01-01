@@ -1,7 +1,6 @@
 <template>
   <div ref="moduleRoot" class="c-kv">
     <div class="c-kv-bg" id="canvas-wrapper">
-      <!-- <NuxtImg src="https://picsum.photos/id/46/891/300" alt="aruka." /> -->
       <canvas id="canvas"></canvas>
     </div>
   </div>  

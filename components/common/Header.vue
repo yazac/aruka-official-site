@@ -4,17 +4,16 @@
       みつけてくれてありがとう！
     </div>
 
-    <div class="c-header-logo-wrapper" ref="arukuchan" :key="route.path">
-      
-      <!-- TOP以外 -->
-      <NuxtLink v-if="route.path != '/'" to="/" class="c-header-logo">
+    <div class="c-header-logo-wrapper" ref="arukuchan" @click="onArukuchanClick">
+      <!-- TOPの時だけ遷移を無効にする -->
+      <NuxtLink
+        to="/"
+        class="c-header-logo"
+        :aria-disabled="route.path === '/'"
+        @click.prevent="route.path === '/'"
+      >
         <CommonLogoArukuChan color="lightgreen" />
       </NuxtLink>
-
-      <!-- TOP -->
-      <button v-else class="c-header-logo">
-        <CommonLogoArukuChan color="lightgreen" />
-      </button>
     </div>
 
     <nav class="c-header-nav">
@@ -41,6 +40,21 @@ const arukuchanClickNum = useArukuchanClickNumState();
 const arukuchan = ref<HTMLElement | null>(null);
 const arukuchanComment = ref<HTMLElement | null>(null);
 
+  const onArukuchanClick = () => {
+    const arukusound = new Audio('/assets/sound/arukuchan.mp3')
+    arukusound.play().catch(() => {})
+
+    arukuchanClickNum.value += 1
+
+    if (arukuchanClickNum.value % 20 === 0) {
+      arukuchanComment.value?.classList.add('js-active')
+      setTimeout(() => {
+        arukuchanComment.value?.classList.remove('js-active')
+      }, 2000)
+    }
+  }
+
+
 onMounted(() => {
   const rect = arukuchan.value?.getBoundingClientRect();
 
@@ -63,20 +77,6 @@ onMounted(() => {
       }
     }
   }));
-
-  arukuchan.value?.addEventListener('click', () => {
-    const arukusound = new Audio('/assets/sound/arukuchan.mp3');
-    arukusound.play().catch(err => console.log('Audio play failed:', err));
-
-    arukuchanClickNum.value += 1;
-
-    if (arukuchanClickNum.value % 20 == 0) {
-      arukuchanComment.value?.classList.add('js-active')
-      setTimeout(()=>{
-        arukuchanComment.value?.classList.remove('js-active')
-      }, 2000)
-    }
-  });
 });
 </script>
 

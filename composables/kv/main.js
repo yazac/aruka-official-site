@@ -24,7 +24,7 @@ export class App {
     this.windowWidth = this.canvasWrapper.clientWidth;
     this.windowHeight = this.canvasWrapper.clientHeight;
 
-    console.log("Canvas size:", this.windowWidth, this.windowHeight);
+    // console.log("Canvas size:", this.windowWidth, this.windowHeight);
 
     // Initialize managers
     this.sceneManager = new SceneManager(this.canvas, this.windowWidth, this.windowHeight);

@@ -23,3 +23,7 @@ export function debounce(delay: number, fn: (...args: any[]) => void) {
     }, delay);
   };
 }
+
+export function wait(delay: number): Promise<void>{
+  return new Promise(resolve => setTimeout(resolve, delay));
+}

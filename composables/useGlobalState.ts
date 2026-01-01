@@ -4,6 +4,10 @@
 export const useLoadingState = (): Ref<boolean> =>
   useState('loading', () => true)
 
+// スプラッシュのオンオフステータス
+export const useSplashState = (): Ref<boolean> =>
+  useState('splash', () => true)
+
 // メニュー開閉
 export const useMenuOpenState = (): Ref<boolean> =>
   useState('menu-open', () => false)

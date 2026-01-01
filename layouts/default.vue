@@ -1,26 +1,29 @@
 <!-- layouts/default.vue -->
 <template>
-  <VueLenis root />
-  
-  <div class="overlay u-anim-squiggle" style="animation-delay: 0.2s;"></div>
-  
-  <TopSplash v-if="route.path == '/'"/>
-  <div class="layout u-font-jp" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
+  <div class="layout u-font-jp">
+    <VueLenis root />
+    <div class="overlay u-anim-squiggle" style="animation-delay: 0.2s;"></div>
     
-    <!-- ヘッダー -->
-    <header class="header">
-      <CommonHeader />
-    </header>
+    
+    <TopSplash v-if="splashState" />
+    <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
+      
+      
+      <!-- ヘッダー -->
+      <header class="header">
+        <CommonHeader />
+      </header>
 
-    <!-- メインコンテンツ -->
-    <main class="main">
-      <slot />
-    </main>
+      <!-- メインコンテンツ -->
+      <main class="main">
+        <slot />
+      </main>
 
-    <!-- フッター -->
-    <footer class="footer">
-      <CommonFooter />
-    </footer>
+      <!-- フッター -->
+      <footer class="footer">
+        <CommonFooter />
+      </footer>
+    </div>
 
     <!-- svgフィルター -->
     <CommonSvgFilterSquiggle />
@@ -28,21 +31,35 @@
 </template>
 
 <script setup>
-import { VueLenis, useLenis } from 'lenis/vue' // Also available as global imports, no need to import them manually
+import { VueLenis, useLenis } from 'lenis/vue'
+import { useRouter } from 'vue-router'
 import { watch } from 'vue'
 
 const route = useRoute();
+const router = useRouter();
+const loading = useLoadingState();
+const splashState = useSplashState();
 
 // const lenis = useLenis((lenis) => {
 //   // called every scroll
 //   // console.log(lenis)
 // })
+
+
+onMounted(async() => {
+  await wait(2000); // loading が終わった判定とさしかえの想定
+  loading.value = false;
+  await wait(500);
+  splashState.value = false;
+})
+
 </script>
 
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
-.layout {
+
+.layout-inner {
   background-color: var.$color-beige;
   position: relative;
   pointer-events: all;

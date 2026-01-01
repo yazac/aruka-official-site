@@ -1,8 +1,9 @@
+<!-- Splash.vue -->
 <template>
-  <div ref="moduleRoot" class="c-splash" :class="{ 'js-active': !loading }">
+  <div class="c-splash" :class="{ 'is-leaving': !loading }">
     <div class="c-splash-logo">
       <div class="c-splash-logo-text">
-        <CommonLogoText color="lightgreen" :trigger="animTrigger"/>
+        <CommonLogoText color="lightgreen" :trigger="animTrigger" />
       </div>
     </div>
   </div>
@@ -12,22 +13,9 @@
 const loading = useLoadingState()
 const animTrigger = ref(false)
 
-const moduleRoot = ref<HTMLElement | null>(null)
-
-setTimeout(() => {
-  loading.value = false
-}, 2000)
-
 onMounted(() => {
   animTrigger.value = true
-
-  if (moduleRoot.value) {
-    moduleRoot.value.addEventListener('transitionend', () => {
-      moduleRoot.value?.remove();
-    })
-  }
-});
-
+})
 </script>
 
 <style scoped lang="scss">
@@ -51,9 +39,9 @@ onMounted(() => {
   opacity: 1;
   transition: opacity 0.5s steps(8);
 
-  &.js-active {
+  &.is-leaving {
     opacity: 0;
-    pointer-events: auto;
+    pointer-events: none;
   }
 }
 
