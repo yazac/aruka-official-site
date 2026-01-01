@@ -78,4 +78,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ## TODO
 
 - works用のカードコンポーネント
+- KVのbloomをページ読み込み時にアニメーションする
+  - appをnewする時にリアクティブな変数として渡せないか
 - 多言語対応

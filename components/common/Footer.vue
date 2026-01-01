@@ -21,7 +21,9 @@
         :trigger="animTrigger" 
         v-intersection-observe="{
           threshold: 0.5,
-          onEnter: () => (animTrigger = true)
+          retrigger: true,
+          onEnter: () => (animTrigger = true),
+          onLeave: () => (animTrigger = false)
         }"
         :height="{
           pc: 60,

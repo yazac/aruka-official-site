@@ -36,7 +36,7 @@ export class App {
       this.windowHeight
     );
     
-    // this.ui = new UIControls(this.sceneManager, this.postProcessing);
+    this.ui = new UIControls(this.sceneManager, this.postProcessing);
     this.eventHandlers = new EventHandlers(
       this.sceneManager,
       this.postProcessing,

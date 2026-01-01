@@ -45,11 +45,18 @@ const imageList = [
 ]
 
 watch(() => props.trigger, (newVal) => {
-  if (newVal && componentRoot.value) {
+  if (componentRoot.value) {
     const stepItems = componentRoot.value.querySelectorAll<HTMLElement>('.u-anim-stepmotion')
-    stepItems.forEach((item) => {
-      item.classList.add('js-active')
-    })
+    if (newVal) {
+      stepItems.forEach((item) => {
+        item.classList.add('js-active')
+      })
+    }
+    else {
+      stepItems.forEach((item) => {
+        item.classList.remove('js-active')
+      })
+    }
   }
 });
 </script>

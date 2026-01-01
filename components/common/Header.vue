@@ -4,6 +4,9 @@
       みつけてくれてありがとう！
     </div>
 
+    <div class="c-header-logo-attention" ref="arukuchanAttention">
+    </div>
+
     <div class="c-header-logo-wrapper" ref="arukuchan" @click="onArukuchanClick">
       <!-- TOPの時だけ遷移を無効にする -->
       <NuxtLink
@@ -20,8 +23,8 @@
       <ul role="list">
         <li role="listitem"><NuxtLink to="/">Home</NuxtLink></li>
         <li role="listitem"><NuxtLink to="/about">About</NuxtLink></li>
-        <li role="listitem"><NuxtLink to="/about">About</NuxtLink></li>
-        <li role="listitem"><NuxtLink to="/about">About</NuxtLink></li>
+        <li role="listitem"><NuxtLink to="/works">Works</NuxtLink></li>
+        <li role="listitem"><NuxtLink to="/contact">Contact</NuxtLink></li>
       </ul>
 
       <button>
@@ -39,6 +42,7 @@ const mouse = useMousePositionState();
 const arukuchanClickNum = useArukuchanClickNumState();
 const arukuchan = ref<HTMLElement | null>(null);
 const arukuchanComment = ref<HTMLElement | null>(null);
+const arukuchanAttention = ref<HTMLElement | null>(null);
 
   const onArukuchanClick = () => {
     const arukusound = new Audio('/assets/sound/arukuchan.mp3')
@@ -71,6 +75,10 @@ onMounted(() => {
     if (teritory.xMin && teritory.yMin) {
       if (mouse.value.x < teritory.xMin && mouse.value.y < teritory.yMin) {
         arukuchan.value?.classList.add('js-active');
+        arukuchanAttention.value?.classList.add('js-active');
+        setTimeout(() => {
+          arukuchanAttention.value?.classList.remove('js-active')
+        }, 250)
       }
       else {
         arukuchan.value?.classList.remove('js-active');
@@ -90,6 +98,26 @@ onMounted(() => {
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.c-header-logo-attention {
+  position: absolute;
+  top: -40%;
+  bottom: 0;
+  margin: auto;
+  left: 85px;
+  width: 20px;
+  height: 20px;
+  mask-image: url("/assets/images/common/attention.svg");
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background: var.$color-light-green;
+  opacity: 0;
+
+  &.js-active {
+    opacity: 1;
+  }
 }
 
 .c-header-logo-wrapper {

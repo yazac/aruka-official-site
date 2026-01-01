@@ -19,7 +19,6 @@ export class PostProcessingManager {
   init(width, height) {
     this.setupComposer(width, height);
     this.setupPasses();
-    this.setupInitialAnimation();
   }
 
   setupComposer(width, height) {
@@ -66,7 +65,7 @@ export class PostProcessingManager {
     
     // Bloom pass
     this.unrealBloomPass = new UnrealBloomPass();
-    this.unrealBloomPass.strength = 0.13;
+    this.unrealBloomPass.strength = 0.10;
     this.unrealBloomPass.radius = 1.0;
     this.unrealBloomPass.threshold = 0.47;
 
@@ -77,22 +76,6 @@ export class PostProcessingManager {
     this.effectComposer.addPass(this.posterizePass);
     this.effectComposer.addPass(this.unrealBloomPass);
     this.effectComposer.addPass(this.filmPass);
-  }
-
-  setupInitialAnimation() {
-    window.addEventListener("load", () => {
-      this.animateBloomStrength();
-    });
-  }
-
-  animateBloomStrength() {
-    const animate = () => {
-      this.unrealBloomPass.strength -= 0.004;
-      if (this.unrealBloomPass.strength > 0.33) {
-        requestAnimationFrame(animate);
-      }
-    };
-    animate();
   }
 
   // Update methods for UI controls
