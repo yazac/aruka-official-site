@@ -33,6 +33,7 @@
 .u-anim-stepmotion {
   display: inline-block;
   transform-origin: center center;
+  transform: translateZ(0);
   opacity: 0;
 
   &.js-active {

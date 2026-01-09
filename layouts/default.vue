@@ -2,7 +2,7 @@
 <template>
   <div class="layout u-font-jp">
     <VueLenis root />
-    <div class="overlay u-anim-squiggle" style="animation-delay: 0.2s;"></div>
+    <div class="overlay" style="animation-delay: 0.2s;"></div>
     
     
     <TopSplash v-if="splashState" />

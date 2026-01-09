@@ -66,6 +66,7 @@ const snsLinks = {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .c-footer-logo-text {
