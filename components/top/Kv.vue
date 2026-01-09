@@ -1,20 +1,17 @@
 <template>
-  <div ref="moduleRoot" class="c-kv">
+  <div ref="moduleRoot" class="c-kv" v-intersection-observe="{
+    threshold: 0.5
+  }">
     <div class="c-kv-bg" id="canvas-wrapper">
       <canvas id="canvas"></canvas>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script setup lang="ts">
 const loading = useLoadingState()
+const splashState = useSplashState()
 const moduleRoot = ref<HTMLElement | null>(null)
-
-watch(loading, (newVal) => {
-  if (!newVal) {
-    moduleRoot.value?.classList.add('js-active')
-  }
-});
 
 import { App } from '@/composables/kv/main.js'
 
@@ -27,12 +24,18 @@ onMounted(() => {
 <style scoped lang="scss">
 .c-kv {
   width: 100%;
-  border-radius: 28px;
+  // border-radius: 28px;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.js-active {
+    opacity: 1;
+  }
 }
 
 .c-kv-bg {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
 </style>

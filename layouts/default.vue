@@ -15,9 +15,11 @@
       </header>
 
       <!-- メインコンテンツ -->
-      <main class="main">
+      <main class="main ">
         <slot />
       </main>
+
+      
 
       <!-- フッター -->
       <footer class="footer">
@@ -30,7 +32,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { VueLenis, useLenis } from 'lenis/vue'
 import { useRouter } from 'vue-router'
 import { watch } from 'vue'
@@ -45,12 +47,14 @@ const splashState = useSplashState();
 //   // console.log(lenis)
 // })
 
-
 onMounted(async() => {
   await wait(2000); // loading が終わった判定とさしかえの想定
   loading.value = false;
+  // console.log('loading', loading.value)
+  
   await wait(500);
   splashState.value = false;
+  // console.log('splashState', splashState.value)
 })
 
 </script>
@@ -70,21 +74,21 @@ onMounted(async() => {
   top: 0;
   text-align: center;
   z-index: 2;
+  height: 0;
 }
 
 .main {
   position: relative;
-
+  // padding-top: var(--header-height);
   @include mixin.pc {
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px 0;
   }
 }
 
 .overlay {
   mix-blend-mode: color-burn;
-  background: url("/assets/images/sunburnpaper2.jpg") no-repeat center center;
+  background: url("/assets/images/sunburnpaper3.jpg") no-repeat center center;
   width: 100%;
   height: 100vh;
   background-size: cover;

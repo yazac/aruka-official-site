@@ -24,16 +24,16 @@ export class EventHandlers {
   }
 
   setupScrollHandler() {
-    window.addEventListener("scroll", (ev) => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+    // window.addEventListener("scroll", (ev) => {
+    //   const scrollY = window.scrollY || document.documentElement.scrollTop;
+    //   const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
       
-      // Rotate object based on scroll
-      const rotationY = scrollY * 0.01;
-      this.sceneManager.rotateObject("arukuchan", rotationY);
+    //   // Rotate object based on scroll
+    //   const rotationY = scrollY * 0.01;
+    //   this.sceneManager.rotateObject("arukuchan", rotationY);
       
-      // Update UI parameter to reflect scroll-based rotation
-      // this.ui.getParams().objectRotationY = rotationY;
-    });
+    //   // Update UI parameter to reflect scroll-based rotation
+    //   // this.ui.getParams().objectRotationY = rotationY;
+    // });
   }
 }

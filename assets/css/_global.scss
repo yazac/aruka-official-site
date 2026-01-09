@@ -34,12 +34,48 @@ button {
   letter-spacing: inherit;
 }
 
+a.external-icon[target="_blank"] {
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    mask-image: url("/assets/images/common/external-link.svg");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    vertical-align: middle;
+  }
+}
+
 .u-font-en {
   font-family: 'Cormorant Garamond', serif;
   font-optical-sizing: auto;
   font-weight: var.$fw-bold;
 }
 
+.u-font-color-light-green {
+  color: var.$color-light-green;
+}
+
+.u-font-color-dark-green {
+  color: var.$color-dark-green;
+}
+
 .u-font-jp {
   font-family: "Zen Old Mincho", serif;
+}
+
+.u-text-accessory-01 {
+  &:before {
+    content: "・"
+  }
+  &:after {
+    content: "・"
+  }
+}
+
+.u-under-page-head-margin {
+  margin-top: 120px;
 }

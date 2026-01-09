@@ -1,5 +1,5 @@
 <template>
-  <div class="c-header">
+  <div class="c-header" ref="headerElem" >
     <div class="c-header-arukuchan-comment" ref="arukuchanComment">
       みつけてくれてありがとう！
     </div>
@@ -21,10 +21,9 @@
 
     <nav class="c-header-nav">
       <ul role="list">
-        <li role="listitem"><NuxtLink to="/">Home</NuxtLink></li>
-        <li role="listitem"><NuxtLink to="/about">About</NuxtLink></li>
-        <li role="listitem"><NuxtLink to="/works">Works</NuxtLink></li>
-        <li role="listitem"><NuxtLink to="/contact">Contact</NuxtLink></li>
+        <li role="listitem u-hover"><NuxtLink to="/">Home</NuxtLink></li>
+        <li role="listitem u-hover"><NuxtLink to="/works">Works</NuxtLink></li>
+        <li role="listitem u-hover"><NuxtLink to="/contact">Contact</NuxtLink></li>
       </ul>
 
       <button>
@@ -43,6 +42,11 @@ const arukuchanClickNum = useArukuchanClickNumState();
 const arukuchan = ref<HTMLElement | null>(null);
 const arukuchanComment = ref<HTMLElement | null>(null);
 const arukuchanAttention = ref<HTMLElement | null>(null);
+
+const headerElem = ref<HTMLElement | null>(null)
+useHeaderHeight(headerElem)
+
+const enterArukuchan = ref(false);
 
   const onArukuchanClick = () => {
     const arukusound = new Audio('/assets/sound/arukuchan.mp3')
@@ -75,16 +79,29 @@ onMounted(() => {
     if (teritory.xMin && teritory.yMin) {
       if (mouse.value.x < teritory.xMin && mouse.value.y < teritory.yMin) {
         arukuchan.value?.classList.add('js-active');
-        arukuchanAttention.value?.classList.add('js-active');
-        setTimeout(() => {
-          arukuchanAttention.value?.classList.remove('js-active')
-        }, 250)
+        if (enterArukuchan.value == false) {
+          enterArukuchan.value = true;
+        }
       }
       else {
         arukuchan.value?.classList.remove('js-active');
+
+        if (enterArukuchan.value == true) {
+          enterArukuchan.value = false;
+        }
       }
     }
   }));
+
+  watch(() => enterArukuchan.value, (newVal) => {
+    console.log(enterArukuchan.value)
+    if (enterArukuchan.value == true) {
+      arukuchanAttention.value?.classList.add('js-active');
+      setTimeout(() => {
+        arukuchanAttention.value?.classList.remove('js-active');
+      }, 200);
+    }
+  })
 });
 </script>
 
@@ -138,6 +155,7 @@ onMounted(() => {
   height: fit-content;
   padding: 8px 8px;
   border-radius: 25px;
+  filter: drop-shadow(0.1rem 0.1rem 0.05rem rgba(0,0,0,0.1));
 
   background: var.$color-white;
 

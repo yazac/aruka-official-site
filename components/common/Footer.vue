@@ -2,12 +2,19 @@
   <div class="c-footer">
     <div>
       <nav class="c-footer-nav">
-        <ul role="list">
+        <ol role="list">
           <li role="listitem"><NuxtLink to="/" class="u-font-en">Home</NuxtLink></li>
-          <li role="listitem"><NuxtLink to="/about" class="u-font-en">About</NuxtLink></li>
           <li role="listitem"><NuxtLink to="/works" class="u-font-en">Works</NuxtLink></li>
           <li role="listitem"><NuxtLink to="/contact" class="u-font-en">Contact</NuxtLink></li>
           <li role="listitem"><NuxtLink to="/privacy-policy" class="u-font-en">Privacy Policy</NuxtLink></li>
+        </ol>
+
+        <ul role="list">
+          <li role="listitem" v-for="item, field in snsLinks">
+            <NuxtLink :to="item" target="_blank" class="u-hover">
+              <img :src="`/assets/images/common/icon-${field}.svg`" :alt="`${field}`">
+            </NuxtLink>
+          </li>
         </ul>
       </nav>
       <span class="c-footer-copyright u-font-en">
@@ -38,6 +45,15 @@
 <script setup lang="ts">
 const route = useRoute()
 const animTrigger = ref(false)
+
+const snsLinks = {
+  x: 'https://x.com/aruku_a_dark',
+  instagram: 'https://www.instagram.com/aruku_a_dark/',
+  soundcloud: 'https://soundcloud.com/aruku_a_dark',
+  spotify: 'https://open.spotify.com/artist/4pnHuAXzea9oZiYwSwvLFJ',
+  apple: 'https://music.apple.com/us/artist/a-r-u-k-a/1616819261'
+}
+
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +73,7 @@ const animTrigger = ref(false)
 }
 
 .c-footer-nav {
-  ul {
+  ol {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -108,6 +124,16 @@ const animTrigger = ref(false)
           }
         }
       }
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    margin-top: 48px;
+    li {
+      width: 30px;
     }
   }
 }

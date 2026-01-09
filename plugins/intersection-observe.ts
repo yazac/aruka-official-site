@@ -23,36 +23,51 @@ const defaultOptions: IOoptions = {
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
+  const splashState = useSplashState()
+  
   nuxtApp.vueApp.directive('intersection-observe', {
     mounted(el: HTMLElement, binding: DirectiveBinding<IOoptions>) {
-      const opt: IOoptions = {
-        ...defaultOptions,
-        ...(binding.value ?? {}),
-      }
+      // console.log(splashState)
 
-      function callback(entries: IntersectionObserverEntry[]): void {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            el.classList.add(opt.className!)
+      const process = () => {
+        const opt: IOoptions = {
+          ...defaultOptions,
+          ...(binding.value ?? {}),
+        }
 
-            opt.onEnter?.(entry)
+        function callback(entries: IntersectionObserverEntry[]): void {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              el.classList.add(opt.className!)
 
-            if (!opt.retrigger) {
-              observer.unobserve(el)
+              opt.onEnter?.(entry)
+
+              if (!opt.retrigger) {
+                observer.unobserve(el)
+              }
             }
-          }
-          
-          else if (opt.retrigger) {
-            el.classList.remove(opt.className!)
+            
+            else if (opt.retrigger) {
+              el.classList.remove(opt.className!)
 
-            opt.onLeave?.(entry)
-          }
-        })
+              opt.onLeave?.(entry)
+            }
+          })
+        }
+        const observer = new IntersectionObserver(callback, opt)
+        observer.observe(el)
+
+        ;(el as any).__io__ = observer
       }
-      const observer = new IntersectionObserver(callback, opt)
-      observer.observe(el)
 
-      ;(el as any).__io__ = observer
+
+      watch(splashState, (newVal) => {
+        process();
+      });
+
+      if (splashState.value == false) {
+        process();
+      }
     },
 
     unmounted(el: HTMLElement) {

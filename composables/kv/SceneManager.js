@@ -43,7 +43,7 @@ export class SceneManager {
       0.1, // Near plane
       1000 // Far plane
     );
-    this.camera.position.set(11.1, -0.1, 0);
+    this.camera.position.set(12.40, -0.1, 0);
     this.camera.lookAt(0, 0, 0);
   }
 

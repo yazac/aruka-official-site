@@ -12,7 +12,8 @@
   width: 100%;
   margin: 0 auto;
   @include mixin.pc {
-    max-width: 1000px;
+    max-width: 1200px;
+    padding: 0 20px 0;
   }
 }
 </style>

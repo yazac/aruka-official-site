@@ -1,5 +1,6 @@
 <template>
   <CommonContentsInner>
+    <div class="u-under-page-head-margin"></div>
     <CommonTextH1>
       プライバシーポリシー
     </CommonTextH1>
