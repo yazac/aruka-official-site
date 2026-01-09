@@ -1,0 +1,48 @@
+// design size
+$dsPc: 1366;
+$dsSp: 375;
+
+// break point
+$breakpoint: 768px;
+
+// color
+$color-black: #000000;
+$color-white: #ffffff;
+$color-beige: #F9F4E7;
+$color-yellow: #FBF0C0;
+$color-light-green: #A8A872;
+$color-dark-green: #535338;
+
+
+// font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// font-set
+@mixin fs-xlarge {
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+@mixin fs-large {
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+@mixin fs-medium {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+@mixin fs-normal {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@mixin fs-small {
+  font-size: 12px;
+  line-height: 1.2;
+}

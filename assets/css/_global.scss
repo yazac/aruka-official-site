@@ -1,0 +1,81 @@
+@use "var";
+
+html {
+  box-sizing: border-box;
+  letter-spacing: 0.05em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  line-height: 1;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: auto;
+}
+
+picture,
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+a.external-icon[target="_blank"] {
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    mask-image: url("/assets/images/common/external-link.svg");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    vertical-align: middle;
+  }
+}
+
+.u-font-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-optical-sizing: auto;
+  font-weight: var.$fw-bold;
+}
+
+.u-font-color-light-green {
+  color: var.$color-light-green;
+}
+
+.u-font-color-dark-green {
+  color: var.$color-dark-green;
+}
+
+.u-font-jp {
+  font-family: "Zen Old Mincho", serif;
+}
+
+.u-text-accessory-01 {
+  &:before {
+    content: "・"
+  }
+  &:after {
+    content: "・"
+  }
+}
+
+.u-under-page-head-margin {
+  margin-top: 120px;
+}

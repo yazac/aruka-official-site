@@ -1,0 +1,21 @@
+@use "_var.scss";
+@use "sass:math";
+
+// responsive
+@mixin pc {
+  @media (min-width: var.$breakpoint) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: (var.$breakpoint - 1)) {
+    @content;
+  }
+}
+
+// px to vw
+// usage example: font-size: vw(16);
+@function vw($size-px, $design-size: var.$dsSp) {
+  @return math.div($size-px, $design-size) * 100vw;
+}
