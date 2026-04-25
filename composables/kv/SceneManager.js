@@ -8,13 +8,14 @@ export class SceneManager {
     this.height = height;
     this.loader = new GLTFLoader();
     this.arukuchanRotationY = 0;
+    this.arukuchanRotationX = 0;
     
     // Mouse tracking state with continuous interpolation
     this.targetX = 0;
     this.targetY = 0;
     this.currentX = 0;
     this.currentY = 0;
-    this.damping = 0.15; // Interpolation factor (lower = smoother, 0.08-0.15 recommended)
+    this.damping = 0.3; // Interpolation factor (lower = smoother, 0.08-0.15 recommended)
     
     this.init();
   }
@@ -74,28 +75,25 @@ export class SceneManager {
       arukuchan.position.set(4.1, -0.60, 0);
       arukuchan.rotation.set(0, Math.PI/2, 0);
       this.arukuchanRotationY = arukuchan.rotation.y;
+      this.arukuchanRotationX = arukuchan.rotation.x;
       this.scene.add(arukuchan);
     }, undefined, (error) => {
       console.error("Error loading model:", error);
     });
-    this.animateArukuchan();
   }
 
-  animateArukuchan() {
-    const animate = () => {
-      const arukuchan = this.scene.getObjectByName("arukuchan");
-      if (arukuchan) {
-        // 目標値に向かってスムーズに補間
-        this.currentX += (this.targetX - this.currentX) * this.damping * this.damping;
-        this.currentY += (this.targetY - this.currentY) * this.damping * this.damping / 2;
-        
-        arukuchan.rotation.y = this.arukuchanRotationY + this.currentX * 0.5;
-        arukuchan.position.y = -0.6 + this.currentY + Math.sin(Date.now() * 0.002) * 0.1;
-        arukuchan.position.z = -this.currentX * 2;
-      }
-      requestAnimationFrame(animate);
-    };
-    animate();
+  updateArukuchan() {
+    const arukuchan = this.scene.getObjectByName("arukuchan");
+    if (arukuchan) {
+      // 目標値に向かってスムーズに補間
+      this.currentX += (this.targetX - this.currentX) * this.damping * this.damping;
+      this.currentY += (this.targetY - this.currentY) * this.damping * this.damping / 2;
+      
+      arukuchan.rotation.y = this.arukuchanRotationY + this.currentX / 3;
+      arukuchan.rotation.x = (this.arukuchanRotationX + this.currentX) / 10;
+      arukuchan.position.y = -0.6 + this.currentY + Math.sin(Date.now() * 0.002) * 0.1;
+      arukuchan.position.z = -this.currentX * 2;
+    }
   }
 
   setupGrass() {
@@ -110,26 +108,25 @@ export class SceneManager {
     const planeHeight = 0.78 * 2;
     const grassGeometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
 
-    // Create 5 grass planes
-    for (let i = 0; i < 10; i++) {
-      const xOffset = i * planeWidth / 8 - 1;
-      const grassPlane = this.createGrassPlane(grassGeometry, grassTexture, xOffset);
-      this.scene.add(grassPlane);
-    }
-    this.animateGrass();
-  }
-
-  createGrassPlane(geometry, baseTexture, xOffset) {
-    const texture = baseTexture.clone();
-    texture.offset.x = Math.random();
-    texture.needsUpdate = true;
-
-    const material = new THREE.MeshBasicMaterial({
-      map: texture,
+    // Create shared material to reduce GPU memory
+    const grassMaterial = new THREE.MeshBasicMaterial({
+      map: grassTexture,
       side: THREE.DoubleSide,
       transparent: true,
       color: 0xd9c0e1
     });
+
+    // Create 10 grass planes with shared texture and material
+    for (let i = 0; i < 10; i++) {
+      const xOffset = i * planeWidth / 8 - 1;
+      const grassPlane = this.createGrassPlane(grassGeometry, grassMaterial, xOffset);
+      this.scene.add(grassPlane);
+    }
+  }
+
+  createGrassPlane(geometry, material, xOffset) {
+    // Set random offset for visual variation
+    material.map.offset.x = Math.random();
 
     const mesh = new THREE.Mesh(geometry, material);
     mesh.name = "GrassPlane";
@@ -138,12 +135,16 @@ export class SceneManager {
     return mesh;
   }
 
-  animateGrass() {
+  updateGrass() {
     const grassPlanes = this.scene.children.filter(obj => obj.name === "GrassPlane");
     grassPlanes.forEach(plane => {
       plane.position.z = Math.sin(Date.now() * 0.002) * 0.02;
     });
-    requestAnimationFrame(() => this.animateGrass());
+  }
+
+  update() {
+    this.updateArukuchan();
+    this.updateGrass();
   }
 
   setBackgroundColor(hex) {

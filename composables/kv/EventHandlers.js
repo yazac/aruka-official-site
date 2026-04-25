@@ -27,15 +27,10 @@ export class EventHandlers {
     let updateTimeout;
 
     window.addEventListener("mousemove", (e) => {
-      // Clear the previous timeout (stops the previous scheduled call)
-      clearTimeout(updateTimeout);
-
-      // Get normalized mouse coordinates
       const rect = this.canvasWrapper.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width * 2 - 1;
       const y = -(e.clientY - rect.top) / rect.height * 2 + 1;
-      // Set a new timeout - only runs if mouse stays still for 200ms
-      this.sceneManager.updateObject(x, y);
+      this.sceneManager.updateObject(x*2, y*2);
     });
   }
 }

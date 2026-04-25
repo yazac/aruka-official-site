@@ -2,7 +2,7 @@
 <template>
   <div class="layout u-font-jp">
     <VueLenis root />
-    <div class="overlay" style="animation-delay: 0.2s;"></div>
+    <div class="overlay"></div>
     
     
     <TopSplash v-if="splashState" />
@@ -20,9 +20,9 @@
     
 
     <!-- フッター -->
-    <!-- <footer class="footer">
+    <footer class="footer">
       <CommonFooter />
-    </footer> -->
+    </footer>
 
     <!-- <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
     </div> -->
@@ -92,6 +92,7 @@ onMounted(async() => {
 .overlay {
   mix-blend-mode: color-burn;
   background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
+  background-size: contain;
   width: 100%;
   height: 100vh;
   position: fixed;

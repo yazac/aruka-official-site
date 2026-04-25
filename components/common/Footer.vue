@@ -62,7 +62,7 @@ const snsLinks = {
 .c-footer {
   width: 100%;
   padding: 80px 18px 0 20px;
-  background: var.$color-light-green;
+  background: var.$color-brown;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
