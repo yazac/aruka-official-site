@@ -10,7 +10,7 @@ export class EventHandlers {
 
   setupEventListeners() {
     this.setupResizeHandler();
-    this.setupScrollHandler();
+    this.setupMouseEventHandler();
   }
 
   setupResizeHandler() {
@@ -23,17 +23,19 @@ export class EventHandlers {
     }));
   }
 
-  setupScrollHandler() {
-    // window.addEventListener("scroll", (ev) => {
-    //   const scrollY = window.scrollY || document.documentElement.scrollTop;
-    //   const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
-      
-    //   // Rotate object based on scroll
-    //   const rotationY = scrollY * 0.01;
-    //   this.sceneManager.rotateObject("arukuchan", rotationY);
-      
-    //   // Update UI parameter to reflect scroll-based rotation
-    //   // this.ui.getParams().objectRotationY = rotationY;
-    // });
+  setupMouseEventHandler() {
+    let updateTimeout;
+
+    window.addEventListener("mousemove", (e) => {
+      // Clear the previous timeout (stops the previous scheduled call)
+      clearTimeout(updateTimeout);
+
+      // Get normalized mouse coordinates
+      const rect = this.canvasWrapper.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width * 2 - 1;
+      const y = -(e.clientY - rect.top) / rect.height * 2 + 1;
+      // Set a new timeout - only runs if mouse stays still for 200ms
+      this.sceneManager.updateObject(x, y);
+    });
   }
 }

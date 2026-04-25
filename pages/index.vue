@@ -2,7 +2,8 @@
 <template>
   <div>
     <TopKv />
-
+    <div style="height: 200vh;"></div>
+<!-- 
     <CommonContentsInner>
       <CommonSplitter class="u-anim-opacity" v-intersection-observe="{
           threshold: 0.5
@@ -47,7 +48,7 @@
         </div>
 
       </div>
-    </CommonContentsInner>    
+    </CommonContentsInner>     -->
   </div>
   
 </template>
@@ -63,7 +64,7 @@
   @include mixin.pc {
     display: flex;
     justify-content: space-between;
-    margin: 120px 0 180px;
+    margin-top: 120px;
     gap: 110px;
   }
 }

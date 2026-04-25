@@ -48,19 +48,19 @@ useHeaderHeight(headerElem)
 
 const enterArukuchan = ref(false);
 
-  const onArukuchanClick = () => {
-    const arukusound = new Audio('/assets/sound/arukuchan.mp3')
-    arukusound.play().catch(() => {})
+const onArukuchanClick = () => {
+  const arukusound = new Audio('/assets/sound/arukuchan.mp3')
+  arukusound.play();
 
-    arukuchanClickNum.value += 1
+  arukuchanClickNum.value += 1
 
-    if (arukuchanClickNum.value % 20 === 0) {
-      arukuchanComment.value?.classList.add('js-active')
-      setTimeout(() => {
-        arukuchanComment.value?.classList.remove('js-active')
-      }, 2000)
-    }
+  if (arukuchanClickNum.value % 20 === 0) {
+    arukuchanComment.value?.classList.add('js-active')
+    setTimeout(() => {
+      arukuchanComment.value?.classList.remove('js-active')
+    }, 2000)
   }
+}
 
 
 onMounted(() => {
@@ -94,7 +94,7 @@ onMounted(() => {
   }));
 
   watch(() => enterArukuchan.value, (newVal) => {
-    console.log(enterArukuchan.value)
+    // console.log(enterArukuchan.value)
     if (enterArukuchan.value == true) {
       arukuchanAttention.value?.classList.add('js-active');
       setTimeout(() => {

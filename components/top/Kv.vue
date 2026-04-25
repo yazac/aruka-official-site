@@ -24,7 +24,8 @@ onMounted(() => {
 <style scoped lang="scss">
 .c-kv {
   width: 100%;
-  // border-radius: 28px;
+  position: sticky;
+  top: 0;
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.5s;
@@ -36,6 +37,6 @@ onMounted(() => {
 
 .c-kv-bg {
   width: 100%;
-  height: 60vh;
+  height: 100vh;
 }
 </style>
