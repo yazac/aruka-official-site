@@ -70,7 +70,7 @@ export class PostProcessingManager {
     this.unrealBloomPass.threshold = 0.47;
 
     // Film pass
-    this.filmPass = new FilmPass(0.2);
+    this.filmPass = new FilmPass(0.18);
 
     // Add passes to composer
     this.effectComposer.addPass(this.posterizePass);

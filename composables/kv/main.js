@@ -49,11 +49,15 @@ export class App {
 
   animate() {
     if (this.isVisible) {
+      // Update scene state before rendering
+      this.sceneManager.update();
+      
+      // Render with post-processing
       this.postProcessing.render();
       
       setTimeout(() => {
         requestAnimationFrame(() => this.animate());
-      }, 1000 / 16); // 18 FPS
+      }, 1000 / 20); // 18 FPS
     } else {
       // When tab is not visible, check periodically if it becomes visible again
       setTimeout(() => this.animate(), 1000);

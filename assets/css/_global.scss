@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   letter-spacing: 0.05em;
+  scroll-behavior: auto;
 }
 
 *,
@@ -51,6 +52,7 @@ a.external-icon[target="_blank"] {
 
 .u-font-en {
   font-family: 'Cormorant Garamond', serif;
+  -webkit-font-smoothing: auto;
   font-optical-sizing: auto;
   font-weight: var.$fw-bold;
 }
@@ -65,6 +67,7 @@ a.external-icon[target="_blank"] {
 
 .u-font-jp {
   font-family: "Zen Old Mincho", serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .u-text-accessory-01 {

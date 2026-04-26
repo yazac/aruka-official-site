@@ -2,30 +2,30 @@
 <template>
   <div class="layout u-font-jp">
     <VueLenis root />
-    <div class="overlay u-anim-squiggle" style="animation-delay: 0.2s;"></div>
+    <div class="overlay"></div>
     
     
     <TopSplash v-if="splashState" />
-    <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
-      
-      
-      <!-- ヘッダー -->
-      <header class="header">
-        <CommonHeader />
-      </header>
 
-      <!-- メインコンテンツ -->
-      <main class="main ">
-        <slot />
-      </main>
+    <!-- ヘッダー -->
+    <header class="header">
+      <CommonHeader />
+    </header>
 
-      
+    <!-- メインコンテンツ -->
+    <main class="main ">
+      <slot />
+    </main>
 
-      <!-- フッター -->
-      <footer class="footer">
-        <CommonFooter />
-      </footer>
-    </div>
+    
+
+    <!-- フッター -->
+    <footer class="footer">
+      <CommonFooter />
+    </footer>
+
+    <!-- <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
+    </div> -->
 
     <!-- svgフィルター -->
     <CommonSvgFilterSquiggle />
@@ -41,6 +41,7 @@ const route = useRoute();
 const router = useRouter();
 const loading = useLoadingState();
 const splashState = useSplashState();
+const kvResourcesLoaded = useKVResourcesLoadedState();
 
 // const lenis = useLenis((lenis) => {
 //   // called every scroll
@@ -48,7 +49,19 @@ const splashState = useSplashState();
 // })
 
 onMounted(async() => {
-  await wait(2000); // loading が終わった判定とさしかえの想定
+  // Wait for KV resources to load or timeout after 2000ms
+  const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
+  const kvLoadComplete = new Promise(resolve => {
+    const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
+      if (loaded) {
+        unwatch();
+        resolve(true);
+      }
+    });
+  });
+
+  await Promise.all([kvLoadComplete, kvLoadTimeout]);
+
   loading.value = false;
   // console.log('loading', loading.value)
   
@@ -62,6 +75,9 @@ onMounted(async() => {
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
+.layout {
+  background-color: var.$color-white;
+}
 
 .layout-inner {
   background-color: var.$color-beige;
@@ -88,10 +104,10 @@ onMounted(async() => {
 
 .overlay {
   mix-blend-mode: color-burn;
-  background: url("/assets/images/sunburnpaper3.jpg") no-repeat center center;
+  background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
+  background-size: contain;
   width: 100%;
   height: 100vh;
-  background-size: cover;
   position: fixed;
   top: 0;
   z-index: 10;
