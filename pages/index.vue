@@ -64,11 +64,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 120px;
+    padding-bottom: 520px;
     gap: 110px;
   }
-}
-
-.p-aboutme-img {
-  min-width: 350px;
 }
 </style>
