@@ -85,16 +85,30 @@ onUnmounted(() => {
 
 .c-footer {
   width: 100%;
-  padding: 80px 18px 0 20px;
   background: var.$color-brown;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   overflow: hidden;
+
+  @include mixin.pc {
+    padding: 80px 18px 0 20px;
+  }
+
+  @include mixin.sp {
+    padding: mixin.vw(60, var.$dsSp) mixin.vw(20, var.$dsSp);
+  }
 }
 
 .c-footer-logo-text {
-  width: 700px;
+  
+  @include mixin.pc {
+    width: 700px;
+  }
+
+  @include mixin.sp {
+    display: none;
+  }
 }
 
 .c-footer-nav {

@@ -111,11 +111,18 @@ onMounted(() => {
 
 .c-header {
   width: 100%;
-  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  @include mixin.pc {
+    padding: 20px 20px;
+  }
+
+  @include mixin.sp {
+    padding: mixin.vw(20, var.$dsSp) mixin.vw(15, var.$dsSp);
+  }
 }
 
 .c-header-logo-attention {
@@ -163,6 +170,14 @@ onMounted(() => {
   opacity: 0;
   transition: opacity 1s;
 
+  @include mixin.pc {
+    left: 90px;
+  }
+
+  @include mixin.sp {
+    left: mixin.vw(78, var.$dsSp);
+  }
+
   &.js-active {
     opacity: 1;
     transition: opacity 0.01s;
@@ -203,6 +218,10 @@ onMounted(() => {
     list-style: none;
     margin: 0;
     padding: 0;
+    
+    @include mixin.sp {
+      display: none;
+    }
 
     li {
       :deep(a) {

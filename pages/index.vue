@@ -59,11 +59,14 @@
     gap: 50px;
   }
 
-  // p {
-  //   @include mixin.pc {
-  //     min-width: 250px;
-  //   }
-  // }
+  @include mixin.sp {
+    display: flex;
+    margin-top: mixin.vw(60, var.$dsSp);
+    padding-bottom: mixin.vw(120, var.$dsSp);
+    flex-direction: column;
+    align-items: center;
+    gap: mixin.vw(60, var.$dsSp);
+  }
 }
 
 .p-aboutme-img {

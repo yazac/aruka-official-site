@@ -98,10 +98,10 @@ onMounted(async() => {
 
 .main {
   position: relative;
-  // padding-top: var(--header-height);
-  @include mixin.pc {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  @include mixin.sp {
+    overflow: hidden;
   }
 }
 
