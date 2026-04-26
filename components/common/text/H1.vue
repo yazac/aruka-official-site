@@ -19,8 +19,9 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 h1 {
-  @include var.fs-xlarge;
+  @include mixin.fs-xlarge;
 }
 </style>

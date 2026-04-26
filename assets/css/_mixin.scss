@@ -19,3 +19,57 @@
 @function vw($size-px, $design-size: var.$dsSp) {
   @return math.div($size-px, $design-size) * 100vw;
 }
+
+// font-set
+@mixin fs-xlarge {
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+@mixin fs-large {
+  line-height: 1.2;
+
+  @include pc {
+    font-size: 38px;
+  }
+
+  @include sp {
+    font-size: vw(30, var.$dsSp);
+  }
+}
+
+@mixin fs-medium {
+  line-height: 1.2;
+
+  @include pc {
+    font-size: 18px;
+  }
+
+  @include sp {
+    font-size: vw(14, var.$dsSp);
+  }
+}
+
+@mixin fs-normal {
+  line-height: 1.5;
+
+  @include pc {
+    font-size: 16px;
+  }
+
+  @include sp {
+    font-size: vw(12, var.$dsSp);
+  }
+}
+
+@mixin fs-small {
+  line-height: 1.2;
+
+  @include pc {
+    font-size: 12px;
+  }
+
+  @include sp {
+    font-size: vw(10, var.$dsSp);
+  }
+}

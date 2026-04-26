@@ -1,5 +1,5 @@
 <template>
-  <div class="c-footer">
+  <div class="c-footer" ref="footerElem">
     <div>
       <nav class="c-footer-nav">
         <ol role="list">
@@ -11,8 +11,8 @@
 
         <ul role="list">
           <li role="listitem" v-for="item, field in snsLinks">
-            <NuxtLink :to="item" target="_blank" class="u-hover">
-              <img :src="`/assets/images/common/icon-${field}.svg`" :alt="`${field}`">
+            <NuxtLink :to="item.url" target="_blank" class="u-hover">
+              <img :src="`/assets/images/common/icon-${item.name}.svg`" :alt="`${item.name}`">
             </NuxtLink>
           </li>
         </ul>
@@ -43,21 +43,45 @@
 
 
 <script setup lang="ts">
+import snsLinks from '@/assets/json/sns.json';
+
 const route = useRoute()
 const animTrigger = ref(false)
 
-const snsLinks = {
-  x: 'https://x.com/aruku_a_dark',
-  instagram: 'https://www.instagram.com/aruku_a_dark/',
-  soundcloud: 'https://soundcloud.com/aruku_a_dark',
-  spotify: 'https://open.spotify.com/artist/4pnHuAXzea9oZiYwSwvLFJ',
-  apple: 'https://music.apple.com/us/artist/a-r-u-k-a/1616819261'
-}
+const footerElem = ref<HTMLElement | null>(null)
+const footerIntersectingState = useFooterIntersectingState()
+
+let observer: IntersectionObserver | null = null
+
+onMounted(() => {
+  if (footerElem.value) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        footerIntersectingState.value = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          console.log('Footer is intersecting');
+        }
+      });
+    }, {
+      rootMargin: "0px",
+      threshold: 0,
+    });
+    
+    observer.observe(footerElem.value);
+  }
+});
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect();
+  }
+});
 
 </script>
 
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 .c-footer {
   width: 100%;
@@ -83,7 +107,7 @@ const snsLinks = {
     gap: 20px;
 
     li {
-      @include var.fs-medium;
+      @include mixin.fs-medium;
       letter-spacing: calc(40 / 1000 * 1rem);
 
       :deep(a) {
@@ -144,7 +168,7 @@ const snsLinks = {
   margin-top: 60px;
   margin-bottom: 8px;
   color: var.$color-white;
-  @include var.fs-small;
+  @include mixin.fs-small;
   letter-spacing: calc(40 / 1000 * 1rem);
 }
 </style>

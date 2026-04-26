@@ -16,19 +16,10 @@
           はじめまして、 a r u k a. といいます。
           <br>
           <br>
-          作曲と、3Dアート、プログラミングを組み合わせた<br>作品を作っています。<br>
-          WORKSやギャラリーのページから見ていってくださいね！
+          作曲、3Dグラフィック、プログラミングを組み合わせた作品を作っています。
           <br>
           <br>
-          僕には大切なキャラクターがいます。
-          <br>
-          arukuちゃんです。丸くて光る大きな目が２つあって、空中をふわふわ飛び回ります。
-          <br>
-          可愛がってもらえると、arukuちゃんも僕もとても嬉しいです。
-          <br>
-          <br>
-          お問い合わせはcontactページから、若しくは
-          <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>まで
+          お問い合わせは<NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>まで
         </CommonTextNormalLarge>
 
         <div class="p-aboutme-img u-anim-stepmotion" 
@@ -65,7 +56,19 @@
     justify-content: space-between;
     margin-top: 120px;
     padding-bottom: 520px;
-    gap: 110px;
+    gap: 50px;
+  }
+
+  // p {
+  //   @include mixin.pc {
+  //     min-width: 250px;
+  //   }
+  // }
+}
+
+.p-aboutme-img {
+  @include mixin.pc {
+    max-width: 400px;
   }
 }
 </style>

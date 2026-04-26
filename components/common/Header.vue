@@ -44,7 +44,7 @@ const arukuchanComment = ref<HTMLElement | null>(null);
 const arukuchanAttention = ref<HTMLElement | null>(null);
 
 const headerElem = ref<HTMLElement | null>(null)
-useHeaderHeight(headerElem)
+useElemHeight(headerElem, 'header-height')
 
 const enterArukuchan = ref(false);
 
@@ -107,6 +107,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 .c-header {
   width: 100%;
@@ -212,7 +213,7 @@ onMounted(() => {
   }
 
   button {
-    @include var.fs-large;
+    @include mixin.fs-large;
   }
 }
 </style>

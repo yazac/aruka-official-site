@@ -12,6 +12,10 @@ export const useSplashState = (): Ref<boolean> =>
 export const useKVResourcesLoadedState = (): Ref<boolean> =>
   useState('kv-resources-loaded', () => false)
 
+// footer交差
+export const useFooterIntersectingState = (): Ref<boolean> =>
+  useState('footer-intersecting', () => false)
+
 // メニュー開閉
 export const useMenuOpenState = (): Ref<boolean> =>
   useState('menu-open', () => false)
