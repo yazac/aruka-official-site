@@ -11,11 +11,47 @@
 <script setup lang="ts">
 const loading = useLoadingState()
 const splashState = useSplashState()
+const kvResourcesLoaded = useKVResourcesLoadedState()
 const moduleRoot = ref<HTMLElement | null>(null)
 
 import { App } from '@/composables/kv/main.js'
 
-onMounted(() => {
+// Preload resources for KV section (3D objects and textures)
+const preloadKVResources = async () => {
+  const resources = [
+    '/assets/object/aruku_chan_white2.glb',
+    '/assets/images/kv/gold_grass.png'
+  ];
+
+  return Promise.all(
+    resources.map(url => {
+      return new Promise((resolve, reject) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'fetch';
+        link.href = url;
+        link.crossOrigin = 'anonymous';
+        link.onload = () => resolve(url);
+        link.onerror = () => reject(new Error(`Failed to preload: ${url}`));
+        document.head.appendChild(link);
+      });
+    })
+  );
+};
+
+onMounted(async () => {
+  // Start preloading resources
+  try {
+    await preloadKVResources();
+    // Mark resources as loaded
+    kvResourcesLoaded.value = true;
+  } catch (error) {
+    console.warn('Resource preload warning:', error);
+    // Mark as loaded even on error to not block splash
+    kvResourcesLoaded.value = true;
+  }
+
+  // Initialize Three.js app
   new App();
 });
 

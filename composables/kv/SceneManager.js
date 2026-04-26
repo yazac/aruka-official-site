@@ -106,7 +106,6 @@ export class SceneManager {
 
     const planeWidth = 8 * 2;
     const planeHeight = 0.78 * 2;
-    const grassGeometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
 
     // Create shared material to reduce GPU memory
     const grassMaterial = new THREE.MeshBasicMaterial({
@@ -119,6 +118,14 @@ export class SceneManager {
     // Create 10 grass planes with shared texture and material
     for (let i = 0; i < 10; i++) {
       const xOffset = i * planeWidth / 8 - 1;
+      const grassGeometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+
+      const positions = grassGeometry.getAttribute('uv');
+      const randomOffset = Math.random();
+      for (let j = 0; j < positions.count; j++) {
+        positions.setXY(j, positions.getX(j) + randomOffset, positions.getY(j));
+      }
+
       const grassPlane = this.createGrassPlane(grassGeometry, grassMaterial, xOffset);
       this.scene.add(grassPlane);
     }
@@ -138,7 +145,7 @@ export class SceneManager {
   updateGrass() {
     const grassPlanes = this.scene.children.filter(obj => obj.name === "GrassPlane");
     grassPlanes.forEach(plane => {
-      plane.position.z = Math.sin(Date.now() * 0.002) * 0.02;
+      plane.position.z = Math.sin(Date.now() * 0.0018) * 0.02;
     });
   }
 

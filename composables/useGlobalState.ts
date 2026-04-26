@@ -8,6 +8,10 @@ export const useLoadingState = (): Ref<boolean> =>
 export const useSplashState = (): Ref<boolean> =>
   useState('splash', () => true)
 
+// KV リソース（3D オブジェクト・テクスチャ）読み込み完了フラグ
+export const useKVResourcesLoadedState = (): Ref<boolean> =>
+  useState('kv-resources-loaded', () => false)
+
 // メニュー開閉
 export const useMenuOpenState = (): Ref<boolean> =>
   useState('menu-open', () => false)

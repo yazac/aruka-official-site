@@ -41,6 +41,7 @@ const route = useRoute();
 const router = useRouter();
 const loading = useLoadingState();
 const splashState = useSplashState();
+const kvResourcesLoaded = useKVResourcesLoadedState();
 
 // const lenis = useLenis((lenis) => {
 //   // called every scroll
@@ -48,7 +49,19 @@ const splashState = useSplashState();
 // })
 
 onMounted(async() => {
-  await wait(2000); // loading が終わった判定とさしかえの想定
+  // Wait for KV resources to load or timeout after 2000ms
+  const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
+  const kvLoadComplete = new Promise(resolve => {
+    const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
+      if (loaded) {
+        unwatch();
+        resolve(true);
+      }
+    });
+  });
+
+  await Promise.all([kvLoadComplete, kvLoadTimeout]);
+
   loading.value = false;
   // console.log('loading', loading.value)
   
