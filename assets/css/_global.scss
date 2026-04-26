@@ -4,6 +4,7 @@ html {
   box-sizing: border-box;
   letter-spacing: 0.05em;
   scroll-behavior: auto;
+  overscroll-behavior-x: none;
 }
 
 *,

@@ -18,10 +18,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
-@use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 h2 {
   margin-top: 50px;
-  @include var.fs-large;
+  @include mixin.fs-large;
 }
 </style>

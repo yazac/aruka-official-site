@@ -3,7 +3,10 @@
   <div class="c-splash" :class="{ 'is-leaving': !loading }">
     <div class="c-splash-logo">
       <div class="c-splash-logo-text">
-        <CommonLogoText color="lightgreen" :trigger="animTrigger" />
+        <CommonLogoText color="lightgreen" :trigger="animTrigger" :height="{
+          pc: 30,
+          sp: 20
+        }"/>
       </div>
     </div>
   </div>
@@ -31,7 +34,7 @@ onMounted(() => {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +52,11 @@ onMounted(() => {
   margin: 0 auto;
   @include mixin.pc {
     width: 365px;
+  }
+
+  @include mixin.sp {
+    width: 100%;
+    padding: 0 mixin.vw(80, var.$dsSp);
   }
 }
 </style>

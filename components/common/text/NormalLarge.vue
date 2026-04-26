@@ -18,10 +18,9 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
-@use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 p {
-  @include var.fs-medium;
-  font-weight: 700;
+  @include mixin.fs-medium;
 }
 </style>

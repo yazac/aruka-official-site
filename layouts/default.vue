@@ -12,6 +12,8 @@
       <CommonHeader />
     </header>
 
+    <SnsBar />
+
     <!-- メインコンテンツ -->
     <main class="main ">
       <slot />
@@ -36,6 +38,7 @@
 import { VueLenis, useLenis } from 'lenis/vue'
 import { useRouter } from 'vue-router'
 import { watch } from 'vue'
+import SnsBar from '~/components/common/SnsBar.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -95,10 +98,10 @@ onMounted(async() => {
 
 .main {
   position: relative;
-  // padding-top: var(--header-height);
-  @include mixin.pc {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  @include mixin.sp {
+    overflow: hidden;
   }
 }
 
@@ -110,8 +113,8 @@ onMounted(async() => {
   height: 100vh;
   position: fixed;
   top: 0;
-  z-index: 10;
-  opacity: 0.6;
+  z-index: 9;
+  opacity: 0.4;
   pointer-events: none;
 }
 </style>

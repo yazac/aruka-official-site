@@ -1,14 +1,15 @@
-export const useHeaderHeight = (
-  headerRef: Ref<HTMLElement | null>
+export const useElemHeight = (
+  elemRef: Ref<HTMLElement | null>,
+  propertyName: string
 ) => {
   let resizeObserver: ResizeObserver | null = null
 
   const update = () => {
-    if (!headerRef.value) return
+    if (!elemRef.value) return
 
-    const height = headerRef.value.offsetHeight
+    const height = elemRef.value.offsetHeight
     document.documentElement.style.setProperty(
-      '--header-height',
+      `--${propertyName}`,
       `${height}px`
     )
   }
@@ -20,8 +21,8 @@ export const useHeaderHeight = (
       update()
     })
 
-    if (headerRef.value) {
-      resizeObserver.observe(headerRef.value)
+    if (elemRef.value) {
+      resizeObserver.observe(elemRef.value)
     }
 
     window.addEventListener('resize', debounce(200, update))

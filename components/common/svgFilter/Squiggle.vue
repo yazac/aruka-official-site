@@ -5,7 +5,7 @@
         <feTurbulence
           ref="turbulence"
           type="fractalNoise"
-          baseFrequency="0.02"
+          baseFrequency="0.2"
           numOctaves="3"
           seed="0"
           result="noise"
@@ -40,7 +40,7 @@ onMounted(() => {
       scales[i]!.toString()
     )
 
-    await wait(300)
+    await wait(100)
 
     requestAnimationFrame(() =>
       animate((i + 1) % seeds.length)
