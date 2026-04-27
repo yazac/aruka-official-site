@@ -58,9 +58,9 @@ onMounted(() => {
     observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         footerIntersectingState.value = entry.isIntersecting;
-        if (entry.isIntersecting) {
-          console.log('Footer is intersecting');
-        }
+        // if (entry.isIntersecting) {
+        //   console.log('Footer is intersecting');
+        // }
       });
     }, {
       rootMargin: "0px",

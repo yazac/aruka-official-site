@@ -15,8 +15,14 @@ export class SceneManager {
     this.targetY = 0;
     this.currentX = 0;
     this.currentY = 0;
-    this.damping = 0.3; // Interpolation factor (lower = smoother, 0.08-0.15 recommended)
+    this.damping = 0.3; // smoothing factor
     
+    // rotation animation
+    this.isRotating = false;
+    this.rotationStartTime = 0;
+    this.rotationDuration = 200;
+    this.rotationProgress = 0;
+
     this.init();
   }
 
@@ -28,6 +34,18 @@ export class SceneManager {
     this.setupArukuchan();
     this.setupGrass();
   }
+
+  destroy() {
+    // Clean up Three.js resources
+    if (this.renderer) {
+      this.renderer.dispose();
+      this.renderer.forceContextLoss();
+      this.renderer.context = null;
+      this.renderer.domElement = null;
+    }
+    this.scene = null;
+    this.camera = null;
+  } 
 
   setupRenderer() {
     this.renderer = new THREE.WebGLRenderer({ 
@@ -76,6 +94,7 @@ export class SceneManager {
       arukuchan.rotation.set(0, Math.PI/2, 0);
       this.arukuchanRotationY = arukuchan.rotation.y;
       this.arukuchanRotationX = arukuchan.rotation.x;
+      this.arukuchanScaleY = arukuchan.scale.y;
       this.scene.add(arukuchan);
     }, undefined, (error) => {
       console.error("Error loading model:", error);
@@ -85,7 +104,6 @@ export class SceneManager {
   updateArukuchan() {
     const arukuchan = this.scene.getObjectByName("arukuchan");
     if (arukuchan) {
-      // 目標値に向かってスムーズに補間
       this.currentX += (this.targetX - this.currentX) * this.damping * this.damping;
       this.currentY += (this.targetY - this.currentY) * this.damping * this.damping / 2;
       
@@ -93,7 +111,27 @@ export class SceneManager {
       arukuchan.rotation.x = (this.arukuchanRotationX + this.currentX) / 10;
       arukuchan.position.y = -0.6 + this.currentY + Math.sin(Date.now() * 0.002) * 0.1;
       arukuchan.position.z = -this.currentX * 2;
+      
+      if (this.isRotating) {
+        const elapsed = Date.now() - this.rotationStartTime;
+        this.rotationProgress = Math.min(elapsed / this.rotationDuration, 1);
+        const originalRotationY = this.arukuchanRotationY;
+
+        arukuchan.rotation.y = originalRotationY + this.rotationProgress * Math.PI * 4;
+        
+        
+        if (this.rotationProgress >= 1) {
+          this.isRotating = false;
+          this.rotationProgress = 0;
+          this.arukuchanRotationY = arukuchan.rotation.y;
+        }
+      }
     }
+  }
+
+  startArukuchanRotation() {
+    this.isRotating = true; 
+    this.rotationStartTime = Date.now();
   }
 
   setupGrass() {

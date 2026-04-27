@@ -6,15 +6,11 @@ import { EventHandlers } from './EventHandlers.js';
 
 export class App {
   constructor() {
-    this.isVisible = true;
-    this.init();
-    this.setupVisibilityHandler();
-  }
+    this.isPaused = false;
+    this.animationFrameId = null;
 
-  setupVisibilityHandler() {
-    document.addEventListener('visibilitychange', () => {
-      this.isVisible = document.visibilityState === 'visible';
-    });
+    this.frameCount = 0;
+    this.init();
   }
 
   async init() {
@@ -23,8 +19,6 @@ export class App {
     this.canvasWrapper = document.getElementById("canvas-wrapper");
     this.windowWidth = this.canvasWrapper.clientWidth;
     this.windowHeight = this.canvasWrapper.clientHeight;
-
-    // console.log("Canvas size:", this.windowWidth, this.windowHeight);
 
     // Initialize managers
     this.sceneManager = new SceneManager(this.canvas, this.windowWidth, this.windowHeight);
@@ -48,19 +42,45 @@ export class App {
   }
 
   animate() {
-    if (this.isVisible) {
-      // Update scene state before rendering
+    if (this.isPaused) return;
+    
+    // this.sceneManager.update();
+    // this.postProcessing.render();
+    
+    // this.animationFrameId = setTimeout(() => {
+    //   this.animationFrameId = requestAnimationFrame(() => this.animate());
+    // }, 1000 / 20);
+
+    this.frameCount++;
+    
+    // reducing frame. 1/7 of RAF
+    if (this.frameCount % 7 === 0) {
       this.sceneManager.update();
-      
-      // Render with post-processing
       this.postProcessing.render();
-      
-      setTimeout(() => {
-        requestAnimationFrame(() => this.animate());
-      }, 1000 / 20); // 18 FPS
-    } else {
-      // When tab is not visible, check periodically if it becomes visible again
-      setTimeout(() => this.animate(), 1000);
     }
+    
+    this.animationFrameId = requestAnimationFrame((t) => this.animate(t));
+  }
+
+  pause() {
+    this.isPaused = true;
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+  }
+
+  resume() {
+    if (!this.isPaused) return;
+    this.isPaused = false;
+    this.animate();
+  }
+
+  destroy() {
+    // Clean up resources and event listeners
+    this.sceneManager.destroy();
+    this.postProcessing.destroy();
+    // this.ui.destroy();
+    this.eventHandlers.destroy();
   }
 }

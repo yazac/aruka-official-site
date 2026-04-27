@@ -56,7 +56,7 @@ onMounted(() => {
 
   @include mixin.sp {
     width: 100%;
-    padding: 0 mixin.vw(80, var.$dsSp);
+    padding: 0 mixin.vw(8w0, var.$dsSp);
   }
 }
 </style>

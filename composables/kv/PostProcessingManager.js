@@ -21,6 +21,18 @@ export class PostProcessingManager {
     this.setupPasses();
   }
 
+  destroy() {
+    // Clean up Three.js resources
+    if (this.effectComposer) {
+      this.effectComposer.dispose();
+      this.effectComposer = null;
+    }
+    this.renderPass = null;
+    this.posterizePass = null;
+    this.unrealBloomPass = null;
+    this.filmPass = null;
+  } 
+
   setupComposer(width, height) {
     this.effectComposer = new EffectComposer(this.renderer);
     this.effectComposer.setSize(width, height);
