@@ -1,5 +1,5 @@
 <template>
-  <div class="c-header" ref="headerElem" >
+  <div class="c-header" ref="headerElem">
     <div class="c-header-arukuchan-comment" ref="arukuchanComment">
       みつけてくれてありがとう！
     </div>
@@ -9,25 +9,36 @@
 
     <div class="c-header-logo-wrapper" ref="arukuchan" @click="onArukuchanClick">
       <!-- TOPの時だけ遷移を無効にする -->
-      <NuxtLink
-        to="/"
-        class="c-header-logo"
-        :aria-disabled="route.path === '/'"
-        @click.prevent="route.path === '/'"
-      >
+      <NuxtLink :to="getLocalizedPath('/')" class="c-header-logo" :aria-disabled="isCurrentPage('/')" @click.prevent="isCurrentPage('/')">
         <CommonLogoArukuChan color="lightgreen" />
       </NuxtLink>
     </div>
 
-    <nav class="c-header-nav">
-      <ul role="list">
-        <li role="listitem u-hover"><NuxtLink to="/">Home</NuxtLink></li>
-        <li role="listitem u-hover"><NuxtLink to="/works">Works</NuxtLink></li>
-        <li role="listitem u-hover"><NuxtLink to="/contact">Contact</NuxtLink></li>
+    <nav class="c-header-nav u-font-en">
+      <ul role="list" class="c-header-nav-page">
+        <li role="listitem" :class="{ 'is-current': isCurrentPage('/') }">
+          <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
+        </li>
+        <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
+          <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
+        </li>
+        <li role="listitem" :class="{ 'is-current': isCurrentPage('/works') }">
+          <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
+        </li>
       </ul>
 
-      <button>
-        =
+      <ul role="list" class="c-header-nav-lang">
+        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'en' }">
+          <NuxtLink to="/en">EN</NuxtLink>
+        </li>
+        <span>/</span>
+        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'jp' }">
+          <NuxtLink to="/">JP</NuxtLink>
+        </li>
+      </ul>
+
+      <button class="c-header-burger">
+        <span></span>
       </button>
     </nav>
   </div>
@@ -147,6 +158,7 @@ onMounted(() => {
 
 .c-header-logo-wrapper {
   transform: scale(1, 1);
+
   &.js-active {
     transform: scale(-1, 1);
   }
@@ -158,12 +170,14 @@ onMounted(() => {
   bottom: 0;
   left: 90px;
   margin: auto;
+  pointer-events: none;
+  z-index: 2;
 
   width: max-content;
   height: fit-content;
   padding: 8px 8px;
   border-radius: 25px;
-  filter: drop-shadow(0.1rem 0.1rem 0.05rem rgba(0,0,0,0.1));
+  filter: drop-shadow(0.1rem 0.1rem 0.05rem rgba(0, 0, 0, 0.1));
 
   background: var.$color-white;
 
@@ -200,7 +214,7 @@ onMounted(() => {
 .c-header-logo {
   width: 60px;
   display: inline-block;
-  transition: transform 0.05s cubic-bezier(0.89,-0.01, 0.2, 1);
+  transition: transform 0.05s cubic-bezier(0.89, -0.01, 0.2, 1);
 
   &:active {
     transform: scale(1.8, 0.5);
@@ -209,16 +223,26 @@ onMounted(() => {
 
 .c-header-nav {
   display: flex;
-  align-items: center;
-  gap: 40px;
+
+  @include mixin.pc {
+    gap: 40px;
+  }
+
+  @include mixin.sp {
+    gap: mixin.vw(30, var.$dsSp);
+  }
+
   ul {
     display: flex;
     align-items: center;
-    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
-    
+  }
+
+  .c-header-nav-page {
+    gap: 10px;
+
     @include mixin.sp {
       display: none;
     }
@@ -227,12 +251,69 @@ onMounted(() => {
       :deep(a) {
         color: var.$color-black;
         text-decoration: none;
+        padding: 10px 5px;
+      }
+
+      &.is-current {
+        pointer-events: none;
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          background: var.$color-black;
+          width: 100%;
+          height: 1px;
+          bottom: -4px;
+        }
+
+        :deep(a) {
+          opacity: 0.3;
+        }
       }
     }
   }
 
-  button {
-    @include mixin.fs-large;
+  .c-header-nav-lang {
+    
+    li {
+      :deep(a) {
+        color: var.$color-black;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 10px;
+      }
+
+      &.is-current {
+        pointer-events: none;
+        position: relative;
+
+        :deep(a) {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  button.c-header-burger {
+    @include mixin.pc {
+      display: none;
+    }
+
+    @include mixin.sp {
+      width: mixin.vw(50, var.$dsSp);
+      height: mixin.vw(50, var.$dsSp);
+      padding: mixin.vw(2, var.$dsSp);
+    }
+
+    span {
+      background: url('/assets/images/common/hamburger.svg') no-repeat center;
+      background-size: contain;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
