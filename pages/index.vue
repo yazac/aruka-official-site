@@ -4,9 +4,7 @@
     <TopKv />
 
     <CommonContentsInner>
-      <CommonSplitter class="u-anim-opacity" v-intersection-observe="{
-          threshold: 0.5
-        }"/>
+      <CommonSplitter />
 
       <div class="p-aboutme-wrapper">
 
