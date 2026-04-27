@@ -1,5 +1,9 @@
 // フラグ管理系
 
+// ブラウザタブのアクティブ/非アクティブ状態
+export const usePageVisibleState = (): Ref<boolean> =>
+  useState('page-visible', () => true)
+
 // ローディング
 export const useLoadingState = (): Ref<boolean> =>
   useState('loading', () => true)

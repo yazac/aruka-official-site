@@ -13,6 +13,8 @@ const loading = useLoadingState()
 const splashState = useSplashState()
 const kvResourcesLoaded = useKVResourcesLoadedState()
 const moduleRoot = ref<HTMLElement | null>(null)
+const pageVisibleState = usePageVisibleState()
+let appObj: App | null = null;
 
 import { App } from '@/composables/kv/main.js'
 
@@ -45,14 +47,37 @@ onMounted(async () => {
     await preloadKVResources();
     // Mark resources as loaded
     kvResourcesLoaded.value = true;
-  } catch (error) {
+
+    // Initialize Three.js app
+    appObj = new App();
+  } 
+  
+  catch (error) {
     console.warn('Resource preload warning:', error);
     // Mark as loaded even on error to not block splash
     kvResourcesLoaded.value = true;
   }
 
-  // Initialize Three.js app
-  new App();
+  window.addEventListener('visibilitychange', () => {
+    pageVisibleState.value = document.visibilityState === 'visible';
+  });
+});
+
+watch(pageVisibleState, (isVisible) => {
+  if (!appObj) return;
+  
+  if (isVisible) {
+    appObj.resume();
+  } else {
+    appObj.pause();
+  }
+});
+
+onUnmounted(() => {
+  if (appObj) {
+    appObj.destroy();
+    appObj = null;
+  }
 });
 
 </script>

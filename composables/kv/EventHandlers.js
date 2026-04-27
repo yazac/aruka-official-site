@@ -11,6 +11,7 @@ export class EventHandlers {
   setupEventListeners() {
     this.setupResizeHandler();
     this.setupMouseEventHandler();
+    this.setupClickEventHandler();
   }
 
   setupResizeHandler() {
@@ -31,6 +32,18 @@ export class EventHandlers {
       const x = (e.clientX - rect.left) / rect.width * 2 - 1;
       const y = -(e.clientY - rect.top) / rect.height * 2 + 1;
       this.sceneManager.updateObject(x*2, y*2);
+    });
+  }
+
+  setupClickEventHandler() {
+    const canvas = document.getElementById("canvas");
+    canvas.addEventListener("click", () => {
+      const timeNow = Date.now();
+      const animationDuration = 1000;
+
+      
+      console.log("Canvas clicked, starting rotation animation");
+      this.sceneManager.startArukuchanRotation();
     });
   }
 }
