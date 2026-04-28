@@ -1,6 +1,6 @@
 <!-- pages/index.vue -->
 <template>
-  <div>
+  <div class="u-font-en">
     <TopKv />
 
     <CommonContentsInner>
@@ -11,13 +11,13 @@
         <CommonTextNormalLarge lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
           threshold: 0.5
         }">
-          はじめまして、 a r u k a. といいます。
+          Hi! I'm a r u k a.
           <br>
           <br>
-          作曲、3Dグラフィック、プログラミングを組み合わせた作品を作っています。
+          I create works that combine music composition, 3D graphics, and programming.
           <br>
           <br>
-          お問い合わせは<NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>まで
+          For inquiries, please contact me at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
         </CommonTextNormalLarge>
 
         <div class="p-aboutme-img u-anim-stepmotion" 

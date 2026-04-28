@@ -1,12 +1,20 @@
 <template>
   <div class="c-footer" ref="footerElem">
     <div>
-      <nav class="c-footer-nav">
+      <nav class="c-footer-nav u-font-en">
         <ol role="list">
-          <li role="listitem"><NuxtLink to="/" class="u-font-en">Home</NuxtLink></li>
-          <li role="listitem"><NuxtLink to="/works" class="u-font-en">Works</NuxtLink></li>
-          <li role="listitem"><NuxtLink to="/contact" class="u-font-en">Contact</NuxtLink></li>
-          <li role="listitem"><NuxtLink to="/privacy-policy" class="u-font-en">Privacy Policy</NuxtLink></li>
+          <li role="listitem u-hover" v-if="!isCurrentPage('/')">
+            <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
+          </li>
+          <li role="listitem u-hover" v-if="!isCurrentPage('/about')">
+            <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
+          </li>
+          <li role="listitem u-hover" v-if="!isCurrentPage('/works')">
+            <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
+          </li>
+          <li role="listitem u-hover" v-if="!isCurrentPage('/privacy-policy')">
+            <NuxtLink :to="getLocalizedPath('/privacy-policy')">Privacy Policy</NuxtLink>
+          </li>
         </ol>
 
         <ul role="list">

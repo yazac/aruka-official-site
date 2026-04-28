@@ -44,22 +44,22 @@ export class App {
   animate() {
     if (this.isPaused) return;
     
-    // this.sceneManager.update();
-    // this.postProcessing.render();
+    this.sceneManager.update();
+    this.postProcessing.render();
     
-    // this.animationFrameId = setTimeout(() => {
-    //   this.animationFrameId = requestAnimationFrame(() => this.animate());
-    // }, 1000 / 20);
+    this.animationFrameId = setTimeout(() => {
+      this.animationFrameId = requestAnimationFrame(() => this.animate());
+    }, 1000 / 20);
 
-    this.frameCount++;
+    // this.frameCount++;
     
-    // reducing frame. 1/7 of RAF
-    if (this.frameCount % 7 === 0) {
-      this.sceneManager.update();
-      this.postProcessing.render();
-    }
+    // // reducing frame. 1/7 of RAF
+    // if (this.frameCount % 7 === 0) {
+    //   this.sceneManager.update();
+    //   this.postProcessing.render();
+    // }
     
-    this.animationFrameId = requestAnimationFrame((t) => this.animate(t));
+    // this.animationFrameId = requestAnimationFrame((t) => this.animate(t));
   }
 
   pause() {
@@ -81,6 +81,6 @@ export class App {
     this.sceneManager.destroy();
     this.postProcessing.destroy();
     // this.ui.destroy();
-    this.eventHandlers.destroy();
+    // this.eventHandlers.destroy();
   }
 }
