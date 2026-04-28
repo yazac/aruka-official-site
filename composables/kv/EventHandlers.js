@@ -4,14 +4,25 @@ export class EventHandlers {
     this.postProcessing = postProcessingManager;
     this.ui = uiControls;
     this.canvasWrapper = document.getElementById("canvas-wrapper");
-    
+
+    this.mousemoveScale = 0;
+
     this.setupEventListeners();
   }
 
   setupEventListeners() {
+    this.setupMousemoveScale();
     this.setupResizeHandler();
     this.setupMouseEventHandler();
     this.setupClickEventHandler();
+  }
+
+  setupMousemoveScale() {
+    if (window.innerWidth < 768) {
+      this.mousemoveScale = 0.5;
+    } else {
+      this.mousemoveScale = 2;
+    }
   }
 
   setupResizeHandler() {
@@ -21,28 +32,23 @@ export class EventHandlers {
       
       this.sceneManager.resize(newWidth, newHeight);
       this.postProcessing.resize(newWidth, newHeight);
+
+      this.setupMousemoveScale();
     }));
   }
 
   setupMouseEventHandler() {
-    let updateTimeout;
-
     window.addEventListener("mousemove", (e) => {
       const rect = this.canvasWrapper.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width * 2 - 1;
       const y = -(e.clientY - rect.top) / rect.height * 2 + 1;
-      this.sceneManager.updateObject(x*2, y*2);
+      this.sceneManager.updateObject(x*this.mousemoveScale, y*2);
     });
   }
 
   setupClickEventHandler() {
     const canvas = document.getElementById("canvas");
     canvas.addEventListener("click", () => {
-      const timeNow = Date.now();
-      const animationDuration = 1000;
-
-      
-      console.log("Canvas clicked, starting rotation animation");
       this.sceneManager.startArukuchanRotation();
     });
   }
