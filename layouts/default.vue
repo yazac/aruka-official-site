@@ -71,6 +71,8 @@ onMounted(async() => {
   await wait(500);
   splashState.value = false;
   // console.log('splashState', splashState.value)
+
+  ginkChanComment();
 })
 
 </script>
