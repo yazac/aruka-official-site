@@ -22,6 +22,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 h2 {
   margin-top: 50px;
-  @include mixin.fs-large;
+  @include mixin.fs-large-32;
 }
 </style>

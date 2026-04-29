@@ -21,6 +21,6 @@ const props = withDefaults(defineProps<Props>(), {
 @use '@/assets/css/_mixin.scss';
 
 p {
-  @include mixin.fs-normal;
+  @include mixin.fs-normal-16;
 }
 </style>

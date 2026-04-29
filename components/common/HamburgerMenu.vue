@@ -111,7 +111,7 @@ watch(() => menuState.value, (newVal) => {
   }
 
   li {
-    @include mixin.fs-medium;
+    @include mixin.fs-medium-18;
 
     :deep(a) {
       color: var.$color-black;

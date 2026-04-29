@@ -14,7 +14,7 @@
           Hi! I'm a r u k a.
           <br>
           <br>
-          I create works that combine music composition, 3D graphics, and programming.
+          I create works that combine music composition, 3D graphics and programming.
           <br>
           <br>
           For inquiries, please contact me at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>

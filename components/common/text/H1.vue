@@ -22,6 +22,6 @@ const props = withDefaults(defineProps<Props>(), {
 @use '@/assets/css/_mixin.scss';
 
 h1 {
-  @include mixin.fs-xlarge;
+  @include mixin.fs-xlarge-40;
 }
 </style>

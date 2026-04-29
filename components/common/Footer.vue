@@ -129,7 +129,7 @@ onUnmounted(() => {
     gap: 20px;
 
     li {
-      @include mixin.fs-medium;
+      @include mixin.fs-medium-18;
       letter-spacing: calc(40 / 1000 * 1rem);
 
       :deep(a) {
@@ -190,7 +190,7 @@ onUnmounted(() => {
   margin-top: 60px;
   margin-bottom: 8px;
   color: var.$color-white;
-  @include mixin.fs-small;
+  @include mixin.fs-small-12;
   letter-spacing: calc(40 / 1000 * 1rem);
 }
 </style>
