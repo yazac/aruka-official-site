@@ -37,11 +37,12 @@
         </li>
       </ul>
 
-      <button class="c-header-burger">
+      <button class="c-header-burger" ref="burgerMenuButton">
         <span></span>
       </button>
     </nav>
   </div>
+  <CommonHamburgerMenu />
 </template>
 
 
@@ -50,9 +51,11 @@ const route = useRoute()
 
 const mouse = useMousePositionState();
 const arukuchanClickNum = useArukuchanClickNumState();
+const menuState = useMenuOpenState();
 const arukuchan = ref<HTMLElement | null>(null);
 const arukuchanComment = ref<HTMLElement | null>(null);
 const arukuchanAttention = ref<HTMLElement | null>(null);
+const burgerMenuButton = ref<HTMLElement | null>(null);
 
 const headerElem = ref<HTMLElement | null>(null)
 useElemHeight(headerElem, 'header-height')
@@ -103,6 +106,10 @@ onMounted(() => {
       }
     }
   }));
+
+  burgerMenuButton.value?.addEventListener("click", () => {
+    menuState.value = true;
+  })
 
   watch(() => enterArukuchan.value, (newVal) => {
     // console.log(enterArukuchan.value)
@@ -168,7 +175,6 @@ onMounted(() => {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 90px;
   margin: auto;
   pointer-events: none;
   z-index: 2;
@@ -212,12 +218,19 @@ onMounted(() => {
 }
 
 .c-header-logo {
-  width: 60px;
   display: inline-block;
   transition: transform 0.05s cubic-bezier(0.89, -0.01, 0.2, 1);
 
   &:active {
     transform: scale(1.8, 0.5);
+  }
+
+  @include mixin.pc {
+    width: 60px;
+  }
+
+  @include mixin.sp {
+    width: mixin.vw(60, var.$dsSp);
   }
 }
 
