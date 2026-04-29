@@ -1,4 +1,5 @@
 <template>
+  <CommonHamburgerMenu />
   <div class="c-header" ref="headerElem">
     <div class="c-header-arukuchan-comment" ref="arukuchanComment">
       みつけてくれてありがとう！
@@ -42,7 +43,7 @@
       </button>
     </nav>
   </div>
-  <CommonHamburgerMenu />
+  
 </template>
 
 
