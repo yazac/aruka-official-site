@@ -222,7 +222,7 @@ onMounted(() => {
   transition: transform 0.05s cubic-bezier(0.89, -0.01, 0.2, 1);
 
   &:active {
-    transform: scale(1.8, 0.5);
+    transform: scale(1.3, 0.5);
   }
 
   @include mixin.pc {
