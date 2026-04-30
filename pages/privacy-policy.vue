@@ -2,7 +2,7 @@
   <CommonContentsInner>
     <div class="u-under-page-head-margin"></div>
     <CommonTextH1>
-      プライバシーポリシー
+      プライバシー<br class="u-is-sp">ポリシー
     </CommonTextH1>
     <CommonSplitter />
 
@@ -80,7 +80,7 @@
     </CommonTextH2>
 
     <CommonTextNormal>
-      当サイトの個人情報の取扱いに関するお問い合わせは、お問い合わせページよりご連絡ください。
+      当サイトの個人情報の取扱いに関するお問い合わせは、お問い合わせは<NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>までご連絡ください。
     </CommonTextNormal>
 
     <div class="p-spacer"></div>

@@ -41,7 +41,6 @@ import { watch } from 'vue'
 import SnsBar from '~/components/common/SnsBar.vue';
 
 const route = useRoute();
-const router = useRouter();
 const loading = useLoadingState();
 const splashState = useSplashState();
 const kvResourcesLoaded = useKVResourcesLoadedState();
@@ -52,18 +51,22 @@ const kvResourcesLoaded = useKVResourcesLoadedState();
 // })
 
 onMounted(async() => {
-  // Wait for KV resources to load or timeout after 2000ms
-  const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
-  const kvLoadComplete = new Promise(resolve => {
-    const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
-      if (loaded) {
-        unwatch();
-        resolve(true);
-      }
+  if (route.path === "/" || route.path === "/en") {
+    // Wait for KV resources to load or timeout after 2000ms
+    const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
+    const kvLoadComplete = new Promise(resolve => {
+      const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
+        if (loaded) {
+          unwatch();
+          resolve(true);
+        }
+      });
     });
-  });
 
-  await Promise.all([kvLoadComplete, kvLoadTimeout]);
+    await Promise.all([kvLoadComplete, kvLoadTimeout]);
+  } else {
+    await wait(500)
+  }
 
   loading.value = false;
   // console.log('loading', loading.value)
