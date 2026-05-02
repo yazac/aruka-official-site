@@ -4,11 +4,11 @@
     <TopKv />
 
     <CommonContentsInner>
-      <CommonSplitter />
+      <!-- <CommonSplitter /> -->
 
       <div class="p-aboutme-wrapper">
 
-        <CommonTextNormalLarge lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
+        <!-- <CommonTextNormalLarge lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
           threshold: 0.5
         }">
           はじめまして、 a r u k a. といいます。
@@ -18,7 +18,7 @@
           <br>
           <br>
           お問い合わせは<NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>まで
-        </CommonTextNormalLarge>
+        </CommonTextNormalLarge> -->
 
         <div class="p-aboutme-img u-anim-stepmotion" 
         v-step-animation="{ 

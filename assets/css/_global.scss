@@ -1,10 +1,12 @@
 @use "var";
+@use "mixin";
 
 html {
   box-sizing: border-box;
   letter-spacing: 0.05em;
   scroll-behavior: auto;
   overscroll-behavior-x: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 *,
@@ -68,6 +70,18 @@ a.external-icon[target="_blank"] {
 .u-font-jp {
   font-family: "Zen Old Mincho", serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.u-is-pc {
+  @include mixin.sp {
+    display: none;
+  }
+}
+
+.u-is-sp {
+  @include mixin.pc {
+    display: none;
+  }
 }
 
 .u-text-accessory-01 {

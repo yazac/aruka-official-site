@@ -2,7 +2,7 @@
 <template>
   <div class="layout u-font-jp">
     <VueLenis root />
-    <div class="overlay"></div>
+    
     
     
     <TopSplash v-if="splashState" />
@@ -12,14 +12,18 @@
       <CommonHeader />
     </header>
 
-    <SnsBar />
+    <CommonSnsBar />
+
+    <!-- モーダル用 -->
+    <div class="modal">
+      <CommonModal />
+    </div>
 
     <!-- メインコンテンツ -->
     <main class="main ">
       <slot />
-    </main>
+    </main>    
 
-    
 
     <!-- フッター -->
     <footer class="footer">
@@ -36,34 +40,29 @@
 
 <script setup lang="ts">
 import { VueLenis, useLenis } from 'lenis/vue'
-import { useRouter } from 'vue-router'
-import { watch } from 'vue'
-import SnsBar from '~/components/common/SnsBar.vue';
 
 const route = useRoute();
-const router = useRouter();
 const loading = useLoadingState();
 const splashState = useSplashState();
 const kvResourcesLoaded = useKVResourcesLoadedState();
 
-// const lenis = useLenis((lenis) => {
-//   // called every scroll
-//   // console.log(lenis)
-// })
-
 onMounted(async() => {
-  // Wait for KV resources to load or timeout after 2000ms
-  const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
-  const kvLoadComplete = new Promise(resolve => {
-    const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
-      if (loaded) {
-        unwatch();
-        resolve(true);
-      }
+  if (route.path === "/" || route.path === "/en") {
+    // Wait for KV resources to load or timeout after 2000ms
+    const kvLoadTimeout = new Promise(resolve => setTimeout(resolve, 1300));
+    const kvLoadComplete = new Promise(resolve => {
+      const unwatch = watch(() => kvResourcesLoaded.value, (loaded) => {
+        if (loaded) {
+          unwatch();
+          resolve(true);
+        }
+      });
     });
-  });
 
-  await Promise.all([kvLoadComplete, kvLoadTimeout]);
+    await Promise.all([kvLoadComplete, kvLoadTimeout]);
+  } else {
+    await wait(500)
+  }
 
   loading.value = false;
   // console.log('loading', loading.value)
@@ -82,6 +81,7 @@ onMounted(async() => {
 @use '@/assets/css/_mixin.scss';
 .layout {
   background-color: var.$color-white;
+  position: relative;
 }
 
 .layout-inner {
@@ -102,21 +102,12 @@ onMounted(async() => {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  @include mixin.sp {
-    overflow: hidden;
-  }
 }
 
-.overlay {
-  mix-blend-mode: color-burn;
-  background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 100vh;
+.modal {
   position: fixed;
+  z-index: 10;
   top: 0;
-  z-index: 9;
-  opacity: 0.4;
-  pointer-events: none;
+  width: 100%;
 }
 </style>

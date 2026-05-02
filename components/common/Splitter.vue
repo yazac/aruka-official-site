@@ -13,12 +13,21 @@
 
 <style scoped lang="scss">
 @use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
 
 .c-splitter {
   width: 0%;
-  height: 2px;
   background-color: var.$color-light-green;
-  margin-top: 60px;
+
+  @include mixin.pc {
+    height: 2px;
+    margin-top: 20px;
+  }
+
+  @include mixin.sp {
+    height: 2px;
+    margin-top: mixin.vw(20, var.$dsSp);
+  }
 
   &.js-active {
     width: 100%;
