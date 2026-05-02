@@ -21,12 +21,12 @@
 
   @include mixin.pc {
     height: 2px;
-    margin-top: 60px;
+    margin-top: 20px;
   }
 
   @include mixin.sp {
     height: 2px;
-    margin-top: mixin.vw(60, var.$dsSp);
+    margin-top: mixin.vw(20, var.$dsSp);
   }
 
   &.js-active {

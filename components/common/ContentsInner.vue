@@ -11,6 +11,7 @@
 .c-contents-inner {
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
   @include mixin.pc {
     max-width: 1200px;
     padding: 0 120px 0;

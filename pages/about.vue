@@ -1,26 +1,27 @@
 <!-- pages/about.vue -->
 <template>
-  <CommonContentsInner>
-    <div class="u-under-page-head-margin"></div>
-    <CommonTextH1 lang="en">
-      About
-    </CommonTextH1>
+  <div>
+    <CommonContentsInner>
+      <div class="u-under-page-head-margin"></div>
+      <CommonTextH1 lang="en">
+        About
+      </CommonTextH1>
 
-    <CommonSplitter />
+      <CommonSplitter />
 
-    <CommonTextNormal>
-      はじめまして、 a r u k a. といいます。
-      <br>
-      <br>
-      日本で音楽、3Dグラフィック、プログラミングを組み合わせた作品を作っています。
-      生まれ育った故郷の自然が大好きで、そんな景色や感覚を表現できたらいいなとおもっています。
-    </CommonTextNormal>
+      <CommonTextNormal>
+        はじめまして、 a r u k a. といいます。
+        <br>
+        <br>
+        日本で音楽、3Dグラフィック、プログラミングを組み合わせた作品を作っています。
+        生まれ育った故郷の自然が大好きで、そんな景色や感覚を表現できたらいいなとおもっています。
+      </CommonTextNormal>
 
-  </CommonContentsInner>    
+    </CommonContentsInner>    
+  </div>
 </template>
 
 <script setup>
-// 必要な設定があれば追加
 </script>
 
 <style lang="scss" scoped>

@@ -3,6 +3,7 @@
     threshold: 0.5
   }">
     <div class="c-kv-bg" id="canvas-wrapper">
+      <div class="overlay"></div>
       <canvas id="canvas"></canvas>
     </div>
   </div>
@@ -99,5 +100,19 @@ onUnmounted(() => {
 .c-kv-bg {
   width: 100%;
   height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  mix-blend-mode: color-burn;
+  background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
 }
 </style>

@@ -2,7 +2,7 @@
 <template>
   <div class="layout u-font-jp">
     <VueLenis root />
-    <div class="overlay"></div>
+    
     
     
     <TopSplash v-if="splashState" />
@@ -105,21 +105,5 @@ onMounted(async() => {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  @include mixin.sp {
-    overflow: hidden;
-  }
-}
-
-.overlay {
-  mix-blend-mode: color-burn;
-  background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
-  background-size: contain;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 9;
-  opacity: 0.4;
-  pointer-events: none;
 }
 </style>
