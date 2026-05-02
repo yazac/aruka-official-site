@@ -1,5 +1,5 @@
 <template>
-  <div class="c-work-card u-anim-stepmotion" 
+  <button class="c-work-card u-anim-stepmotion" 
     v-step-animation="{ 
       duration: 500,
       delay: 0,
@@ -11,6 +11,7 @@
       threshold: 0.5,
       retrigger: false,
     }"
+    @click="requestModal()"
   >
     <div class="c-work-card-image-wrap">
       <NuxtImg 
@@ -23,15 +24,23 @@
     <CommonTextNormal class="c-work-card-title">
       {{ title }}
     </CommonTextNormal>
-  </div>
+  </button>
 </template>
 
 <script setup lang="ts">
 interface Props {
+  id: string
   image: string
   title: string
 }
-defineProps<Props>()
+
+const props = defineProps<Props>()
+
+const { openModal } = useModal()
+
+function requestModal() {
+  openModal({ type: 'works', id: props.id })
+}
 
 </script>
 

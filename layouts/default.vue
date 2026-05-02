@@ -12,14 +12,18 @@
       <CommonHeader />
     </header>
 
-    <SnsBar />
+    <CommonSnsBar />
+
+    <!-- モーダル用 -->
+    <div class="modal">
+      <CommonModal />
+    </div>
 
     <!-- メインコンテンツ -->
     <main class="main ">
       <slot />
-    </main>
+    </main>    
 
-    
 
     <!-- フッター -->
     <footer class="footer">
@@ -36,19 +40,11 @@
 
 <script setup lang="ts">
 import { VueLenis, useLenis } from 'lenis/vue'
-import { useRouter } from 'vue-router'
-import { watch } from 'vue'
-import SnsBar from '~/components/common/SnsBar.vue';
 
 const route = useRoute();
 const loading = useLoadingState();
 const splashState = useSplashState();
 const kvResourcesLoaded = useKVResourcesLoadedState();
-
-// const lenis = useLenis((lenis) => {
-//   // called every scroll
-//   // console.log(lenis)
-// })
 
 onMounted(async() => {
   if (route.path === "/" || route.path === "/en") {
@@ -85,6 +81,7 @@ onMounted(async() => {
 @use '@/assets/css/_mixin.scss';
 .layout {
   background-color: var.$color-white;
+  position: relative;
 }
 
 .layout-inner {
@@ -105,5 +102,12 @@ onMounted(async() => {
   position: relative;
   width: 100%;
   margin: 0 auto;
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
 }
 </style>

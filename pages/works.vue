@@ -29,6 +29,7 @@
           <WorksCard
             v-for="item in filteredWorks"
             :key="item.id"
+            :id="item.id"
             :image=item.image
             :title=item.title
           />
