@@ -1,4 +1,3 @@
-<!-- pages/about.vue -->
 <template>
   <div>
     <CommonContentsInner>

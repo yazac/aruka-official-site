@@ -2,7 +2,7 @@
   "categories": [
     { "id": "music", "label": "Music", "order": 1 },
     { "id": "3d", "label": "3D", "order": 2 },
-    { "id": "code", "label": "Code", "order": 3 }
+    { "id": "programming", "label": "Programming", "order": 3 }
   ],
   "works": [
     {
@@ -30,7 +30,7 @@
       "id": "work-004",
       "title": "Particle Letter",
       "image": "https://placehold.jp/800x800.png",
-      "categories": ["code", "3d"],
+      "categories": ["programming", "3d"],
       "publishedAt": "2026-02-18"
     },
     {
@@ -51,21 +51,21 @@
       "id": "work-007",
       "title": "Signal Garden",
       "image": "https://placehold.jp/800x800.png",
-      "categories": ["code"],
+      "categories": ["programming"],
       "publishedAt": "2026-03-15"
     },
     {
       "id": "work-008",
       "title": "Float Archive",
       "image": "https://placehold.jp/800x800.png",
-      "categories": ["code"],
+      "categories": ["programming"],
       "publishedAt": "2026-03-24"
     },
     {
       "id": "work-009",
       "title": "Cloud Cursor",
       "image": "https://placehold.jp/800x800.png",
-      "categories": ["code", "music"],
+      "categories": ["programming", "music"],
       "publishedAt": "2026-04-02"
     },
     {
@@ -86,7 +86,7 @@
       "id": "work-012",
       "title": "Draft Sequence",
       "image": "https://placehold.jp/800x800.png",
-      "categories": ["music", "code"],
+      "categories": ["music", "programming"],
       "publishedAt": "2026-05-08"
     }
   ]
