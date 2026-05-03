@@ -30,11 +30,11 @@
 
       <ul role="list" class="c-header-nav-lang">
         <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'en' }">
-          <NuxtLink :to="'/en' + route.path">EN</NuxtLink>
+          <NuxtLink :to="'/en' + getBasePath()">EN</NuxtLink>
         </li>
         <span>/</span>
         <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'jp' }">
-          <NuxtLink :to="route.path.replace(/^\/en\//, '/')">JP</NuxtLink>
+          <NuxtLink :to="getBasePath()">JP</NuxtLink>
         </li>
       </ul>
 
