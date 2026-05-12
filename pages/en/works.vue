@@ -2,9 +2,9 @@
   <div>
     <CommonContentsInner>
       <div class="u-under-page-head-margin"></div>
-      <CommonTextH1 lang="en">
+      <CommonTextH1Large lang="en">
         WORKS
-      </CommonTextH1>
+      </CommonTextH1Large>
 
       <CommonSplitter />
 
@@ -29,9 +29,14 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image=item.image
-            :title=item.title
+            :image="item.image === null? 'https://placehold.jp/800x800.png': item.image"
+            :title=item.title.en
           />
+          <div v-if="filteredWorks.length === 0"> 
+            <CommonTextNormalLarge>
+              まだないよ
+            </CommonTextNormalLarge>
+          </div>
         </div>
       </Transition>
     </CommonContentsInner>

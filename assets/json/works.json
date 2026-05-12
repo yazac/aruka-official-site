@@ -1,93 +1,293 @@
 {
   "categories": [
-    { "id": "music", "label": "Music", "order": 1 },
-    { "id": "3d", "label": "3D", "order": 2 },
-    { "id": "programming", "label": "Programming", "order": 3 }
+    {
+      "id": "music",
+      "label": "Music",
+      "order": 1
+    },
+    {
+      "id": "3d",
+      "label": "3D graphic",
+      "order": 2
+    },
+    {
+      "id": "programming",
+      "label": "Programming",
+      "order": 3
+    }
   ],
   "works": [
     {
       "id": "work-001",
-      "title": "Dawn Signal",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["music"],
-      "publishedAt": "2026-01-14"
+      "title": {
+        "jp": "あの枝の葉",
+        "en": "the leaf on that branch"
+      },
+      "image": "/music/the_leaf_on_that_branch.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-03-30",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-002",
-      "title": "Aruku Bloom",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["3d"],
-      "publishedAt": "2026-01-28"
+      "title": {
+        "jp": "土の匂いがする",
+        "en": "smells like earth"
+      },
+      "image": "/music/smells_like_earth.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-04-19",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-003",
-      "title": "Looping Meadow",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["music"],
-      "publishedAt": "2026-02-06"
+      "title": {
+        "jp": "Unseen Skies",
+        "en": "Unseen Skies"
+      },
+      "image": "/music/ctv3.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-07-01",
+      "description": {
+        "jp": "san holoで有名なレーベルbitbird主催のコンピレーション、\"Create together ver.3\"からのリリース。\n2045とfungeeyとの合作。",
+        "en": "test test test test test test test test test test test test test test test test test test test test test test test test test test test "
+      }
     },
     {
       "id": "work-004",
-      "title": "Particle Letter",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["programming", "3d"],
-      "publishedAt": "2026-02-18"
+      "title": {
+        "jp": "コースティクス",
+        "en": "caustics"
+      },
+      "image": "/music/caustics.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-09-13",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-005",
-      "title": "Night Window",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["music"],
-      "publishedAt": "2026-02-25"
+      "title": {
+        "jp": "稲穂垂る",
+        "en": "golden field"
+      },
+      "image": "/music/稲穂垂るart_1000.png",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-10-28",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-006",
-      "title": "Stone Choir",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["music", "3d"],
-      "publishedAt": "2026-03-03"
+      "title": {
+        "jp": "行方",
+        "en": "yukue"
+      },
+      "image": "/music/yuque.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-12-17",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-007",
-      "title": "Signal Garden",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["programming"],
-      "publishedAt": "2026-03-15"
+      "title": {
+        "jp": "Aquarius",
+        "en": "Aquarius"
+      },
+      "image": "/music/aquarius.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2023-05-19",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-008",
-      "title": "Float Archive",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["programming"],
-      "publishedAt": "2026-03-24"
+      "title": {
+        "jp": "すなおなきもち",
+        "en": "sincerity"
+      },
+      "image": "/music/sunao.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2023-06-12",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-009",
-      "title": "Cloud Cursor",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["programming", "music"],
-      "publishedAt": "2026-04-02"
+      "title": {
+        "jp": "サモンセンス (feat. a r u k a.) - a r u k a. Remix",
+        "en": "summonsense (feat. a r u k a.) - a r u k a. Remix"
+      },
+      "image": "/music/made_santo_witches_remix.jpg",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2024-10-24",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-010",
-      "title": "Paper Sun",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["3d", "music"],
-      "publishedAt": "2026-04-10"
+      "title": {
+        "jp": "パラセール",
+        "en": "parasail"
+      },
+      "image": "/music/parasail-artwork.png",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2025-02-22",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-011",
-      "title": "Unreleased Marble",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["3d"],
-      "publishedAt": "2026-05-01"
+      "title": {
+        "jp": "湾岸通り / 歩く人 + a r u k a. feat. 初音ミク",
+        "en": "Kaigan dori / pedestrian + a r u k a. feat. Hatsune Miku"
+      },
+      "image": "/music/maxresdefault.webp",
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2025-09-12",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
     },
     {
       "id": "work-012",
-      "title": "Draft Sequence",
-      "image": "https://placehold.jp/800x800.png",
-      "categories": ["music", "programming"],
-      "publishedAt": "2026-05-08"
+      "title": {
+        "jp": "夕暮れに背を向け",
+        "en": "twilight"
+      },
+      "image": "/3d/aruku-chaaan.png",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2022-02-22",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "work-013",
+      "title": {
+        "jp": "あさもや",
+        "en": "morning haze"
+      },
+      "image": "/3d/aruku-morning2.jpg",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2023-01-08",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "work-014",
+      "title": {
+        "jp": "かえりみち",
+        "en": "way back home"
+      },
+      "image": "/3d/aruku-night.png",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2023-01-08",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "work-015",
+      "title": {
+        "jp": "干し草",
+        "en": "hay"
+      },
+      "image": "",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2023-04-10",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "work-016",
+      "title": {
+        "jp": "Wavfire - One day ジャケット制作",
+        "en": "Wavfire - One day album artwork"
+      },
+      "image": "/3d/one_day.jpg",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2023-04-30",
+      "description": {
+        "jp": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "work-017",
+      "title": {
+        "jp": "MEs Market 2025",
+        "en": "MEs Market 2025"
+      },
+      "image": "/3d/mes/untitled.png",
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2025-12-06",
+      "description": {
+        "jp": "<a url=\"https://www.o-me.io/\">O Ltd.</a> 主催のバーチャルイベントにて、ワールドの作成と出展を行いました。\n<a url=\"https://www.instagram.com/atinyyellowleaf\">ginko</a>との共作で暖かな絵本のような世界を作成しました。",
+        "en": "test test test test test test test test test test test test test test test test test test test test test test test test test test test "
+      }
     }
   ]
 }

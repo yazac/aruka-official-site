@@ -21,6 +21,18 @@
 }
 
 // font-set
+@mixin fs-xlarge-60 {
+  line-height: 1.2;
+
+  @include pc {
+    font-size: 60px;
+  }
+
+  @include sp {
+    font-size: vw(60, var.$dsSp);
+  }
+}
+
 @mixin fs-xlarge-40 {
   line-height: 1.2;
 
