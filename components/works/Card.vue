@@ -20,7 +20,7 @@
         width="800"
         height="800"
         loading="lazy" 
-        quality="20"
+        quality="50"
         placeholder
       />
     </div>
