@@ -1,14 +1,14 @@
 <template>
   <CommonHamburgerMenu />
   <div class="c-header" ref="headerElem">
-    <div class="c-header-arukuchan-comment" ref="arukuchanComment">
+    <div class="c-header-arukuchan-comment" :class="{ 'js-active': isCommentVisible }">
       みつけてくれてありがとう！
     </div>
 
-    <div class="c-header-logo-attention" ref="arukuchanAttention">
+    <div class="c-header-logo-attention" :class="{ 'js-active': isAttentionVisible }">
     </div>
 
-    <div class="c-header-logo-wrapper" ref="arukuchan" @click="onArukuchanClick">
+    <div class="c-header-logo-wrapper" ref="arukuchan" :class="{ 'js-active': isArukuchanActive }" @click="onArukuchanClick">
       <!-- TOPの時だけ遷移を無効にする -->
       <NuxtLink :to="getLocalizedPath('/')" class="c-header-logo" :aria-disabled="isCurrentPage('/')" @click.prevent="isCurrentPage('/')">
         <CommonLogoArukuChan color="lightgreen" />
@@ -38,7 +38,7 @@
         </li>
       </ul>
 
-      <button class="c-header-burger" ref="burgerMenuButton">
+      <button class="c-header-burger" @click="onBurgerClick">
         <span></span>
       </button>
     </nav>
@@ -50,78 +50,73 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const mouse = useMousePositionState();
-const arukuchanClickNum = useArukuchanClickNumState();
-const menuState = useMenuOpenState();
-const arukuchan = ref<HTMLElement | null>(null);
-const arukuchanComment = ref<HTMLElement | null>(null);
-const arukuchanAttention = ref<HTMLElement | null>(null);
-const burgerMenuButton = ref<HTMLElement | null>(null);
+const mouse = useMousePositionState()
+const arukuchanClickNum = useArukuchanClickNumState()
+const menuState = useMenuOpenState()
 
+const arukuchan = ref<HTMLElement | null>(null)
 const headerElem = ref<HTMLElement | null>(null)
+
 useElemHeight(headerElem, 'header-height')
 
-const enterArukuchan = ref(false);
+const isArukuchanActive = ref(false)
+const isCommentVisible = ref(false)
+const isAttentionVisible = ref(false)
+
+const arukuSound = ref<HTMLAudioElement | null>(null)
+
+const onBurgerClick = () => {
+  menuState.value = true
+}
 
 const onArukuchanClick = () => {
-  const arukusound = new Audio('/assets/sound/arukuchan.mp3')
-  arukusound.play();
+  const sound = arukuSound.value
 
-  arukuchanClickNum.value += 1
+  if (!sound) return
+
+  sound.currentTime = 0
+  sound.play()
+
+  arukuchanClickNum.value++
 
   if (arukuchanClickNum.value % 20 === 0) {
-    arukuchanComment.value?.classList.add('js-active')
+    isCommentVisible.value = true
+
     setTimeout(() => {
-      arukuchanComment.value?.classList.remove('js-active')
+      isCommentVisible.value = false
     }, 2000)
   }
 }
 
+watch(isArukuchanActive, (active) => {
+  if (!active) return
+
+  isAttentionVisible.value = true
+
+  setTimeout(() => {
+    isAttentionVisible.value = false
+  }, 200)
+})
 
 onMounted(() => {
-  const rect = arukuchan.value?.getBoundingClientRect();
+  arukuSound.value = new Audio('/assets/sound/arukuchan.mp3')
 
-  const teritory = {
-    xMin: (rect?.x ?? 0) + 200,
-    yMin: (rect?.y ?? 0) + 200,
-  };
+  window.addEventListener(
+    'mousemove',
+    throttle(200, (e: MouseEvent) => {
+      mouse.value.x = e.clientX
+      mouse.value.y = e.clientY
 
+      const rect = arukuchan.value?.getBoundingClientRect()
 
-  window.addEventListener('mousemove', throttle(200, (e: MouseEvent) => {
-    mouse.value.x = e.clientX;
-    mouse.value.y = e.clientY;
+      if (!rect) return
 
-    if (teritory.xMin && teritory.yMin) {
-      if (mouse.value.x < teritory.xMin && mouse.value.y < teritory.yMin) {
-        arukuchan.value?.classList.add('js-active');
-        if (enterArukuchan.value == false) {
-          enterArukuchan.value = true;
-        }
-      }
-      else {
-        arukuchan.value?.classList.remove('js-active');
-
-        if (enterArukuchan.value == true) {
-          enterArukuchan.value = false;
-        }
-      }
-    }
-  }));
-
-  burgerMenuButton.value?.addEventListener("click", () => {
-    menuState.value = true;
-  })
-
-  watch(() => enterArukuchan.value, (newVal) => {
-    // console.log(enterArukuchan.value)
-    if (enterArukuchan.value == true) {
-      arukuchanAttention.value?.classList.add('js-active');
-      setTimeout(() => {
-        arukuchanAttention.value?.classList.remove('js-active');
-      }, 200);
-    }
-  })
-});
+      isArukuchanActive.value =
+        mouse.value.x < rect.x + 200 &&
+        mouse.value.y < rect.y + 200
+    })
+  )
+})
 </script>
 
 <style scoped lang="scss">

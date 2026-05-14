@@ -1,7 +1,6 @@
 <template>
   <div 
     class="c-works-modal_content u-anim-stepmotion"
-    :class="{'js-active': displayState}"
     v-step-animation="{ 
       duration: 200,
       delay: 0,
@@ -17,16 +16,26 @@
     <template v-if="matchedWork">
       <div class="c-works-modal_content-image-wrap">
         <NuxtImg 
-          :src="matchedWork.image"
-          :alt="matchedWork.title"
+          :src="matchedWork.image === null? 'https://placehold.jp/800x800.png': `/assets/images/works${matchedWork.image}`"
+          :alt="matchedWork.title[getCurrentLanguage()]"
           loading="lazy" 
           placeholder
-          @load="onImageLoaded"
+          width="800"
+          height="800"
+          quality="80"
+          fit="contain"
         />
       </div>
-      <CommonTextNormal class="c-works-modal_content-title">
-        {{ matchedWork.title }}
-      </CommonTextNormal>
+
+      <div class="c-works-modal_content-texts">
+        <CommonTextNormal class="c-works-modal_content-title">
+          {{ matchedWork.title[getCurrentLanguage()] }}
+        </CommonTextNormal>
+
+        <CommonTextNormal class="c-works-modal_content-desc">
+          {{ matchedWork.description[getCurrentLanguage()] }}
+        </CommonTextNormal>
+      </div>
     </template>
 
     <!-- Fallback if no match -->
@@ -47,15 +56,9 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const displayState = ref(false)
-
 const matchedWork = computed(() =>
   worksDetailData.find((item) => String(item.id) === props.id)
 )
-const onImageLoaded = () => {
-  displayState.value = true
-}
 </script>
 
 <style scoped lang="scss">
@@ -83,8 +86,13 @@ const onImageLoaded = () => {
   }
 }
 
+.c-works-modal_content-texts {
+  word-break: break-word;
+}
+
 .c-works-modal_content-image-wrap {
   @include mixin.pc {
+    flex-shrink: 0;
     :deep(img) {
       height: 100%;
     }
