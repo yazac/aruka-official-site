@@ -1,7 +1,6 @@
 <template>
   <div 
     class="c-works-modal_content u-anim-stepmotion"
-    :class="{'js-active': displayState}"
     v-step-animation="{ 
       duration: 200,
       delay: 0,
@@ -21,7 +20,10 @@
           :alt="matchedWork.title[getCurrentLanguage()]"
           loading="lazy" 
           placeholder
-          @load="onImageLoaded"
+          width="800"
+          height="800"
+          quality="80"
+          fit="contain"
         />
       </div>
 
@@ -54,15 +56,9 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const displayState = ref(false)
-
 const matchedWork = computed(() =>
   worksDetailData.find((item) => String(item.id) === props.id)
 )
-const onImageLoaded = () => {
-  displayState.value = true
-}
 </script>
 
 <style scoped lang="scss">

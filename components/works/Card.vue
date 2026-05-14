@@ -17,7 +17,10 @@
       <NuxtImg 
         :src="image"
         :alt="title"
+        width="800"
+        height="800"
         loading="lazy" 
+        quality="20"
         placeholder
       />
     </div>
@@ -54,5 +57,9 @@ function requestModal() {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+.c-work-card-image-wrap {
+  aspect-ratio: 1;
 }
 </style>

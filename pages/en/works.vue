@@ -29,7 +29,7 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image="item.image === null? 'https://placehold.jp/800x800.png': item.image"
+            :image="item.image === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image}`"
             :title=item.title.en
           />
           <div v-if="filteredWorks.length === 0"> 
