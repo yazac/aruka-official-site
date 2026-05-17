@@ -1,5 +1,5 @@
 <template>
-  <button class="c-work-card u-anim-stepmotion" 
+  <div class="c-work-card-wrap u-anim-stepmotion"
     v-step-animation="{ 
       duration: 500,
       delay: 0,
@@ -10,24 +10,24 @@
     v-intersection-observe="{
       threshold: 0.5,
       retrigger: false,
-    }"
-    @click="requestModal()"
-  >
-    <div class="c-work-card-image-wrap">
-      <NuxtImg 
-        :src="image"
-        :alt="title"
-        width="800"
-        height="800"
-        loading="lazy" 
-        quality="50"
-        placeholder
-      />
-    </div>
-    <CommonTextNormal class="c-work-card-title">
-      {{ title }}
-    </CommonTextNormal>
-  </button>
+    }">
+    <button class="c-work-card" @click="requestModal()">
+      <div class="c-work-card-image-wrap">
+        <NuxtImg 
+          :src="image"
+          :alt="title"
+          width="800"
+          height="800"
+          loading="lazy" 
+          quality="50"
+          placeholder
+        />
+      </div>
+      <!-- <CommonTextNormalLarge class="c-work-card-title">
+        {{ title }}
+      </CommonTextNormalLarge> -->
+    </button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -48,9 +48,25 @@ function requestModal() {
 </script>
 
 <style lang="scss" scoped>
+.c-work-card-wrap {
+  overflow: hidden;
+  &:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+}
+
 .c-work-card {
   position: relative;
   width: 100%;
+
+  &:hover{
+    .c-work-card-image-wrap {
+      // filter: blur(0.2rem);
+      transform: scale(1.02);
+    }
+  }
 }
 
 .c-work-card-title {
@@ -61,5 +77,7 @@ function requestModal() {
 
 .c-work-card-image-wrap {
   aspect-ratio: 1;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
 }
 </style>
