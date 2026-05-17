@@ -67,6 +67,16 @@ a.external-icon[target="_blank"] {
   color: var.$color-dark-green;
 }
 
+.u-icon {
+  display: table-cell;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background-color: currentColor;
+  width: 2em;
+  height: 2em;
+}
+
 .u-font-jp {
   font-family: "Zen Old Mincho", serif;
   -webkit-font-smoothing: antialiased;

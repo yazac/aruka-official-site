@@ -80,14 +80,8 @@ onMounted(async() => {
 @use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
 .layout {
-  background-color: var.$color-white;
-  position: relative;
-}
-
-.layout-inner {
   background-color: var.$color-beige;
   position: relative;
-  pointer-events: all;
 }
 
 .header {

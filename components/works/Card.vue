@@ -23,9 +23,12 @@
           placeholder
         />
       </div>
-      <!-- <CommonTextNormalLarge class="c-work-card-title">
-        {{ title }}
-      </CommonTextNormalLarge> -->
+
+      <!-- SEO用に見えないテキストを挿入 -->
+      <p class="c-work-card-text-info" style="display: none">
+        <p>{{ title }}</p> 
+        <p v-if="desc">{{ desc }}</p>
+      </p>
     </button>
   </div>
 </template>
@@ -35,6 +38,7 @@ interface Props {
   id: string
   image: string
   title: string
+  desc?: string
 }
 
 const props = defineProps<Props>()
@@ -67,12 +71,6 @@ function requestModal() {
       transform: scale(1.02);
     }
   }
-}
-
-.c-work-card-title {
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 
 .c-work-card-image-wrap {

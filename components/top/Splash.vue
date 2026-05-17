@@ -27,7 +27,7 @@ onMounted(() => {
 
 .c-splash {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   overflow: hidden;
   background: var.$color-beige;
 
