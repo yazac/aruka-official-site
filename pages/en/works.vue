@@ -15,12 +15,10 @@
           @click="setCategory(item.id)"
           :class="{ 'js-active': currentCategory === item.id }"
         >
-          <p class="p-works-filter-button-inner">
-            <CommonTextNormal lang="en">
-              <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/${icons[i]}.svg')`"></span>
-              <span>{{item.label}}</span>
-            </CommonTextNormal>
-          </p>
+          <span class="p-works-filter-button-inner u-font-en">
+            <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/${icons[i]}.svg')`"></span>
+            <span>{{item.label}}</span>
+          </span>
         </button>
       </div>
 
@@ -155,11 +153,9 @@ const filteredWorks = computed(() => {
     padding: mixin.vw(1, var.$dsSp) mixin.vw(15, var.$dsSp);
   }
 
-  :deep(p) {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-  }
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .fade2-enter-active,

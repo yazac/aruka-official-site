@@ -25,10 +25,10 @@
       </div>
 
       <!-- SEO用に見えないテキストを挿入 -->
-      <p class="c-work-card-text-info" style="display: none">
-        <p>{{ title }}</p> 
+      <div class="c-work-card-text-info" style="display: none">
+        <p>{{ title }}</p>
         <p v-if="desc">{{ desc }}</p>
-      </p>
+      </div>
     </button>
   </div>
 </template>
