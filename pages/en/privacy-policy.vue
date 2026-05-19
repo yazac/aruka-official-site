@@ -59,6 +59,19 @@
 </template>
 
 <script setup>
+import meta from '@/assets/json/meta.json'
+const { path } = useRoute()
+useHead({
+  title: meta.pages.privacyPolicy.title,
+  meta: [
+    { name: 'description', content: meta.pages.privacyPolicy.description.en },
+    { property: 'og:title', content: meta.pages.privacyPolicy.title },
+    { property: 'og:description', content: meta.pages.privacyPolicy.description.en },
+    { property: 'og:url', content: `${meta.domain}${path}` },
+    { name: 'twitter:title', content: meta.pages.privacyPolicy.title },
+    { name: 'twitter:description', content: meta.pages.privacyPolicy.description.en },
+  ]
+})
 </script>
 
 <style lang="scss" scoped>

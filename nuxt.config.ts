@@ -9,12 +9,27 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'My Nuxt App', // サイトのタイトル
       meta: [
-        { name: 'description', content: 'Nuxt 3 アプリの説明' }
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: '' },
+        { name: 'robots', content: 'index,follow' },
+        { name: 'format-detection', content: 'telephone=no' },
+
+        // ogp
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: '' },
+        { property: 'og:description', content: '' },
+        { property: 'og:image', content: '/assets/images/ogp.png' },
+        { property: 'og:site_name', content: '' },
+        
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: '' },
+        { name: 'twitter:description', content: '' },
+        { name: 'twitter:image', content: '/assets/images/ogp.png' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.ico' }, // Favicon 設定
+        { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Zen+Old+Mincho&display=swap' }

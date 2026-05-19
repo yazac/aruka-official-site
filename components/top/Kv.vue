@@ -105,7 +105,7 @@ onUnmounted(() => {
 
 .overlay {
   mix-blend-mode: color-burn;
-  background: url("/assets/images/sunburnpaper6.jpg") repeat center center;
+  background: url("/assets/images/kv/sunburnpaper6.jpg") repeat center center;
   background-size: contain;
   width: 100%;
   height: 100%;

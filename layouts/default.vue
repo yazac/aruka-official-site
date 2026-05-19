@@ -30,9 +30,6 @@
       <CommonFooter />
     </footer>
 
-    <!-- <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
-    </div> -->
-
     <!-- svgフィルター -->
     <CommonSvgFilterSquiggle />
   </div>

@@ -41,6 +41,21 @@
 </template>
 
 <script setup lang="ts">
+import meta from '@/assets/json/meta.json'
+const { path } = useRoute()
+useHead({
+  title: meta.pages.works.title,
+  meta: [
+    { name: 'description', content: meta.pages.works.description.en },
+    { property: 'og:title', content: meta.pages.works.title },
+    { property: 'og:description', content: meta.pages.works.description.en },
+    { property: 'og:url', content: `${meta.domain}${path}` },
+    { name: 'twitter:title', content: meta.pages.works.title },
+    { name: 'twitter:description', content: meta.pages.works.description.en },
+  ]
+})
+
+
 import worksData from '@/assets/json/works.json'
 
 const categoriesData = worksData.categories
