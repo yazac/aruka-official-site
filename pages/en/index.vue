@@ -32,7 +32,7 @@
           threshold: 0.5,
           retrigger: false,
         }">
-          <NuxtImg src="/assets/images/works/3d/aruku-morning2.eng" alt="flying arukuchan in moring sky" loading="lazy" placeholder/>
+          <NuxtImg src="/assets/images/works/3d/aruku-morning2.jpg" alt="flying arukuchan in moring sky" loading="lazy" placeholder/>
         </div>
 
       </div>
