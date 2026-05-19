@@ -6,7 +6,7 @@
     <CommonContentsInner>
       <CommonSplitter />
 
-      <div class="p-aboutme-wrapper">
+      <div class="p-home-aboutme-wrapper">
 
         <CommonTextNormalLarge lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
           threshold: 0.5
@@ -20,7 +20,7 @@
           For inquiries, please contact me at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
         </CommonTextNormalLarge>
 
-        <div class="p-aboutme-img u-anim-stepmotion" 
+        <div class="p-home-aboutme-img u-anim-stepmotion" 
         v-step-animation="{ 
           duration: 500,
           delay: 0,
@@ -48,7 +48,7 @@
 @use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
 
-.p-aboutme-wrapper {
+.p-home-aboutme-wrapper {
   @include mixin.pc {
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@
   }
 }
 
-.p-aboutme-img {
+.p-home-aboutme-img {
   @include mixin.pc {
     max-width: 400px;
   }
