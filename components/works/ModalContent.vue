@@ -47,6 +47,7 @@
       type="button"
       class="c-works-modal-close-button"
       @click="closeModal()"
+      aria-label="Close modal"
     ></button>
   </div>
 </template>

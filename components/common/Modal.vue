@@ -8,6 +8,7 @@
         type="button"
         class="c-modal-background"
         @click="closeModal()"
+        aria-label="Close modal"
       ></button>
     </div>
   </Transition>

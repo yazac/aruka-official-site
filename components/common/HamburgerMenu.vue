@@ -3,17 +3,17 @@
     <nav class="c-menu-inner">
       <ul role="list" class="c-menu-page-list" ref="menuPageList">
         <li role="listitem" :class="{ 'is-current': isCurrentPage('/') }">
-          <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
+          <NuxtLink :to="getLocalizedPath('/')" @click="menuState = false">Home</NuxtLink>
         </li>
-        <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
+        <!-- <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
           <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
-        </li>
+        </li> -->
         <li role="listitem" :class="{ 'is-current': isCurrentPage('/works') }">
-          <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
+          <NuxtLink :to="getLocalizedPath('/works')" @click="menuState = false">Works</NuxtLink>
         </li>
       </ul>
 
-      <button class="c-menu-burger-close" ref="menuCloseButton">
+      <button class="c-menu-burger-close" ref="menuCloseButton" aria-label="Close menu" type="button">
         <span></span>
       </button>
     </nav>
@@ -88,8 +88,8 @@ watch(() => menuState.value, (newVal) => {
 }
 
 .c-menu-inner {
-  padding-top: mixin.vw(59, var.$dsSp);
-  padding-left: mixin.vw(62, var.$dsSp);
+  padding-top: mixin.vw(74, var.$dsSp);
+  padding-left: mixin.vw(80, var.$dsSp);
 }
 
 .c-menu-page-list {
@@ -111,7 +111,7 @@ watch(() => menuState.value, (newVal) => {
   }
 
   li {
-    @include mixin.fs-medium-18;
+    @include mixin.fs-medium-24;
 
     :deep(a) {
       color: var.$color-black;

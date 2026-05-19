@@ -14,6 +14,8 @@
           :key="item.id"
           @click="setCategory(item.id)"
           :class="{ 'js-active': currentCategory === item.id }"
+          type="button"
+          aria-label="Filter works"
         >
           <span class="p-works-filter-button-inner u-font-en">
             <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/${icons[i]}.svg')`"></span>

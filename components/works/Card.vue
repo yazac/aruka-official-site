@@ -11,7 +11,7 @@
       threshold: 0.5,
       retrigger: false,
     }">
-    <button class="c-work-card" @click="requestModal()">
+    <button class="c-work-card" @click="requestModal()" aria-label="Open work details" type="button">
       <div class="c-work-card-image-wrap">
         <NuxtImg 
           :src="image"

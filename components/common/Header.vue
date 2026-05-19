@@ -20,9 +20,9 @@
         <li role="listitem" :class="{ 'is-current': isCurrentPage('/') }">
           <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
         </li>
-        <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
+        <!-- <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
           <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
-        </li>
+        </li> -->
         <li role="listitem" :class="{ 'is-current': isCurrentPage('/works') }">
           <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
         </li>
@@ -38,7 +38,7 @@
         </li>
       </ul>
 
-      <button class="c-header-burger" @click="onBurgerClick">
+      <button class="c-header-burger" @click="onBurgerClick" aria-label="Open menu" type="button">
         <span></span>
       </button>
     </nav>

@@ -1,6 +1,6 @@
 <template>
   <div class="aruku-chan-wrapper" :class="`aruku-chan-wrapper-color--${props.color}`">
-    <span class="aruku-chan-img"></span>
+    <span class="aruku-chan-img" fetchpriority="high"></span>
   </div>
 </template>
 

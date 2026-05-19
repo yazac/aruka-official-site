@@ -23,9 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         el.style.transform = `translateY(calc(${options.initPosition} + ${y}px))`;
       };
 
-      const onScroll = throttle(200, update);
-
-      el.style.transition = "transform 0.5s ease-out";
+      const onScroll = throttle(20, update);
       (el as any).__parallaxOnScroll__ = onScroll;
       window.addEventListener("scroll", onScroll);
       onScroll();

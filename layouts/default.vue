@@ -96,6 +96,7 @@ onMounted(async() => {
   position: relative;
   width: 100%;
   margin: 0 auto;
+  overflow: clip;
 }
 
 .modal {

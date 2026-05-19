@@ -77,7 +77,13 @@ export class App {
   }
 
   destroy() {
-    // Clean up resources and event listeners
+    this.isPaused = true;
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      clearTimeout(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+
     this.sceneManager.destroy();
     this.postProcessing.destroy();
     // this.ui.destroy();

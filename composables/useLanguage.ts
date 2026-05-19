@@ -21,6 +21,7 @@ export function getLocalizedPath(basePath: string): string {
 
 export function isCurrentPage(targetPath: string): boolean {
   const { path } = useRoute()
+  const normalizePath = (value: string) => value === '/' ? '/' : value.replace(/\/$/, '')
   const enPath = targetPath === '/' ? '/en' : `/en${targetPath}`
-  return path === targetPath || path === enPath
+  return normalizePath(path) === normalizePath(targetPath) || normalizePath(path) === normalizePath(enPath)
 }
