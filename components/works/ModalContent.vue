@@ -42,13 +42,19 @@
     <p v-else class="c-works-modal_content-not-found">
       Work not found.
     </p>
+
+    <button 
+      type="button"
+      class="c-works-modal-close-button"
+      @click="closeModal()"
+      aria-label="Close modal"
+    ></button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue'
 import worksData from '@/assets/json/works.json'
-
+const { closeModal } = useModal()
 const worksDetailData = worksData.works
 
 interface Props {
@@ -99,4 +105,22 @@ const matchedWork = computed(() =>
   }
 }
 
+.c-works-modal-close-button {
+  mask-image: url("/assets/images/common/close.svg");
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var.$color-brown;
+  
+  @include mixin.pc {
+    padding: 20px;
+  }
+  @include mixin.sp {
+    padding: mixin.vw(16, var.$dsSp);
+  }
+}
 </style>

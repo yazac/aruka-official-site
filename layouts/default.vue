@@ -30,9 +30,6 @@
       <CommonFooter />
     </footer>
 
-    <!-- <div class="layout-inner" :class="route.path == '/' ? 'u-anim-squiggle': undefined">
-    </div> -->
-
     <!-- svgフィルター -->
     <CommonSvgFilterSquiggle />
   </div>
@@ -80,14 +77,8 @@ onMounted(async() => {
 @use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
 .layout {
-  background-color: var.$color-white;
-  position: relative;
-}
-
-.layout-inner {
   background-color: var.$color-beige;
   position: relative;
-  pointer-events: all;
 }
 
 .header {
@@ -102,6 +93,7 @@ onMounted(async() => {
   position: relative;
   width: 100%;
   margin: 0 auto;
+  overflow: clip;
 }
 
 .modal {

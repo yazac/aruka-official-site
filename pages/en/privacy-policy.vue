@@ -6,59 +6,94 @@
     </CommonTextH1>
     <CommonSplitter />
 
-    <CommonTextNormal>
-      This website (hereinafter referred to as "this site") considers the proper handling of user personal information to be an important responsibility and hereby establishes the following privacy policy.
-    </CommonTextNormal>
+    <CommonTextNormalLarge>
+      this site considers the proper handling of user personal information to be an important responsibility and hereby establishes the following privacy policy.
+    </CommonTextNormalLarge>
 
     <CommonTextH2>
       Purpose of Use of Personal Information
     </CommonTextH2>
 
-    <CommonTextNormal>
-      This site may request personal information such as name and email address when users contact us.
+    <CommonTextNormalLarge>
+      This site may request personal information such as name and email address when users contact me.
       Personal information provided will not be used for any purpose other than the following:
       <ul>
         <li>To respond to inquiries and provide necessary information</li>
-        <li>To analyze and improve our services and website</li>
+        <li>To analyze and improve our services and Website</li>
       </ul>
-    </CommonTextNormal>
+    </CommonTextNormalLarge>
 
     <CommonTextH2>
       Disclosure of Personal Information to Third Parties
     </CommonTextH2>
 
-    <CommonTextNormal>
-      We will not disclose personal information to third parties without the consent of the user, except as required by law.
-    </CommonTextNormal>
+    <CommonTextNormalLarge>
+      I will not disclose personal information to third parties without the consent of the user, except as required by law.
+    </CommonTextNormalLarge>
 
     <CommonTextH2>
       Security Measures
     </CommonTextH2>
 
-    <CommonTextNormal>
-      We implement appropriate security measures to protect personal information from loss, damage, or unauthorized access.
-    </CommonTextNormal>
+    <CommonTextNormalLarge>
+      I implement appropriate security measures to protect personal information from loss, damage, or unauthorized access.
+    </CommonTextNormalLarge>
 
     <CommonTextH2>
       Changes to This Privacy Policy
     </CommonTextH2>
 
-    <CommonTextNormal>
-      We may update this privacy policy without notice. Users are encouraged to review this policy regularly.
-    </CommonTextNormal>
+    <CommonTextNormalLarge>
+      I may update this privacy policy without notice. Users are encouraged to review this policy regularly.
+    </CommonTextNormalLarge>
 
     <CommonTextH2>
-      Contact Us
+      Contact
     </CommonTextH2>
 
-    <CommonTextNormal>
-      For inquiries regarding this privacy policy, please contact us at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
-    </CommonTextNormal>
+    <CommonTextNormalLarge>
+      For inquiries regarding this privacy policy, please contact me at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
+    </CommonTextNormalLarge>
+    <div class="p-spacer"></div>
   </CommonContentsInner>
 </template>
 
 <script setup>
+import meta from '@/assets/json/meta.json'
+const { path } = useRoute()
+useHead({
+  title: meta.pages.privacyPolicy.title,
+  meta: [
+    { name: 'description', content: meta.pages.privacyPolicy.description.en },
+    { property: 'og:title', content: meta.pages.privacyPolicy.title },
+    { property: 'og:description', content: meta.pages.privacyPolicy.description.en },
+    { property: 'og:url', content: `${meta.domain}${path}` },
+    { name: 'twitter:title', content: meta.pages.privacyPolicy.title },
+    { name: 'twitter:description', content: meta.pages.privacyPolicy.description.en },
+  ]
+})
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  margin-top: 80px;
+}
+
+p {
+  margin-top: 20px;
+  line-height: 2;
+}
+
+ul {
+  margin-top: 20px;
+  padding-left: 1.5rem;
+
+  li {
+    line-height: 1.5;
+  }
+}
+
+.p-spacer {
+  margin-top: 120px;
+}
 </style>

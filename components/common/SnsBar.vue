@@ -92,7 +92,7 @@ watch(shouldHideBar, (shouldHide) => {
         display: block;
         width: 100%;
         height: 100%;
-        background-color: var.$color-brown;
+        background-color: var.$color-dark-beige;
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;

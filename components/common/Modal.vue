@@ -8,6 +8,7 @@
         type="button"
         class="c-modal-background"
         @click="closeModal()"
+        aria-label="Close modal"
       ></button>
     </div>
   </Transition>
@@ -46,7 +47,7 @@ watch(
 
 .c-modal {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   position: relative;
 }
 

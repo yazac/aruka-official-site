@@ -1,0 +1,26 @@
+{
+  "domain": "https://aruka-earth.net",
+  "pages": {
+    "home": {
+      "title": "HOME | aruka official site",
+      "description": {
+        "jp": "aruka.の公式サイトです。 音楽や3D、プログラミングを合わせた作品を作っています。",
+        "en": "official site of aruka. I create works that combine music, 3D, and programming."
+      }
+    },
+    "works": {
+      "title": "WORKS | aruka official site",
+      "description": {
+        "jp": "aruka.の作品一覧です。 音楽や3D、プログラミングを合わせた作品を作っています。",
+        "en": "a list of works by aruka. I create works that combine music, 3D, and programming."
+      }
+    },
+    "privacyPolicy": {
+      "title": "PRIVACY POLICY | aruka official site",
+      "description": {
+        "jp": "aruka.のプライバシーポリシーページです。",
+        "en": "Privacy policy page of aruka."
+      }
+    }
+  }
+}

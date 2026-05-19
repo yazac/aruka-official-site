@@ -6,9 +6,9 @@
           <li role="listitem u-hover" v-if="!isCurrentPage('/')">
             <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
           </li>
-          <li role="listitem u-hover" v-if="!isCurrentPage('/about')">
+          <!-- <li role="listitem u-hover" v-if="!isCurrentPage('/about')">
             <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
-          </li>
+          </li> -->
           <li role="listitem u-hover" v-if="!isCurrentPage('/works')">
             <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
           </li>

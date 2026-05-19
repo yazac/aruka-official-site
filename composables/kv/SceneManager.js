@@ -102,6 +102,7 @@ export class SceneManager {
   }
 
   updateArukuchan() {
+    if (!this.scene) return;
     const arukuchan = this.scene.getObjectByName("arukuchan");
     if (arukuchan) {
       this.currentX += (this.targetX - this.currentX) * this.damping * this.damping;
@@ -257,6 +258,7 @@ export class SceneManager {
   }
 
   resize(width, height) {
+    if (!this.scene) return;
     this.width = width;
     this.height = height;
     
