@@ -13,7 +13,7 @@ export class EventHandlers {
   setupEventListeners() {
     this.setupMousemoveScale();
     this.setupResizeHandler();
-    // this.setupMouseEventHandler();
+    this.setupMouseEventHandler();
     this.setupClickEventHandler();
   }
 
