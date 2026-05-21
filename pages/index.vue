@@ -177,6 +177,7 @@ onMounted(() => {
   height: fit-content;
   z-index: 2;
   box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 
   @include mixin.pc {
     padding: 20px 40px;
@@ -187,6 +188,11 @@ onMounted(() => {
   @include mixin.sp {
     width : 100%;
     padding: mixin.vw(20, var.$dsSp) 0;
+  }
+
+  &:hover {
+    transform: translateY(0.2em);
+    opacity: 0.9;
   }
 
   span {

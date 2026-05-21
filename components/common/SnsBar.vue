@@ -96,6 +96,10 @@ watch(shouldHideBar, (shouldHide) => {
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;
+
+        &:after {
+          display: none;  
+        }
       }
     }
   }

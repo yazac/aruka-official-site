@@ -19,9 +19,9 @@
 
         <ul role="list">
           <li role="listitem" v-for="item, field in snsLinks">
-            <NuxtLink :to="item.url" target="_blank" class="u-hover">
+            <a :href="item.url" target="_blank" class="u-hover">
               <img :src="`/assets/images/common/icon-${item.name}.svg`" :alt="`${item.name}`">
-            </NuxtLink>
+            </a>
           </li>
         </ul>
       </nav>
@@ -181,6 +181,9 @@ onUnmounted(() => {
     margin-top: 48px;
     li {
       width: 30px;
+      a:after {
+        display: none;
+      }
     }
   }
 }

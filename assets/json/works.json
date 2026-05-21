@@ -23,7 +23,9 @@
         "jp": "あの枝の葉",
         "en": "the leaf on that branch"
       },
-      "image": "/music/the_leaf_on_that_branch.jpg",
+      "image": [
+        "/music/the_leaf_on_that_branch.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -31,7 +33,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/6UT7G9Rs"
     },
     {
       "id": "work-002",
@@ -39,7 +42,9 @@
         "jp": "土の匂いがする",
         "en": "smells like earth"
       },
-      "image": "/music/smells_like_earth.jpg",
+      "image": [
+        "/music/smells_like_earth.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -47,7 +52,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/bTB4SXzC"
     },
     {
       "id": "work-003",
@@ -55,15 +61,18 @@
         "jp": "Unseen Skies",
         "en": "Unseen Skies"
       },
-      "image": "/music/ctv3.jpg",
+      "image": [
+        "/music/ctv3.jpg"
+      ],
       "categories": [
         "music"
       ],
       "publishedAt": "2022-07-01",
       "description": {
-        "jp": "san holoで有名なレーベルbitbird主催のコンピレーション、\"Create together ver.3\"からのリリース。\n2045とfungeeyとの合作。",
-        "en": "test test test test test test test test test test test test test test test test test test test test test test test test test test test "
-      }
+        "jp": "san holoで有名なレーベルbitbird主催のコンピレーション、\"Create together ver.3\"からのリリース。<a href=\"https://www.instagram.com/2045_music/\" target=\"_blank\">2045</a>と<a href=\"https://www.instagram.com/fungeey/\" target=\"_blank\">fungeey</a>との合作。",
+        "en": "san holoで有名なレーベルbitbird主催のコンピレーション、\"Create together ver.3\"からのリリース。<a href=\"https://www.instagram.com/2045_music/\" target=\"_blank\">2045</a>と<a href=\"https://www.instagram.com/fungeey/\" target=\"_blank\">fungeey</a>との合作。"
+      },
+      "url": ""
     },
     {
       "id": "work-004",
@@ -71,7 +80,9 @@
         "jp": "コースティクス",
         "en": "caustics"
       },
-      "image": "/music/caustics.jpg",
+      "image": [
+        "/music/caustics.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -79,7 +90,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/NMUfEABz"
     },
     {
       "id": "work-005",
@@ -87,7 +99,9 @@
         "jp": "稲穂垂る",
         "en": "golden field"
       },
-      "image": "/music/稲穂垂るart_1000.png",
+      "image": [
+        "/music/稲穂垂るart_1000.png"
+      ],
       "categories": [
         "music"
       ],
@@ -95,7 +109,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://soundcloud.com/aruku_a_dark/goldenfield"
     },
     {
       "id": "work-006",
@@ -103,7 +118,9 @@
         "jp": "行方",
         "en": "yukue"
       },
-      "image": "/music/yuque.jpg",
+      "image": [
+        "/music/yuque.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -111,7 +128,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/8d26bTMX"
     },
     {
       "id": "work-007",
@@ -119,7 +137,9 @@
         "jp": "Aquarius",
         "en": "Aquarius"
       },
-      "image": "/music/aquarius.jpg",
+      "image": [
+        "/music/aquarius.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -127,7 +147,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://open.spotify.com/track/1S8q9uG3BH3mNh9TaPWUe0?si=b3c6708768c24484"
     },
     {
       "id": "work-008",
@@ -135,7 +156,9 @@
         "jp": "すなおなきもち",
         "en": "sincerity"
       },
-      "image": "/music/sunao.jpg",
+      "image": [
+        "/music/sunao.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -143,7 +166,8 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/FBSNff90"
     },
     {
       "id": "work-009",
@@ -151,7 +175,9 @@
         "jp": "サモンセンス (feat. a r u k a.) - a r u k a. Remix",
         "en": "summonsense (feat. a r u k a.) - a r u k a. Remix"
       },
-      "image": "/music/made_santo_witches_remix.jpg",
+      "image": [
+        "/music/made_santo_witches_remix.jpg"
+      ],
       "categories": [
         "music"
       ],
@@ -159,15 +185,37 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://linkco.re/7z2YqRVY"
     },
     {
       "id": "work-010",
       "title": {
+        "jp": "薫風 (feat. a r u k a. & aria igarashi)",
+        "en": "薫風 (feat. a r u k a. & aria igarashi)"
+      },
+      "image": [
+        "/music/kazenagu.jpeg"
+      ],
+      "categories": [
+        "music"
+      ],
+      "publishedAt": "2022-08-19",
+      "description": {
+        "jp": "",
+        "en": ""
+      },
+      "url": "https://linkco.re/vDeHPnSR"
+    },
+    {
+      "id": "work-011",
+      "title": {
         "jp": "パラセール",
         "en": "parasail"
       },
-      "image": "/music/parasail-artwork.png",
+      "image": [
+        "/music/parasail-artwork.png"
+      ],
       "categories": [
         "music"
       ],
@@ -175,15 +223,18 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": ""
     },
     {
-      "id": "work-011",
+      "id": "work-012",
       "title": {
         "jp": "湾岸通り / 歩く人 + a r u k a. feat. 初音ミク",
         "en": "Kaigan dori / pedestrian + a r u k a. feat. Hatsune Miku"
       },
-      "image": "/music/maxresdefault.webp",
+      "image": [
+        "/music/maxresdefault.webp"
+      ],
       "categories": [
         "music"
       ],
@@ -191,15 +242,18 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": "https://www.nicovideo.jp/watch/sm45377769"
     },
     {
-      "id": "work-012",
+      "id": "work-013",
       "title": {
         "jp": "夕暮れに背を向け",
         "en": "twilight"
       },
-      "image": "/3d/aruku-chaaan.png",
+      "image": [
+        "/3d/aruku-chaaan.png"
+      ],
       "categories": [
         "3d"
       ],
@@ -207,31 +261,18 @@
       "description": {
         "jp": "",
         "en": ""
-      }
-    },
-    {
-      "id": "work-013",
-      "title": {
-        "jp": "あさもや",
-        "en": "morning haze"
       },
-      "image": "/3d/aruku-morning2.jpg",
-      "categories": [
-        "3d"
-      ],
-      "publishedAt": "2023-01-08",
-      "description": {
-        "jp": "",
-        "en": ""
-      }
+      "url": ""
     },
     {
       "id": "work-014",
       "title": {
-        "jp": "かえりみち",
-        "en": "way back home"
+        "jp": "あさもや",
+        "en": "morning haze"
       },
-      "image": "/3d/aruku-night.png",
+      "image": [
+        "/3d/aruku-morning2.jpg"
+      ],
       "categories": [
         "3d"
       ],
@@ -239,15 +280,37 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": ""
     },
     {
       "id": "work-015",
       "title": {
+        "jp": "かえりみち",
+        "en": "way back home"
+      },
+      "image": [
+        "/3d/aruku-night.png"
+      ],
+      "categories": [
+        "3d"
+      ],
+      "publishedAt": "2023-01-08",
+      "description": {
+        "jp": "",
+        "en": ""
+      },
+      "url": ""
+    },
+    {
+      "id": "work-016",
+      "title": {
         "jp": "干し草",
         "en": "hay"
       },
-      "image": null,
+      "image": [
+        "/3d/hay.png"
+      ],
       "categories": [
         "3d"
       ],
@@ -255,15 +318,18 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": ""
     },
     {
-      "id": "work-016",
+      "id": "work-017",
       "title": {
         "jp": "Wavfire - One day ジャケット制作",
         "en": "Wavfire - One day album artwork"
       },
-      "image": "/3d/one_day.jpg",
+      "image": [
+        "/3d/one_day.jpg"
+      ],
       "categories": [
         "3d"
       ],
@@ -271,23 +337,48 @@
       "description": {
         "jp": "",
         "en": ""
-      }
+      },
+      "url": ""
     },
     {
-      "id": "work-017",
+      "id": "work-018",
       "title": {
         "jp": "MEs Market 2025",
         "en": "MEs Market 2025"
       },
-      "image": "/3d/mes/untitled.png",
+      "image": [
+        "/3d/mes/untitled.png",
+        "/3d/mes/geometry_1000.png",
+        "/3d/mes/thumbnail_grass_flower_1000.png"
+      ],
       "categories": [
         "3d"
       ],
       "publishedAt": "2025-12-06",
       "description": {
-        "jp": "<a url=\"https://www.o-me.io/\">O Ltd.</a> 主催のバーチャルイベントにて、ワールドの作成と出展を行いました。\n<a url=\"https://www.instagram.com/atinyyellowleaf\">ginko</a>との共作で暖かな絵本のような世界を作成しました。",
+        "jp": "<a href=\"https://www.o-me.io/\" target=\"_blank\">O Ltd.</a>主催のバーチャルイベントにて、ワールドの作成と出展を行いました。<a href=\"https://www.instagram.com/atinyyellowleaf\" target=\"_blank\">ginko</a>との共作で暖かな絵本のような世界を作成しました。",
         "en": "test test test test test test test test test test test test test test test test test test test test test test test test test test test "
-      }
+      },
+      "url": ""
+    },
+    {
+      "id": "work-019",
+      "title": {
+        "jp": "Tile Impressionism ",
+        "en": "Tile Impressionism "
+      },
+      "image": [
+        "/programming/tile-impressionism.png"
+      ],
+      "categories": [
+        "programming"
+      ],
+      "publishedAt": "2026-05-21",
+      "description": {
+        "jp": "",
+        "en": ""
+      },
+      "url": ""
     }
   ]
 }

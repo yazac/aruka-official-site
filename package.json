@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "update": "sh ./shell/update-works.sh"
+    "update:works": "sh ./shell/update-works.sh"
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
@@ -17,6 +17,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^4.2.2",
     "ress": "^5.0.2",
+    "swiper": "^12.1.4",
     "three": "^0.182.0",
     "tweakpane": "^4.0.5",
     "vue": "latest",

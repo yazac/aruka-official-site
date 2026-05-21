@@ -33,7 +33,14 @@
         </CommonTextNormal>
 
         <CommonTextNormal class="c-works-modal_content-desc">
-          {{ matchedWork.description[getCurrentLanguage()] }}
+          <span v-html="matchedWork.description[getCurrentLanguage()]">
+          </span>
+        </CommonTextNormal>
+
+        <CommonTextNormal class="c-works-modal_content-url">
+          <a :href="matchedWork.url" target="_blank" rel="noopener noreferrer" v-if="matchedWork.url">
+            link
+          </a>
         </CommonTextNormal>
       </div>
     </template>
@@ -65,6 +72,8 @@ const props = defineProps<Props>()
 const matchedWork = computed(() =>
   worksDetailData.find((item) => String(item.id) === props.id)
 )
+
+
 </script>
 
 <style scoped lang="scss">
@@ -122,5 +131,9 @@ const matchedWork = computed(() =>
   @include mixin.sp {
     padding: mixin.vw(16, var.$dsSp);
   }
+}
+
+.c-works-modal_content-url {
+  margin-top: 1em;
 }
 </style>
