@@ -1,9 +1,9 @@
 <template>
   <CommonContentsInner>
     <div class="u-under-page-head-margin"></div>
-    <CommonTextH1>
-      <span style="display: inline-flex; align-items: center; gap: 0.5em;">
-        <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/mountain.svg')`"></span>
+    <CommonTextH1 lang="en" color="lightgreen">
+      <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+        <span class="u-icon" :style="`mask-image: url('/assets/images/common/moon.svg')`"></span>
         <span>Privacy Policy</span>
       </span>
     </CommonTextH1>

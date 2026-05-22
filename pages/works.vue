@@ -2,12 +2,12 @@
   <div>
     <CommonContentsInner>
       <div class="u-under-page-head-margin"></div>
-      <CommonTextH2 lang="en">
-        <span style="display: inline-flex; align-items: center; gap: 0.5em;">
-          <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/flower02.svg')`"></span>
+      <CommonTextH1 lang="en" color="lightgreen">
+        <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+          <span class="u-icon" :style="`mask-image: url('/assets/images/common/flower02.svg')`"></span>
           <span>Works</span>
         </span>
-      </CommonTextH2>
+      </CommonTextH1>
 
       <CommonSplitter />
 
@@ -100,9 +100,11 @@ const filteredWorks = computed(() => {
 .p-works-filter-button-wrap {
   display: flex;
   align-items: center;
+  background: var.$color-white;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
 
   @include mixin.pc {
-    padding: 20px 0;
+    padding: 20px;
     border-radius: 0 0 10px 10px;
   }
 
@@ -114,7 +116,7 @@ const filteredWorks = computed(() => {
   }
 
   button {
-    background: linear-gradient(0deg, rgba(230, 230, 218, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(0deg, rgb(242, 242, 211) 0%, rgba(255, 255, 255, 1) 100%);
 
     @include mixin.pc {
       border-top: 1px solid var.$color-gray;
@@ -139,7 +141,7 @@ const filteredWorks = computed(() => {
     }
 
     &.js-active {
-      background: linear-gradient(180deg, rgba(230, 230, 218, 1) 0%, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(180deg, rgb(242, 242, 211) 0%, rgba(255, 255, 255, 1) 100%);
     }
   }
 }
@@ -172,5 +174,10 @@ const filteredWorks = computed(() => {
 .fade2-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+
+.p-works-filter-button-icon {
+  width: 2em;
+  height: 2em;
 }
 </style>

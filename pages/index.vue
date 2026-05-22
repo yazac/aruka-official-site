@@ -81,7 +81,7 @@
 <script setup lang="ts">
 import worksData from '@/assets/json/works.json'
 const worksDetailData = worksData.works
-const topWorksDetail = worksDetailData.sort(()=> Math.random() - 0.5)
+const topWorksDetail = [...worksDetailData].sort(()=> Math.random() - 0.5)
 const worksWrap = ref<HTMLElement | null>(null)
 const isWorksVisible = ref(false)
 
@@ -147,6 +147,7 @@ onMounted(() => {
 .p-home-works-wrapper {
   display: block;
   position:relative;
+  z-index: 1;
   padding-bottom: 150svh;
   margin: 0 10%;
 }
@@ -180,9 +181,8 @@ onMounted(() => {
   text-decoration: none;
 
   @include mixin.pc {
-    padding: 20px 40px;
-    width: 240px;
-    
+    padding: 23px 20px;
+    width: 290px;
   }
 
   @include mixin.sp {

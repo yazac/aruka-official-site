@@ -258,7 +258,7 @@ onMounted(() => {
 
     li {
       :deep(a) {
-        color: var.$color-black;
+        color: var.$color-light-green;
         text-decoration: none;
         padding: 10px 5px;
       }
@@ -271,7 +271,7 @@ onMounted(() => {
           content: "";
           display: block;
           position: absolute;
-          background: var.$color-black;
+          background: var.$color-light-green;
           width: 100%;
           height: 1px;
           bottom: -4px;
@@ -288,7 +288,7 @@ onMounted(() => {
     
     li {
       :deep(a) {
-        color: var.$color-black;
+        color: var.$color-light-green;
         text-decoration: none;
         display: inline-block;
         padding: 10px 10px;

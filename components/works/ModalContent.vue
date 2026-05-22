@@ -130,7 +130,7 @@ const modules = [Navigation]
   position: relative;
   @include mixin.pc {
     p {
-      font-size: 1.5vh;
+      font-size: 1.7vh;
     }
   }
   @include mixin.sp {
@@ -170,7 +170,7 @@ const modules = [Navigation]
   position: absolute;
   top: 0;
   right: 0;
-  background: var.$color-brown;
+  background: var.$color-dark-green;
   
   @include mixin.pc {
     padding: 20px;

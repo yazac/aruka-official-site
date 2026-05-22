@@ -1,5 +1,5 @@
 <template>
-  <p :class="[`c-text-p`, `c-text-p-color--${props.color}`, `u-font-${props.lang}`]">
+  <p :class="[`c-text-p`, `u-text-color--${props.color}`, `u-font-${props.lang}`]">
     <slot />
   </p>
 </template>
@@ -18,6 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/css/_var.scss';
 @use '@/assets/css/_mixin.scss';
 
 p {

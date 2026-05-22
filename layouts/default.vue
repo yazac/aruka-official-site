@@ -120,6 +120,45 @@ onMounted(async() => {
   width: 100%;
   margin: 0 auto;
   overflow: clip;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: overlay;
+    z-index: 1;
+    pointer-events: none;
+
+    @include mixin.pc {
+      width: 40%;
+    }
+    @include mixin.sp {
+      width: 20%;
+    }    
+  }
+
+  &:after {  
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(270deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: overlay;
+    z-index: 0;
+    pointer-events: none;
+
+    @include mixin.pc {
+      width: 40%;
+    }
+    @include mixin.sp {
+      width: 20%;
+    }
+  }
 }
 
 .modal {

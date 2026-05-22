@@ -70,9 +70,14 @@ a {
 }
 
 .u-font-en {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Luxurious Roman", serif;
   -webkit-font-smoothing: auto;
   font-optical-sizing: auto;
+  letter-spacing: 0.1em;
+}
+
+.u-font-jp {
+  font-family: "Zen Old Mincho", serif;
 }
 
 .u-font-color-light-green {
@@ -84,18 +89,14 @@ a {
 }
 
 .u-icon {
+  flex-shrink: 0;
   display: table-cell;
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: currentColor;
-  width: 2em;
-  height: 2em;
-}
-
-.u-font-jp {
-  font-family: "Zen Old Mincho", serif;
-  -webkit-font-smoothing: antialiased;
+  width: 1em;
+  height: 1em;
 }
 
 .u-is-pc {
@@ -122,3 +123,12 @@ a {
 .u-under-page-head-margin {
   margin-top: 120px;
 }
+
+.u-text-color--lightgreen {
+  color: var.$color-light-green;
+}
+
+.u-text-color--darkgreen {
+  color: var.$color-dark-green;
+}
+

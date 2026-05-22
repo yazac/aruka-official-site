@@ -37,11 +37,11 @@
   line-height: 1.2;
 
   @include pc {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   @include sp {
-    font-size: vw(40, var.$dsSp);
+    font-size: vw(50, var.$dsSp);
   }
 }
 

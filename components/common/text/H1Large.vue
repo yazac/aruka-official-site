@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="[`c-text-h1`, `c-text-h1-color--${props.color}`, `u-font-${props.lang}`]">
+  <h1 :class="[`c-text-h1`, `u-text-color--${props.color}`, `u-font-${props.lang}`]">
     <slot />
   </h1>
 </template>
