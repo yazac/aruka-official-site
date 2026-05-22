@@ -53,6 +53,6 @@ export default defineNuxtConfig({
   },
   ssr: true,
   image: {
-    provider: 'ipx'
+    provider: 'vercel',
   }
 })
