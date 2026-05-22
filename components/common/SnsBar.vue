@@ -92,10 +92,14 @@ watch(shouldHideBar, (shouldHide) => {
         display: block;
         width: 100%;
         height: 100%;
-        background-color: var.$color-dark-beige;
+        background-color: var.$color-light-green;
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;
+
+        &:after {
+          display: none;  
+        }
       }
     }
   }

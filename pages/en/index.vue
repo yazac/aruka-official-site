@@ -79,23 +79,9 @@
 </template>
 
 <script setup lang="ts">
-import meta from '@/assets/json/meta.json'
-const { path } = useRoute()
-useHead({
-  title: meta.pages.home.title,
-  meta: [
-    { name: 'description', content: meta.pages.home.description.en },
-    { property: 'og:title', content: meta.pages.home.title },
-    { property: 'og:description', content: meta.pages.home.description.en },
-    { property: 'og:url', content: `${meta.domain}${path}` },
-    { name: 'twitter:title', content: meta.pages.home.title },
-    { name: 'twitter:description', content: meta.pages.home.description.en },
-  ]
-})
-
 import worksData from '@/assets/json/works.json'
 const worksDetailData = worksData.works
-const topWorksDetail = worksDetailData.sort(()=> Math.random() - 0.5)
+const topWorksDetail = [...worksDetailData].sort(()=> Math.random() - 0.5)
 const worksWrap = ref<HTMLElement | null>(null)
 const isWorksVisible = ref(false)
 
@@ -160,6 +146,7 @@ onMounted(() => {
 .p-home-works-wrapper {
   display: block;
   position:relative;
+  z-index: 1;
   padding-bottom: 150svh;
   margin: 0 10%;
 }
@@ -190,16 +177,22 @@ onMounted(() => {
   height: fit-content;
   z-index: 2;
   box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 
   @include mixin.pc {
-    padding: 20px 40px;
-    width: 240px;
+    padding: 23px 20px;
+    width: 290px;
     
   }
 
   @include mixin.sp {
     width : 100%;
     padding: mixin.vw(20, var.$dsSp) 0;
+  }
+
+  &:hover {
+    transform: translateY(0.2em);
+    opacity: 0.9;
   }
 
   span {

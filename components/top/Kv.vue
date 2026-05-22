@@ -49,10 +49,19 @@ onMounted(async () => {
     // Mark resources as loaded
     kvResourcesLoaded.value = true;
 
-    // Initialize Three.js app
-    appObj = new App();
-  } 
-  
+    // Defer Three.js initialization to avoid blocking main thread
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        appObj = new App();
+      }, { timeout: 3000 });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(() => {
+        appObj = new App();
+      }, 100);
+    }
+  }
+
   catch (error) {
     console.warn('Resource preload warning:', error);
     // Mark as loaded even on error to not block splash

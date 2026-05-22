@@ -4,24 +4,39 @@
       <nav class="c-footer-nav u-font-en">
         <ol role="list">
           <li role="listitem u-hover" v-if="!isCurrentPage('/')">
-            <NuxtLink :to="getLocalizedPath('/')">Home</NuxtLink>
+            <NuxtLink :to="getLocalizedPath('/')">
+              <span style="display: inline-flex; align-items: center; gap: 0.5em;">
+                <span class="u-icon" :style="`mask-image: url('/assets/images/common/firework.svg')`"></span>
+                Home
+              </span>
+            </NuxtLink>
           </li>
           <!-- <li role="listitem u-hover" v-if="!isCurrentPage('/about')">
             <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
           </li> -->
           <li role="listitem u-hover" v-if="!isCurrentPage('/works')">
-            <NuxtLink :to="getLocalizedPath('/works')">Works</NuxtLink>
+            <NuxtLink :to="getLocalizedPath('/works')">
+              <span style="display: inline-flex; align-items: center; gap: 0.5em;">
+                <span class="u-icon" :style="`mask-image: url('/assets/images/common/leaf.svg')`"></span>
+                Works
+              </span>
+            </NuxtLink>
           </li>
           <li role="listitem u-hover" v-if="!isCurrentPage('/privacy-policy')">
-            <NuxtLink :to="getLocalizedPath('/privacy-policy')">Privacy Policy</NuxtLink>
+            <NuxtLink :to="getLocalizedPath('/privacy-policy')">
+              <span style="display: inline-flex; align-items: center; gap: 0.5em;">
+                <span class="u-icon" :style="`mask-image: url('/assets/images/common/question.svg')`"></span>
+                Privacy Policy
+              </span>
+            </NuxtLink>
           </li>
         </ol>
 
         <ul role="list">
           <li role="listitem" v-for="item, field in snsLinks">
-            <NuxtLink :to="item.url" target="_blank" class="u-hover">
+            <a :href="item.url" target="_blank" class="u-hover">
               <img :src="`/assets/images/common/icon-${item.name}.svg`" :alt="`${item.name}`">
-            </NuxtLink>
+            </a>
           </li>
         </ul>
       </nav>
@@ -93,7 +108,7 @@ onUnmounted(() => {
 
 .c-footer {
   width: 100%;
-  background: var.$color-brown;
+  background: var.$color-dark-green;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -181,6 +196,9 @@ onUnmounted(() => {
     margin-top: 48px;
     li {
       width: 30px;
+      a:after {
+        display: none;
+      }
     }
   }
 }

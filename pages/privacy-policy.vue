@@ -1,8 +1,11 @@
 <template>
   <CommonContentsInner>
     <div class="u-under-page-head-margin"></div>
-    <CommonTextH1>
-      プライバシー<br class="u-is-sp">ポリシー
+    <CommonTextH1 color="lightgreen">
+      <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+        <span class="u-icon" :style="`mask-image: url('/assets/images/common/moon.svg')`"></span>
+        <span>プライバシー<br class="u-is-sp">ポリシー</span>
+      </span>
     </CommonTextH1>
     <CommonSplitter />
 
@@ -89,19 +92,6 @@
 </template>
 
 <script setup lang="ts">
-import meta from '@/assets/json/meta.json'
-const { path } = useRoute()
-useHead({
-  title: meta.pages.privacyPolicy.title,
-  meta: [
-    { name: 'description', content: meta.pages.privacyPolicy.description.jp },
-    { property: 'og:title', content: meta.pages.privacyPolicy.title },
-    { property: 'og:description', content: meta.pages.privacyPolicy.description.jp },
-    { property: 'og:url', content: `${meta.domain}${path}` },
-    { name: 'twitter:title', content: meta.pages.privacyPolicy.title },
-    { name: 'twitter:description', content: meta.pages.privacyPolicy.description.jp },
-  ]
-})
 </script>
 
 <style scoped lang="scss">

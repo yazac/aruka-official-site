@@ -2,10 +2,13 @@
   <div>
     <CommonContentsInner>
       <div class="u-under-page-head-margin"></div>
-      <CommonTextH1Large lang="en">
-        WORKS
-      </CommonTextH1Large>
-
+      <CommonTextH1 lang="en" color="lightgreen">
+        <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+          <span class="u-icon" :style="`mask-image: url('/assets/images/common/flower02.svg')`"></span>
+          <span>Works</span>
+        </span>
+      </CommonTextH1>
+      
       <CommonSplitter />
 
       <div class="p-works-filter-button-wrap">
@@ -30,7 +33,7 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image="item.image === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image}`"
+            :image="item.image[0] === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image[0]}`"
             :title=item.title.en
             :desc=item.description.en
           />
@@ -41,21 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import meta from '@/assets/json/meta.json'
-const { path } = useRoute()
-useHead({
-  title: meta.pages.works.title,
-  meta: [
-    { name: 'description', content: meta.pages.works.description.en },
-    { property: 'og:title', content: meta.pages.works.title },
-    { property: 'og:description', content: meta.pages.works.description.en },
-    { property: 'og:url', content: `${meta.domain}${path}` },
-    { name: 'twitter:title', content: meta.pages.works.title },
-    { name: 'twitter:description', content: meta.pages.works.description.en },
-  ]
-})
-
-
 import worksData from '@/assets/json/works.json'
 
 const categoriesData = worksData.categories
@@ -114,7 +102,7 @@ const filteredWorks = computed(() => {
 .p-works-filter-button-wrap {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: var.$color-white;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
 
   @include mixin.pc {
@@ -173,6 +161,7 @@ const filteredWorks = computed(() => {
   display: inline-flex;
   align-items: center;
   gap: 1em;
+  font-weight: bold;
 }
 
 .fade2-enter-active,
@@ -187,5 +176,10 @@ const filteredWorks = computed(() => {
 .fade2-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+
+.p-works-filter-button-icon {
+  width: 2em;
+  height: 2em;
 }
 </style>

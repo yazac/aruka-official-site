@@ -1,3 +1,5 @@
+import meta from './assets/json/meta.json'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: {
@@ -20,19 +22,20 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: '' },
         { property: 'og:description', content: '' },
-        { property: 'og:image', content: '/assets/images/ogp.png' },
+        { property: 'og:image', content: '/ogp.png' },
         { property: 'og:site_name', content: '' },
         
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: '' },
         { name: 'twitter:description', content: '' },
-        { name: 'twitter:image', content: '/assets/images/ogp.png' }
+        { name: 'twitter:image', content: '/ogp.png' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
+        { rel: 'canonical', href: meta.domain },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Zen+Old+Mincho&display=swap' }
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=New+Tegomin&family=Zen+Old+Mincho&display=swap' }
       ]
     },
     pageTransition: { name: 'fade', mode: 'out-in' }

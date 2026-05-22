@@ -38,7 +38,7 @@ button {
   letter-spacing: inherit;
 }
 
-a.external-icon[target="_blank"] {
+a[target="_blank"] {
   &:after {
     content: "";
     display: inline-block;
@@ -50,22 +50,34 @@ a.external-icon[target="_blank"] {
     mask-repeat: no-repeat;
     background: currentColor;
     vertical-align: middle;
+    margin-left: 0.2em;
+    margin-bottom: 0.2em;
+    margin-right: 0.3em;
+    transition: margin 0.2s ease-out;
   }
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: green;
 
   &:hover {
-    text-decoration: underline;
+    color: blue;
+    &:after {
+      margin-left: 0.3em;
+      margin-right: 0.2em;
+    }
   }
 }
 
 .u-font-en {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Luxurious Roman", serif;
   -webkit-font-smoothing: auto;
   font-optical-sizing: auto;
+  letter-spacing: 0.1em;
+}
+
+.u-font-jp {
+  font-family: "Zen Old Mincho", serif;
 }
 
 .u-font-color-light-green {
@@ -77,18 +89,14 @@ a {
 }
 
 .u-icon {
+  flex-shrink: 0;
   display: table-cell;
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: currentColor;
-  width: 2em;
-  height: 2em;
-}
-
-.u-font-jp {
-  font-family: "Zen Old Mincho", serif;
-  -webkit-font-smoothing: antialiased;
+  width: 1em;
+  height: 1em;
 }
 
 .u-is-pc {
@@ -115,3 +123,12 @@ a {
 .u-under-page-head-margin {
   margin-top: 120px;
 }
+
+.u-text-color--lightgreen {
+  color: var.$color-light-green;
+}
+
+.u-text-color--darkgreen {
+  color: var.$color-dark-green;
+}
+

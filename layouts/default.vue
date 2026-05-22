@@ -36,9 +36,35 @@
 </template>
 
 <script setup lang="ts">
-import { VueLenis, useLenis } from 'lenis/vue'
-
 const route = useRoute();
+import meta from '@/assets/json/meta.json'
+
+watch(() => route.path, (newPath) => {
+  const pageName: string = getBasePath()
+  const pageMeta: any = (meta.pages as Record<string, any>)[pageName]
+
+  if (pageMeta) {
+    useHead({
+      title: pageMeta.title,
+      htmlAttrs: {
+        lang: `${getCurrentLanguage() === 'en' ? 'en' : 'ja'}`,
+      },
+      meta: [
+        { name: 'description', content: pageMeta.description[getCurrentLanguage()] },
+        { property: 'og:title', content: pageMeta.title },
+        { property: 'og:site_name', content: pageMeta.title },
+        { property: 'og:description', content: pageMeta.description[getCurrentLanguage()] },
+        { property: 'og:url', content: `${meta.domain}${newPath}` },
+        { name: 'twitter:title', content: pageMeta.title },
+        { name: 'twitter:description', content: pageMeta.description[getCurrentLanguage()] },
+      ]
+    })
+  }
+}, { immediate: true })
+
+
+
+import { VueLenis, useLenis } from 'lenis/vue'
 const loading = useLoadingState();
 const splashState = useSplashState();
 const kvResourcesLoaded = useKVResourcesLoadedState();
@@ -94,6 +120,45 @@ onMounted(async() => {
   width: 100%;
   margin: 0 auto;
   overflow: clip;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: overlay;
+    z-index: 1;
+    pointer-events: none;
+
+    @include mixin.pc {
+      width: 40%;
+    }
+    @include mixin.sp {
+      width: 20%;
+    }    
+  }
+
+  &:after {  
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(270deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: overlay;
+    z-index: 0;
+    pointer-events: none;
+
+    @include mixin.pc {
+      width: 40%;
+    }
+    @include mixin.sp {
+      width: 20%;
+    }
+  }
 }
 
 .modal {
