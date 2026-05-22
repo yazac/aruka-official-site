@@ -2,7 +2,10 @@
   <CommonContentsInner>
     <div class="u-under-page-head-margin"></div>
     <CommonTextH1>
-      Privacy Policy
+      <span style="display: inline-flex; align-items: center; gap: 0.5em;">
+        <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/mountain.svg')`"></span>
+        <span>Privacy Policy</span>
+      </span>
     </CommonTextH1>
     <CommonSplitter />
 

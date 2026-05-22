@@ -2,9 +2,12 @@
   <div>
     <CommonContentsInner>
       <div class="u-under-page-head-margin"></div>
-      <CommonTextH1Large lang="en">
-        WORKS
-      </CommonTextH1Large>
+      <CommonTextH2 lang="en">
+        <span style="display: inline-flex; align-items: center; gap: 0.5em;">
+          <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/flower02.svg')`"></span>
+          <span>Works</span>
+        </span>
+      </CommonTextH2>
 
       <CommonSplitter />
 
@@ -30,7 +33,7 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image="item.image === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image}`"
+            :image="item.image[0] === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image[0]}`"
             :title=item.title.en
             :desc=item.description.en
           />
@@ -99,11 +102,9 @@ const filteredWorks = computed(() => {
 .p-works-filter-button-wrap {
   display: flex;
   align-items: center;
-  background: #ffffff;
-  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
 
   @include mixin.pc {
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 0 0 10px 10px;
   }
 
@@ -158,6 +159,7 @@ const filteredWorks = computed(() => {
   display: inline-flex;
   align-items: center;
   gap: 1em;
+  font-weight: bold;
 }
 
 .fade2-enter-active,
