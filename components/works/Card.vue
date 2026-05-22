@@ -21,6 +21,7 @@
           loading="lazy" 
           quality="50"
           placeholder
+          fit="cover"
         />
       </div>
 
