@@ -153,7 +153,7 @@ watch(() => menuState.value, (newVal) => {
   }
 
   span {
-    background: url('/assets/images/common/close.svg') no-repeat center;
+    background: url('/images/common/close.svg') no-repeat center;
     background-size: contain;
     display: block;
     width: 100%;

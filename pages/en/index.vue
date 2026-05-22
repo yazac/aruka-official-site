@@ -32,7 +32,7 @@
           threshold: 0.5,
           retrigger: false,
         }">
-          <NuxtImg src="/assets/images/works/3d/aruku-morning2.jpg" alt="flying arukuchan in moring sky" loading="lazy" placeholder/>
+          <NuxtImg src="/images/works/3d/aruku-morning2.jpg" alt="flying arukuchan in moring sky" loading="lazy" placeholder/>
         </div>
 
       </div>
@@ -201,7 +201,7 @@ onMounted(() => {
       display: inline-block;
       width: 1.2rem;
       height: 1.2rem;
-      mask-image: url("/assets/images/common/arrow01.svg");
+      mask-image: url("/images/common/arrow01.svg");
       mask-size: contain;
       mask-position: center;
       mask-repeat: no-repeat;

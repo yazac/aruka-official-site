@@ -11,7 +11,7 @@
     }"
   >
     <NuxtImg 
-      :src="work.image[0] === null? 'https://placehold.jp/800x800.png': `/assets/images/works${work.image[0]}`"
+      :src="work.image[0] === null? 'https://placehold.jp/800x800.png': `/images/works${work.image[0]}`"
       width="800" height="800" loading="lazy" quality="50" placeholder
       style="position: absolute; transform: translate(0, -50%);"
     />

@@ -4,7 +4,7 @@
       <div class="u-under-page-head-margin"></div>
       <CommonTextH1 lang="en" color="lightgreen">
         <span style="display: inline-flex; align-items: center; gap: 0.3em;">
-          <span class="u-icon" :style="`mask-image: url('/assets/images/common/flower02.svg')`"></span>
+          <span class="u-icon" :style="`mask-image: url('/images/common/flower02.svg')`"></span>
           <span>Works</span>
         </span>
       </CommonTextH1>
@@ -21,7 +21,7 @@
           aria-label="Filter works"
         >
           <span class="p-works-filter-button-inner u-font-en">
-            <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/assets/images/common/${icons[i]}.svg')`"></span>
+            <span class="u-icon p-works-filter-button-icon" :style="`mask-image: url('/images/common/${icons[i]}.svg')`"></span>
             <span>{{item.label}}</span>
           </span>
         </button>
@@ -33,7 +33,7 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image="item.image[0] === null? 'https://placehold.jp/800x800.png': `/assets/images/works${item.image[0]}`"
+            :image="item.image[0] === null? 'https://placehold.jp/800x800.png': `/images/works${item.image[0]}`"
             :title=item.title.en
             :desc=item.description.en
           />

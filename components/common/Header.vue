@@ -99,7 +99,7 @@ watch(isArukuchanActive, (active) => {
 })
 
 onMounted(() => {
-  arukuSound.value = new Audio('/assets/sound/arukuchan.mp3')
+  arukuSound.value = new Audio('/sound/arukuchan.mp3')
 
   window.addEventListener(
     'mousemove',
@@ -147,7 +147,7 @@ onMounted(() => {
   left: 85px;
   width: 20px;
   height: 20px;
-  mask-image: url("/assets/images/common/attention.svg");
+  mask-image: url("/images/common/attention.svg");
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;
@@ -317,7 +317,7 @@ onMounted(() => {
     }
 
     span {
-      background: url('/assets/images/common/hamburger.svg') no-repeat center;
+      background: url('/images/common/hamburger.svg') no-repeat center;
       background-size: contain;
       display: block;
       width: 100%;
