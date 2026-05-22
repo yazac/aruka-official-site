@@ -32,7 +32,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
-        { rel: 'canonical', href: meta.domain },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=New+Tegomin&family=Zen+Old+Mincho&display=swap' }
