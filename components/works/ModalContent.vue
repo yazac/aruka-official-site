@@ -19,7 +19,7 @@
           <Swiper :modules="modules" navigation loop :speed="300">
             <SwiperSlide v-for="(image, index) in matchedWork.image" :key="index">
               <NuxtImg
-                :src="`/assets/images/works${image}`"
+                :src="`/images/works${image}`"
                 :alt="`${matchedWork.title[getCurrentLanguage()]} - image ${index + 1}`"
                 loading="lazy"
                 placeholder
@@ -33,7 +33,7 @@
         </template>
         <template v-else>
           <NuxtImg
-            :src="matchedWork.image[0] ? `/assets/images/works${matchedWork.image[0]}` : 'https://placehold.jp/800x800.png'"
+            :src="matchedWork.image[0] ? `/images/works${matchedWork.image[0]}` : 'https://placehold.jp/800x800.png'"
             :alt="matchedWork.title[getCurrentLanguage()]"
             loading="lazy"
             placeholder
@@ -139,9 +139,12 @@ const modules = [Navigation]
 }
 
 .c-works-modal_content-image-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  --swiper-navigation-size: 25px;
+
   @include mixin.pc {
     width: 60vh;
-
     flex-shrink: 0;
   }
   @include mixin.sp {
@@ -159,10 +162,18 @@ const modules = [Navigation]
       filter: drop-shadow(0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3))
     }
   }
+
+  :deep(> img) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: gray;
+  }
 }
 
 .c-works-modal-close-button {
-  mask-image: url("/assets/images/common/close.svg");
+  mask-image: url("/images/common/close.svg");
   mask-size: contain;
   mask-position: center;
   mask-repeat: no-repeat;

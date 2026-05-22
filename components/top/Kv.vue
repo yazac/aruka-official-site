@@ -22,8 +22,8 @@ import { App } from '@/composables/kv/main.js'
 // Preload resources for KV section (3D objects and textures)
 const preloadKVResources = async () => {
   const resources = [
-    '/assets/object/aruku_chan_white2.glb',
-    '/assets/images/kv/gold_grass.png'
+    '/object/aruku_chan_white2.glb',
+    '/images/kv/gold_grass.png'
   ];
 
   return Promise.all(
@@ -114,7 +114,7 @@ onUnmounted(() => {
 
 .overlay {
   mix-blend-mode: color-burn;
-  background: url("/assets/images/kv/sunburnpaper6.jpg") repeat center center;
+  background: url("/images/kv/sunburnpaper6.jpg") repeat center center;
   background-size: contain;
   width: 100%;
   height: 100%;

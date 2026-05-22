@@ -86,7 +86,7 @@ export class SceneManager {
   }
 
   setupArukuchan() {
-    this.loader.load("/assets/object/aruku_chan_white2.glb", (gltf) => {
+    this.loader.load("/object/aruku_chan_white2.glb", (gltf) => {
       const arukuchan = gltf.scene;
       arukuchan.name = "arukuchan";
       arukuchan.scale.set(0.6, 0.6, 0.6);
@@ -136,7 +136,7 @@ export class SceneManager {
   }
 
   setupGrass() {
-    const grassTexture = new THREE.TextureLoader().load("/assets/images/kv/gold_grass.png");
+    const grassTexture = new THREE.TextureLoader().load("/images/kv/gold_grass.png");
     grassTexture.wrapS = THREE.RepeatWrapping;
     grassTexture.wrapT = THREE.RepeatWrapping;
 

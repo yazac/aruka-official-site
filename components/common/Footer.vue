@@ -6,7 +6,7 @@
           <li role="listitem u-hover" v-if="!isCurrentPage('/')">
             <NuxtLink :to="getLocalizedPath('/')">
               <span style="display: inline-flex; align-items: center; gap: 0.5em;">
-                <span class="u-icon" :style="`mask-image: url('/assets/images/common/firework.svg')`"></span>
+                <span class="u-icon" :style="`mask-image: url('/images/common/firework.svg')`"></span>
                 Home
               </span>
             </NuxtLink>
@@ -17,7 +17,7 @@
           <li role="listitem u-hover" v-if="!isCurrentPage('/works')">
             <NuxtLink :to="getLocalizedPath('/works')">
               <span style="display: inline-flex; align-items: center; gap: 0.5em;">
-                <span class="u-icon" :style="`mask-image: url('/assets/images/common/leaf.svg')`"></span>
+                <span class="u-icon" :style="`mask-image: url('/images/common/leaf.svg')`"></span>
                 Works
               </span>
             </NuxtLink>
@@ -25,7 +25,7 @@
           <li role="listitem u-hover" v-if="!isCurrentPage('/privacy-policy')">
             <NuxtLink :to="getLocalizedPath('/privacy-policy')">
               <span style="display: inline-flex; align-items: center; gap: 0.5em;">
-                <span class="u-icon" :style="`mask-image: url('/assets/images/common/question.svg')`"></span>
+                <span class="u-icon" :style="`mask-image: url('/images/common/question.svg')`"></span>
                 Privacy Policy
               </span>
             </NuxtLink>
@@ -35,7 +35,7 @@
         <ul role="list">
           <li role="listitem" v-for="item, field in snsLinks">
             <a :href="item.url" target="_blank" class="u-hover">
-              <img :src="`/assets/images/common/icon-${item.name}.svg`" :alt="`${item.name}`">
+              <img :src="`/images/common/icon-${item.name}.svg`" :alt="`${item.name}`">
             </a>
           </li>
         </ul>
@@ -163,7 +163,7 @@ onUnmounted(() => {
           right: 0;
           width: 1.2rem;
           height: 1.2rem;
-          mask-image: url("/assets/images/common/arrow01.svg");
+          mask-image: url("/images/common/arrow01.svg");
           mask-size: contain;
           mask-position: center;
           mask-repeat: no-repeat;

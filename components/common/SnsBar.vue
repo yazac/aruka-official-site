@@ -2,7 +2,7 @@
   <div class="c-snsbar" ref="snsBar">
     <ul role="list">
       <li role="listitem" v-for="item, field in snsLinks">
-        <NuxtLink :to="item.url" target="_blank" class="u-hover" :style="{maskImage: `url(/assets/images/common/icon-${item.name}.svg)`}">
+        <NuxtLink :to="item.url" target="_blank" class="u-hover" :style="{maskImage: `url(/images/common/icon-${item.name}.svg)`}">
         </NuxtLink>
       </li>
     </ul>
