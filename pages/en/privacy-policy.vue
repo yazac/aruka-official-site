@@ -2,7 +2,7 @@
   <CommonContentsInner>
     <div class="u-under-page-head-margin"></div>
     <CommonTextH1 lang="en" color="lightgreen">
-      <span style="display: inline-flex; align-items: center; gap: 0.3em;">
+      <span style="display: inline-flex; align-items: flex-start; gap: 0.3em;">
         <span class="u-icon" :style="`mask-image: url('/images/common/moon.svg')`"></span>
         <span>Privacy Policy</span>
       </span>

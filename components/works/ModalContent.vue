@@ -140,7 +140,7 @@ const modules = [Navigation]
 
 .c-works-modal_content-image-wrap {
   position: relative;
-  background: black;
+  aspect-ratio: 1;
   @include mixin.pc {
     width: 60vh;
     flex-shrink: 0;
