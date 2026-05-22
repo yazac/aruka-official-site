@@ -139,9 +139,10 @@ const modules = [Navigation]
 }
 
 .c-works-modal_content-image-wrap {
+  position: relative;
+  background: black;
   @include mixin.pc {
     width: 60vh;
-
     flex-shrink: 0;
   }
   @include mixin.sp {
@@ -158,6 +159,13 @@ const modules = [Navigation]
       color: var.$color-white;
       filter: drop-shadow(0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3))
     }
+  }
+
+  :deep(> img) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
 

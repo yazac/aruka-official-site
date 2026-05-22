@@ -78,5 +78,14 @@ function requestModal() {
   aspect-ratio: 1;
   transform: scale(1);
   transition: transform 0.3s ease-out;
+
+  :deep(img) {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+  } 
 }
 </style>
