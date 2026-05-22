@@ -141,6 +141,8 @@ const modules = [Navigation]
 .c-works-modal_content-image-wrap {
   position: relative;
   aspect-ratio: 1;
+  --swiper-navigation-size: 25px;
+
   @include mixin.pc {
     width: 60vh;
     flex-shrink: 0;
