@@ -56,7 +56,7 @@
       当サイトでは、一部のコンテンツにおいてCookieを使用する場合があります。
       Cookieは、ユーザーのブラウザを識別するためのものであり、個人を特定する情報は含まれません。
     </CommonTextNormal>
-
+<!-- 
     <CommonTextH2>
       お問い合わせフォームについて
     </CommonTextH2>
@@ -64,7 +64,7 @@
     <CommonTextNormal>
       当サイトのお問い合わせフォームでは、スパム・不正利用防止および円滑な対応のため、必要な範囲で個人情報を取得する場合があります。
       取得した情報は、お問い合わせ対応以外の目的では使用いたしません。
-    </CommonTextNormal>
+    </CommonTextNormal> -->
 
 
     <CommonTextH2>
