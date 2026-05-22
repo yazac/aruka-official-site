@@ -52,4 +52,7 @@ export default defineNuxtConfig({
     id: 'G-C7KPRL5Z3D'
   },
   ssr: true,
+  image: {
+    provider: 'ipx'
+  }
 })
