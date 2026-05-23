@@ -53,12 +53,17 @@ function requestModal() {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/css/_var.scss';
+@use '@/assets/css/_mixin.scss';
+
 .c-work-card-wrap {
   overflow: hidden;
-  &:hover{
-    transform: scale(1.2);
-    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.6);
-    z-index: 1;
+  @include mixin.pc {
+    &:hover{
+      transform: scale(1.2);
+      box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }  
   }
 }
 

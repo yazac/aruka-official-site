@@ -33,11 +33,11 @@
       </ul>
 
       <ul role="list" class="c-header-nav-lang">
-        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'en' }">
+        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'en', 'js-modal-active': menuState  }">
           <NuxtLink :to="'/en' + getBasePath()">EN</NuxtLink>
         </li>
         <span>/</span>
-        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'jp' }">
+        <li role="listitem" :class="{ 'is-current': getCurrentLanguage() === 'jp', 'js-modal-active': menuState }">
           <NuxtLink :to="getBasePath()">JP</NuxtLink>
         </li>
       </ul>
@@ -296,6 +296,7 @@ onMounted(() => {
         text-decoration: none;
         display: inline-block;
         padding: 10px 10px;
+        pointer-events: all;
       }
 
       &.is-current {
@@ -304,6 +305,12 @@ onMounted(() => {
 
         :deep(a) {
           opacity: 0.3;
+        }
+      }
+
+      &.js-modal-active {
+        :deep(a) {
+          pointer-events: none;
         }
       }
     }
