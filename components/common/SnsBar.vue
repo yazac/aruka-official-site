@@ -2,7 +2,14 @@
   <div class="c-snsbar" ref="snsBar">
     <ul role="list">
       <li role="listitem" v-for="item, field in snsLinks">
-        <NuxtLink :to="item.url" target="_blank" class="u-hover" :style="{maskImage: `url(/images/common/icon-${item.name}.svg)`}">
+        <NuxtLink
+          :to="item.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="u-hover"
+          :aria-label="`Open ${getSnsLabel(item.name)} profile (opens in a new tab)`"
+          :style="{maskImage: `url(/images/common/icon-${item.name}.svg)`}"
+        >
         </NuxtLink>
       </li>
     </ul>
@@ -19,6 +26,17 @@ const snsBar = ref<HTMLElement>();
 const shouldHideBar = computed(() => {
   return splashState.value || footerIntersection.value;
 });
+
+const getSnsLabel = (name: string): string => {
+  const labelMap: Record<string, string> = {
+    x: 'X',
+    instagram: 'Instagram',
+    soundcloud: 'SoundCloud',
+    spotify: 'Spotify',
+    apple_music: 'Apple Music'
+  }
+  return labelMap[name] ?? name
+}
 
 watch(shouldHideBar, (shouldHide) => {
   if (snsBar.value) {

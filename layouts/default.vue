@@ -49,6 +49,9 @@ watch(() => route.path, (newPath) => {
       htmlAttrs: {
         lang: `${getCurrentLanguage() === 'en' ? 'en' : 'ja'}`,
       },
+      link: [
+        { rel: 'canonical', href: `${meta.domain}${newPath}` },
+      ],
       meta: [
         { name: 'description', content: pageMeta.description[getCurrentLanguage()] },
         { property: 'og:title', content: pageMeta.title },

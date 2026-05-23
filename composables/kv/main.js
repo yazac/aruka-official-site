@@ -87,6 +87,6 @@ export class App {
     this.sceneManager.destroy();
     this.postProcessing.destroy();
     // this.ui.destroy();
-    // this.eventHandlers.destroy();
+    this.eventHandlers.destroy();
   }
 }
