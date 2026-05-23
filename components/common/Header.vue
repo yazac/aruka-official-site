@@ -10,7 +10,11 @@
 
     <div class="c-header-logo-wrapper" ref="arukuchan" :class="{ 'js-active': isArukuchanActive }" @click="onArukuchanClick">
       <!-- TOPの時だけ遷移を無効にする -->
-      <NuxtLink :to="getLocalizedPath('/')" class="c-header-logo" :aria-disabled="isCurrentPage('/')" @click.prevent="isCurrentPage('/')">
+      <NuxtLink
+        :to="getLocalizedPath('/')"
+        class="c-header-logo"
+        aria-label="Go to home page"
+      >
         <CommonLogoArukuChan color="lightgreen" />
       </NuxtLink>
     </div>
