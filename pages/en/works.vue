@@ -118,7 +118,7 @@ const filteredWorks = computed(() => {
   }
 
   button {
-    background: linear-gradient(0deg, rgba(230, 230, 218, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(0deg, rgb(242, 242, 211) 0%, rgba(255, 255, 255, 1) 100%);
 
     @include mixin.pc {
       border-top: 1px solid var.$color-gray;
@@ -143,7 +143,7 @@ const filteredWorks = computed(() => {
     }
 
     &.js-active {
-      background: linear-gradient(180deg, rgba(230, 230, 218, 1) 0%, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(180deg, rgb(242, 242, 211) 0%, rgba(255, 255, 255, 1) 100%);
     }
   }
 }
