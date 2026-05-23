@@ -2,13 +2,13 @@
   <div class="c-menu u-font-en">
     <nav class="c-menu-inner">
       <ul role="list" class="c-menu-page-list" ref="menuPageList">
-        <li role="listitem" :class="{ 'is-current': isCurrentPage('/') }">
+        <li role="listitem" :class="{ 'is-current': isCurrentPage('/') , 'js-active': menuState }">
           <NuxtLink :to="getLocalizedPath('/')" @click="menuState = false">Home</NuxtLink>
         </li>
         <!-- <li role="listitem" :class="{ 'is-current': isCurrentPage('/about') }">
           <NuxtLink :to="getLocalizedPath('/about')">About</NuxtLink>
         </li> -->
-        <li role="listitem" :class="{ 'is-current': isCurrentPage('/works') }">
+        <li role="listitem" :class="{ 'is-current': isCurrentPage('/works'), 'js-active': menuState }">
           <NuxtLink :to="getLocalizedPath('/works')" @click="menuState = false">Works</NuxtLink>
         </li>
       </ul>
@@ -32,6 +32,11 @@ onMounted(() => {
   menuCloseButton.value?.addEventListener("click", () => {
     menuState.value = false;
   })
+  window.addEventListener("resize", debounce(300, () => {
+    if (menuState.value) {
+      menuState.value = false;
+    }
+  }));
 })
 
 watch(() => menuState.value, (newVal) => {
@@ -116,7 +121,7 @@ watch(() => menuState.value, (newVal) => {
     :deep(a) {
       color: var.$color-black;
       text-decoration: none;
-      pointer-events: all;
+      pointer-events: none;
     }
 
     &:nth-child(2) {
@@ -130,6 +135,12 @@ watch(() => menuState.value, (newVal) => {
       :deep(a) {
         opacity: 0.3;
         pointer-events: none;
+      }
+    }
+
+    &.js-active {
+      :deep(a) {
+        pointer-events: all;
       }
     }
   }
