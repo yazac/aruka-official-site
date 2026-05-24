@@ -131,7 +131,7 @@ onMounted(async() => {
     left: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
     mix-blend-mode: overlay;
     z-index: 1;
     pointer-events: none;
@@ -150,7 +150,7 @@ onMounted(async() => {
     top: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(270deg,rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(270deg,rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
     mix-blend-mode: overlay;
     z-index: 0;
     pointer-events: none;
