@@ -88,11 +88,11 @@ const filteredWorks = computed(() => {
   @include mixin.pc {
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 260px;
   }
   @include mixin.sp {
-    gap: mixin.vw(20, var.$dsSp);
+    gap: mixin.vw(12, var.$dsSp);
     grid-template-columns: repeat(2, 1fr);
     margin-top: mixin.vw(30, var.$dsSp);
     margin-bottom: mixin.vw(120, var.$dsSp);
