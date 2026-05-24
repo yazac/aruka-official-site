@@ -19,7 +19,7 @@
     padding: 0 120px 0;
   }
   @include mixin.sp {
-    padding: 0 mixin.vw(20, var.$dsSp);
+    padding: 0 mixin.vw(24, var.$dsSp);
   }
 }
 </style>

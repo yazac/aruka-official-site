@@ -8,7 +8,7 @@
 
       <div class="p-home-aboutme-wrapper">
 
-        <CommonTextNormalLarge lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
+        <CommonTextNormal lang="jp" style="line-height: 2;" class="u-font-color-dark-green u-anim-opacity" v-intersection-observe="{
           threshold: 0.5
         }">
           Hi! I'm a r u k a.
@@ -18,7 +18,7 @@
           <br>
           <br>
           For inquiries, please contact me at <a class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</a>
-        </CommonTextNormalLarge>
+        </CommonTextNormal>
 
         <div class="p-home-aboutme-img u-anim-stepmotion" 
         v-step-animation="{ 
@@ -125,6 +125,7 @@ onMounted(() => {
     margin-top: 120px;
     padding-bottom: 120px;
     gap: 50px;
+    align-items: center;
   }
 
   @include mixin.sp {
