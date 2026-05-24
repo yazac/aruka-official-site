@@ -87,7 +87,7 @@ const filteredWorks = computed(() => {
   display: grid;
   @include mixin.pc {
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 60px;
     margin-bottom: 260px;
   }
