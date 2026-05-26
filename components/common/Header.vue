@@ -79,6 +79,7 @@ const onArukuchanClick = () => {
   if (!sound) return
 
   sound.currentTime = 0
+  sound.volume = 0.5;
   sound.play()
 
   arukuchanClickNum.value++
