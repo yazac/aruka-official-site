@@ -120,7 +120,8 @@ const modules = [Navigation]
     width: 90vw;
     padding: 8vw;
     flex-wrap: wrap;
-    align-content: stretch
+    align-content: stretch;
+    margin-bottom: 10vh;
   }
 }
 
@@ -142,6 +143,7 @@ const modules = [Navigation]
   position: relative;
   aspect-ratio: 1;
   --swiper-navigation-size: 25px;
+  border: solid 1px #f2f2f2;
 
   @include mixin.pc {
     width: 60vh;
@@ -188,6 +190,16 @@ const modules = [Navigation]
   }
   @include mixin.sp {
     padding: mixin.vw(16, var.$dsSp);
+  }
+}
+
+.c-works-modal_content-desc {
+  white-space: pre-wrap;
+  @include mixin.pc {
+    margin-top: 2vh;
+  }
+  @include mixin.sp {
+    margin-top: mixin.vw(16, var.$dsSp);
   }
 }
 </style>
