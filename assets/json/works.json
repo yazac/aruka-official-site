@@ -20,6 +20,25 @@
     {
       "id": "work-001",
       "title": {
+        "jp": "aruka official site",
+        "en": "aruka official site"
+      },
+      "image": [
+        "/programming/aruka-website.jpg"
+      ],
+      "categories": [
+        "programming"
+      ],
+      "publishedAt": "2026-05-27",
+      "description": {
+        "jp": "",
+        "en": ""
+      },
+      "url": "https://www.aruka-earth.net/"
+    },
+    {
+      "id": "work-002",
+      "title": {
         "jp": "they",
         "en": "they"
       },
@@ -37,7 +56,7 @@
       "url": ""
     },
     {
-      "id": "work-002",
+      "id": "work-003",
       "title": {
         "jp": "Tile Impressionism ",
         "en": "Tile Impressionism "
@@ -56,7 +75,7 @@
       "url": "https://tile-impressionism.vercel.app/"
     },
     {
-      "id": "work-003",
+      "id": "work-004",
       "title": {
         "jp": "MEs Market 2025",
         "en": "MEs Market 2025"
@@ -78,7 +97,7 @@
       "url": ""
     },
     {
-      "id": "work-004",
+      "id": "work-005",
       "title": {
         "jp": "湾岸通り / 歩く人 + a r u k a. feat. 初音ミク",
         "en": "Kaigan dori / pedestrian + a r u k a. feat. Hatsune Miku"
@@ -97,7 +116,7 @@
       "url": "https://www.nicovideo.jp/watch/sm45377769"
     },
     {
-      "id": "work-005",
+      "id": "work-006",
       "title": {
         "jp": "パラセール",
         "en": "parasail"
@@ -116,7 +135,7 @@
       "url": ""
     },
     {
-      "id": "work-006",
+      "id": "work-007",
       "title": {
         "jp": "サモンセンス (feat. a r u k a.) - a r u k a. Remix",
         "en": "summonsense (feat. a r u k a.) - a r u k a. Remix"
@@ -135,7 +154,7 @@
       "url": "https://linkco.re/7z2YqRVY"
     },
     {
-      "id": "work-007",
+      "id": "work-008",
       "title": {
         "jp": "すなおなきもち",
         "en": "sincerity"
@@ -154,7 +173,7 @@
       "url": "https://linkco.re/FBSNff90"
     },
     {
-      "id": "work-008",
+      "id": "work-009",
       "title": {
         "jp": "Aquarius",
         "en": "Aquarius"
@@ -173,7 +192,7 @@
       "url": "https://open.spotify.com/track/1S8q9uG3BH3mNh9TaPWUe0?si=b3c6708768c24484"
     },
     {
-      "id": "work-009",
+      "id": "work-010",
       "title": {
         "jp": "Wavfire - One day ジャケット制作",
         "en": "Wavfire - One day album artwork"
@@ -192,7 +211,7 @@
       "url": ""
     },
     {
-      "id": "work-010",
+      "id": "work-011",
       "title": {
         "jp": "干し草",
         "en": "hay"
@@ -211,7 +230,7 @@
       "url": "https://www.instagram.com/p/DW82h0mAYu3/"
     },
     {
-      "id": "work-011",
+      "id": "work-012",
       "title": {
         "jp": "あさもや",
         "en": "morning haze"
@@ -230,7 +249,7 @@
       "url": ""
     },
     {
-      "id": "work-012",
+      "id": "work-013",
       "title": {
         "jp": "かえりみち",
         "en": "way back home"
@@ -249,7 +268,7 @@
       "url": ""
     },
     {
-      "id": "work-013",
+      "id": "work-014",
       "title": {
         "jp": "行方",
         "en": "yukue"
@@ -268,7 +287,7 @@
       "url": "https://linkco.re/8d26bTMX"
     },
     {
-      "id": "work-014",
+      "id": "work-015",
       "title": {
         "jp": "稲穂垂る",
         "en": "golden field"
@@ -287,7 +306,7 @@
       "url": "https://soundcloud.com/aruku_a_dark/goldenfield"
     },
     {
-      "id": "work-015",
+      "id": "work-016",
       "title": {
         "jp": "コースティクス",
         "en": "caustics"
@@ -306,7 +325,7 @@
       "url": "https://linkco.re/NMUfEABz"
     },
     {
-      "id": "work-016",
+      "id": "work-017",
       "title": {
         "jp": "薫風 (feat. a r u k a. & aria igarashi)",
         "en": "薫風 (feat. a r u k a. & aria igarashi)"
@@ -325,7 +344,7 @@
       "url": "https://linkco.re/vDeHPnSR"
     },
     {
-      "id": "work-017",
+      "id": "work-018",
       "title": {
         "jp": "Unseen Skies",
         "en": "Unseen Skies"
@@ -344,7 +363,7 @@
       "url": ""
     },
     {
-      "id": "work-018",
+      "id": "work-019",
       "title": {
         "jp": "土の匂いがする",
         "en": "smells like earth"
@@ -363,7 +382,7 @@
       "url": "https://linkco.re/bTB4SXzC"
     },
     {
-      "id": "work-019",
+      "id": "work-020",
       "title": {
         "jp": "あの枝の葉",
         "en": "the leaf on that branch"
@@ -382,7 +401,7 @@
       "url": "https://linkco.re/6UT7G9Rs"
     },
     {
-      "id": "work-020",
+      "id": "work-021",
       "title": {
         "jp": "夕暮れに背を向け",
         "en": "twilight"
