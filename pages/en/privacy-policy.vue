@@ -10,7 +10,7 @@
     <CommonSplitter />
 
     <CommonTextNormalLarge>
-      this site considers the proper handling of user personal information to be an important responsibility and hereby establishes the following privacy policy.
+      This website establishes the following Privacy Policy.
     </CommonTextNormalLarge>
 
     <CommonTextH2>
@@ -18,28 +18,42 @@
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      This site may request personal information such as name and email address when users contact me.
-      Personal information provided will not be used for any purpose other than the following:
+      When making inquiries on this website, users may be asked to provide personal information such as their name and email address.<br>
+      Such personal information will only be used for the following purposes:
       <ul>
-        <li>To respond to inquiries and provide necessary information</li>
-        <li>To analyze and improve our services and Website</li>
+        <li>Responding to inquiries and providing necessary information</li>
+        <li>Analysis for service improvement and website optimization</li>
       </ul>
     </CommonTextNormalLarge>
 
     <CommonTextH2>
-      Disclosure of Personal Information to Third Parties
+      Provision of Personal Information to Third Parties
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      I will not disclose personal information to third parties without the consent of the user, except as required by law.
+      This website will not provide acquired personal information to third parties without the user's consent, except where required by law.
     </CommonTextNormalLarge>
 
     <CommonTextH2>
-      Security Measures
+      Access Analysis Tools
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      I implement appropriate security measures to protect personal information from loss, damage, or unauthorized access.
+      This website uses Google Analytics to understand how the site is used.
+      <br>
+      Google Analytics uses cookies to collect traffic data; however, this data is collected anonymously and does not identify individuals.
+      Users may refuse data collection by disabling cookies in their browser settings. Please check your browser settings for details.
+      <br>
+      For more information regarding Google Analytics, please refer to Google's Privacy Policy.
+    </CommonTextNormalLarge>
+
+    <CommonTextH2>
+      About Cookies
+    </CommonTextH2>
+
+    <CommonTextNormalLarge>
+      This website may use cookies for certain content.
+      Cookies are used to identify users' browsers and do not contain personally identifiable information.
     </CommonTextNormalLarge>
 
     <CommonTextH2>
@@ -47,7 +61,9 @@
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      I may update this privacy policy without notice. Users are encouraged to review this policy regularly.
+      This website may revise this Privacy Policy without prior notice due to changes in laws, regulations, or operational policies.
+      <br>
+      The revised Privacy Policy shall become effective once posted on this website.
     </CommonTextNormalLarge>
 
     <CommonTextH2>
@@ -55,7 +71,7 @@
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      For inquiries regarding this privacy policy, please contact me at <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
+      For inquiries regarding the handling of personal information on this website, please contact: <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
     </CommonTextNormalLarge>
     <div class="p-spacer"></div>
   </CommonContentsInner>

@@ -134,6 +134,7 @@ onMounted(() => {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  pointer-events: none;
 
   @include mixin.pc {
     padding: 20px 20px;
@@ -219,6 +220,7 @@ onMounted(() => {
 }
 
 .c-header-logo {
+  pointer-events: all;
   display: inline-block;
   transition: transform 0.05s cubic-bezier(0.89, -0.01, 0.2, 1);
 
@@ -237,6 +239,7 @@ onMounted(() => {
 
 .c-header-nav {
   display: flex;
+  pointer-events: all;
 
   @include mixin.pc {
     gap: 40px;
