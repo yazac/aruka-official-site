@@ -1,1 +1,1 @@
-wget -O assets/json/works.json "${CMS_API_URL}/export"
+curl "${CMS_API_URL}/export" > assets/json/works.json
