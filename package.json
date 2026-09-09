@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "npm run update:works && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "update:works": "sh ./shell/update-works.sh"
