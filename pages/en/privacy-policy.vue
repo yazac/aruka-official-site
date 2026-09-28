@@ -71,7 +71,7 @@
     </CommonTextH2>
 
     <CommonTextNormalLarge>
-      For inquiries regarding the handling of personal information on this website, please contact: <NuxtLink class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</NuxtLink>
+      For inquiries regarding the handling of personal information on this website, please contact: <NuxtLink class="external-icon" href="mailto:aruka.earth@gmail.com" target="_blank">aruka.earth@gmail.com</NuxtLink>
     </CommonTextNormalLarge>
     <div class="p-spacer"></div>
   </CommonContentsInner>

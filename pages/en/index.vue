@@ -17,7 +17,7 @@
           I create works that combine music composition, 3D graphics and programming.
           <br>
           <br>
-          For inquiries, please contact me at <a class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</a>
+          For inquiries, please contact me at <a class="external-icon" href="mailto:aruka.earth@gmail.com" target="_blank">aruka.earth@gmail.com</a>
         </CommonTextNormal>
 
         <div class="p-home-aboutme-img u-anim-stepmotion" 

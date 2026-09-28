@@ -17,7 +17,7 @@
           作曲、3Dグラフィック、プログラミングを組み合わせた作品を作っています。
           <br>
           <br>
-          お問い合わせは<br><a class="external-icon" href="mailto:aruka.music.pon@gmail.com" target="_blank">aruka.music.pon@gmail.com</a>まで
+          お問い合わせは<br><a class="external-icon" href="mailto:aruka.earth@gmail.com" target="_blank">aruka.earth@gmail.com</a>まで
         </CommonTextNormal>
 
         <div class="p-home-aboutme-img u-anim-stepmotion" 
