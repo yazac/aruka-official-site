@@ -53,5 +53,9 @@ export default defineNuxtConfig({
   ssr: true,
   image: {
     provider: 'vercel',
+    // 作品画像（CMS 管理、R2 に保存）は Cloudflare Image Transformations で変換して配信する
+    cloudflare: {
+      baseURL: 'https://images.aruka-earth.net'
+    }
   }
 })

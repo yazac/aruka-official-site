@@ -14,7 +14,8 @@
     <button class="c-work-card" @click="requestModal()" aria-label="Open work details" type="button">
       <div class="c-work-card-image-wrap">
         <NuxtImg 
-          :src="image"
+          :src="workImageSrc(image)"
+          :provider="workImageProvider(image)"
           :alt="title"
           width="800"
           height="800"
@@ -37,7 +38,7 @@
 <script setup lang="ts">
 interface Props {
   id: string
-  image: string
+  image?: string
   title: string
   desc?: string
 }
