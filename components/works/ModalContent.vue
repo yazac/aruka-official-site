@@ -19,7 +19,8 @@
           <Swiper :modules="modules" navigation loop :speed="300">
             <SwiperSlide v-for="(image, index) in matchedWork.image" :key="index">
               <NuxtImg
-                :src="`/images/works${image}`"
+                :src="workImageSrc(image)"
+                :provider="workImageProvider(image)"
                 :alt="`${matchedWork.title[getCurrentLanguage()]} - image ${index + 1}`"
                 loading="lazy"
                 placeholder
@@ -33,7 +34,8 @@
         </template>
         <template v-else>
           <NuxtImg
-            :src="matchedWork.image[0] ? `/images/works${matchedWork.image[0]}` : 'https://placehold.jp/800x800.png'"
+            :src="workImageSrc(matchedWork.image[0])"
+            :provider="workImageProvider(matchedWork.image[0])"
             :alt="matchedWork.title[getCurrentLanguage()]"
             loading="lazy"
             placeholder

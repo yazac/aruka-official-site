@@ -33,7 +33,7 @@
             v-for="item in filteredWorks"
             :key="item.id"
             :id="item.id"
-            :image="item.image[0] === null? 'https://placehold.jp/800x800.png': `/images/works${item.image[0]}`"
+            :image="item.image[0]"
             :title=item.title.en
             :desc=item.description.en
           />
